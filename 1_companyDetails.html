@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Account Opening</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <section class="companyDetails customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
+    <div class="ourLogo">
+      <img src="./images/DhanushLogo.png" alt="" class="my-2">
+    </div>
+
+    <form id="companyForm">
+      <div class="companyProfile mt-8">
+        <div
+          class="profileHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          1. Company Profile:</div>
+        <div class="profileDetails flex flex-wrap">
+      
+          <div class="mr-5 mt-2">
+            <label for="companyName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Company Name</label>
+            <input type="text" name="companyName" id="companyName"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
+              required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="incorporationDate" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date of
+              incorporation</label>
+            <input type="date" name="incorporationDate" id="incorporationDate"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="incorporationPlace" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Place of
+              incorporation</label>
+            <input type="text" name="incorporationPlace" id="incorporationPlace"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10"
+              required>
+          </div>
+
+          <div class="mr-5 mt-2">
+            <label for="incorporationCountry" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Country of
+              incorporation</label>
+            <input type="text" name="incorporationCountry" id="incorporationCountry" maxlength="4"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10"
+              required>
+          </div>
+
+          <div class="mr-5 mt-2">
+            <label for="entityConstitutionType" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Entity Constitution Type</label>
+              <select name="entityConstitutionType" id="entityConstitutionType" class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
+                <option selected disabled>Select Entity Type</option>
+                <option value="Sole Proprietorship">Sole Proprietorship</option>
+                <option value="Partnership Firm">Partnership Firm</option>
+                <option value="HUF">HUF</option>
+                <option value="Private Limited Company">Private Limited Company</option>
+                <option value="Public Limited Company">Public Limited Company</option>
+                <option value="Society">Society</option>
+                <option value="Association of Persons (AOP) / Body of Individuals (BOI)">Association of Persons (AOP) / Body of Individuals (BOI)</option>
+                <option value="Trust">Trust</option>
+                <option value="Liquidator">Liquidator</option>
+                <option value="Limited Liability Partnership">Limited Liability Partnership</option>
+                <option value="Artificial Liability Partnership">Artificial Liability Partnership</option>
+                <option value="Public Sector Banks">Public Sector Banks</option>
+                <option value="Central/State Govt. Department or Agency">Central/State Govt. Department or Agency</option>
+                <option value="Section 8 Companies (Companies Act, 2013)">Section 8 Companies (Companies Act, 2013)</option>
+                <option value="Aritificial Jurisdical Person">Aritificial Jurisdical Person</option>
+                <option value="International Organisation / Foreign Embassy or Consular Office">International Organisation / Foreign Embassy or Consular Office</option>
+                <option value="Foreign Portfolio Investors">Foreign Portfolio Investors</option>
+                <option value="Not Categorized">Not Categorized</option>
+                <option value="Others">Others</option>
+              </select>
+          </div>
+
+          <div class="mr-5 mt-2">
+            <label for="companyPan" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Company's PAN</label>
+            <input type="text" name="companyPan" id="companyPan" maxlength="10"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+
+          <div class="mr-5 mt-2">
+            <label for="tinOrEquivalentIssuingCountry" class="block text-sm text-gray-700 font-semibold my-1 pl-1">TIN or Equivanent Issuing Country</label>
+            <input type="text" name="tinOrEquivalentIssuingCountry" id="tinOrEquivalentIssuingCountry" maxlength="4"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10" required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="gstRegistration" class="block text-sm text-gray-700 font-semibold my-1 pl-1">GST Registration
+              No. (Optional)</label>
+            <input type="text" name="gstRegistration" id="gstRegistration"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="bussinessCommenceDate" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date of
+              Commence of Bussiness</label>
+            <input type="date" name="bussinessCommenceDate" id="bussinessCommenceDate"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+      
+        </div>
+      </div>
+      
+      <div class="companyAddress mt-8">
+        <div
+          class="addressHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          2. Company Address:</div>
+          <div class="addressProofType flex items-center">
+            <div>
+              <label class="text-blue-800 font-semibold text-lg">Proof of Address</label>
+            </div>
+            <div class="ml-10">
+              <input type="radio" name="addressProof" id="incorporationCertificate" value="Certificate of incorporation" class="size-4">
+              <label for="incorporationCertificate" class="text-gray-600 text-lg font-semibold">Certificate of incorporation</label>
+            </div>
+            <div class="ml-7">
+              <input type="radio" name="addressProof" id="registrationCertificate" value="Registration Certificate" class="size-4">
+              <label for="registrationCertificate" class="text-gray-600 text-lg font-semibold">Registration Certificate</label>
+            </div>
+            <div class="ml-7">
+              <input type="radio" name="addressProof" id="otherDocuments" value="Other Documents" class="size-4">
+              <label for="otherDocuments" class="text-gray-600 text-lg font-semibold">Other Documents</label>
+            </div>
+          </div>
+        <div class="addressDetails flex flex-wrap">
+      
+          <div class="mr-5 mt-2">
+            <label for="companyAddress" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Company Address</label>
+            <input type="text" name="companyAddress" id="companyAddress"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10"
+              required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="registeredCity" class="block text-sm text-gray-700 font-semibold my-1 pl-1">City</label>
+            <input type="text" name="registeredCity" id="registeredCity"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+
+          <div class="mr-5 mt-2">
+            <label for="registeredDistrict" class="block text-sm text-gray-700 font-semibold my-1 pl-1">District</label>
+            <input type="text" name="registeredDistrict" id="registeredDistrict"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="registeredPinCode" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pin Code</label>
+            <input type="text" name="registeredPinCode" id="registeredPinCode"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="registeredState" class="block text-sm text-gray-700 font-semibold my-1 pl-1">State/UT Code</label>
+            <input type="text" name="registeredState" id="registeredState" maxlength="4"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="registeredCountry" class="block text-sm text-gray-700 font-semibold my-1 pl-1">ISO 3166 Country
+              Code</label>
+            <input type="text" name="registeredCountry" id="registeredCountry" maxlength="4"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="localAddress mt-8">
+        <div
+          class="localAddressHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          3. Local Address:</div>
+          <div class="isLocalRegisteredAddressSame">
+            <input type="checkbox" name="isLocalSame" id="isLocalSame" value="Yes" class="size-4"> <span class="font-semibold text-lg text-gray-500">Same as above mentioned address (in such case local address is need not to be filled).</span>
+          </div>
+        <div class="localAddressDetails flex flex-wrap">
+          
+          <div class="mr-5 mt-2">
+            <label for="localAddress" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Company Address</label>
+            <input type="text" name="localAddress" id="localAddress"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="localCity" class="block text-sm text-gray-700 font-semibold my-1 pl-1">City</label>
+            <input type="text" name="localCity" id="localCity"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
+          </div>
+
+          <div class="mr-5 mt-2">
+            <label for="localDistrict" class="block text-sm text-gray-700 font-semibold my-1 pl-1">District</label>
+            <input type="text" name="localDistrict" id="localDistrict"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="localPinCode" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pin Code</label>
+            <input type="text" name="localPinCode" id="localPinCode"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="localState" class="block text-sm text-gray-700 font-semibold my-1 pl-1">State/UT Code</label>
+            <input type="text" name="localState" id="localState" maxlength="4"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="localCountry" class="block text-sm text-gray-700 font-semibold my-1 pl-1">ISO 3166 Country
+              Code</label>
+            <input type="text" name="localCountry" id="localCountry" maxlength="4"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="contactDetails mt-8">
+        <div
+          class="contactHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          4. Contact Details:</div>
+        <div class="contactDetail flex flex-wrap">
+      
+          <div class="mr-5 mt-2">
+            <label for="companyPhoneNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Phone Number</label>
+            <input type="text" name="companyPhoneNumber" id="companyPhoneNumber"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
+              required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="companyEmailId" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Email Id</label>
+            <input type="text" name="companyEmailId" id="companyEmailId"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
+              required>
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="companyTelephoneNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Telephone Number (Optional)</label>
+            <input type="text" name="companyTelephoneNumber" id="companyTelephoneNumber"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+          </div>
+      
+          <div class="mr-5 mt-2">
+            <label for="companyFaxNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Fax Number (Optional)</label>
+            <input type="text" name="companyFaxNumber" id="companyFaxNumber"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+          </div>
+
+        </div>
+      
+      </div>
+
+      <div class="relatedPerson mt-8">
+        <div
+          class="relatedPersonHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          5. Number of Related Person:</div>
+        <div class="relatedPersonDetail flex flex-wrap">
+      
+          <div class="mr-5 mt-2">
+            <label for="relatedPersonCount" class="block text-sm text-gray-700 font-semibold my-1 pl-1">No. of Related Person</label>
+            <input type="text" name="relatedPersonCount" id="relatedPersonCount" maxlength="2"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+              required>
+          </div>
+        </div>
+      </div>
+
+      <div class="nextAndPrevButton flex justify-end mt-8">
+        <div class="nextBtn">
+          <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Next <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <script src="companyDetails.js"></script>
+</body>
+</html>

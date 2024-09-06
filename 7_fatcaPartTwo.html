@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Account Opening</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section
+    class="acknowledgementDetailsSection customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
+    <div class="ourLogo">
+      <img src="./images/DhanushLogo.png" alt="" class="my-2">
+    </div>
+
+    <form id="fatcaPartTwoForm">
+
+      <div class="trustTextingDetails mt-8">
+        <div
+          class="trustTextingDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          22. FATCA/CRS Declaration:</div>
+        <div class="secondPart flex items-center justify-center mt-5">
+          <div class="left border-b-2 border-gray-600 w-[42vw]"></div>
+          <div class="secondPartHeading text-lg text-blue-800 font-semibold mx-3">Part 2</div>
+          <div class="right border-b-2 border-gray-600 w-[42vw]"></div>
+        </div>
+        <div class="secondPartDetails">
+          <div class="sectionFirst">
+            <div class="firstSectionHeading  mt-2 text-lg text-blue-800 font-semibold">Section 1: Entity Information
+            </div>
+            <div class="entityInformation flex flex-wrap">
+              <div class="mr-5 mt-2">
+                <label for="EntityName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Entity Name</label>
+                <input type="text" name="EntityName" id="EntityName"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="customerId" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Customer Id (if
+                  existing)</label>
+                <input type="text" name="customerId" id="customerId"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="entityConsitutionType" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Entity
+                  Constitution
+                  Type</label>
+                <input type="text" name="entityConsitutionType" id="entityConsitutionType"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="entityIdentificationType" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Entity
+                  Identification Type</label>
+                <select name="entityIdentificationType" id="entityIdentificationType"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-64 h-10">
+                  <option selected disabled>Select Identification Type</option>
+                  <option value="TIN">Tax Identification Number</option>
+                  <option value="US_GIIN">US GIIN</option>
+                  <option value="CIN">Company Identification Number</option>
+                  <option value="EIN">Global Entity Identification Number</option>
+                  <option value="otherEIT">Other</option>
+                </select>
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="entityIdentificationNumber"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">Entity Identification Number</label>
+                <input type="text" name="entityIdentificationNumber" id="entityIdentificationNumber"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="entityIdentificationIssuingCountry"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">Entity Identification Issuing
+                  Country</label>
+                <input type="text" name="entityIdentificationIssuingCountry" id="entityIdentificationIssuingCountry"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="countryOfResidence" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Country of
+                  Residence for Tax Purpose</label>
+                <input type="text" name="countryOfResidence" id="countryOfResidence"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+              </div>
+            </div>
+          </div>
+
+          <div class="sectionTwo mt-8">
+            <div class="secondSectionHeading  mt-2 text-lg text-blue-800 font-semibold">Section 2: Classification of
+              Non-Financial Entities</div>
+            <div class="nonFinancialEntitiesInformation">
+              <div class="text-lg text-gray-800 font-semibold">I/We (on behalf of the entity) certify that the entity
+                is:</div>
+
+              <div class="flex items-center">
+                <div class="mt-3">
+                  <div class="description text-gray-600 font-semibold">A. An entity incorporated and taxable in US
+                    (Specified US person):</div>
+                  <div class="flex">
+                    <div class="flex items-center mt-3">
+                      <input type="radio" name="USTaxable" id="USTaxableYes" value="Yes" class="size-5 mr-2 hover:cursor-pointer">
+                      <label for="USTaxableYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+                    </div>
+                    <div class="trustOption flex items-center mt-3 ml-5">
+                      <input type="radio" name="USTaxable" id="USTaxableNo" value="No" class="size-5 mr-2 hover:cursor-pointer">
+                      <label for="USTaxableNo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="ml-14">
+                  <div class="mr-5 mt-2">
+                    <label for="entityIdentificationNumber"
+                      class="block text-sm text-gray-700 font-semibold my-1 pl-1">If "Yes", please provide your US
+                      Taxpayer Identification Number(TIN)</label>
+                    <input type="text" name="taxpayerIdentificationNumber" id="taxpayerIdentificationNumber"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center">
+                <div class="mt-3">
+                  <div class="description text-gray-600 font-semibold">B. An entity incorporated and taxable outside of
+                    India (other than US):</div>
+                  <div class="flex">
+                    <div class="flex items-center mt-3">
+                      <input type="radio" name="otherCountryTaxable" id="otherCountryTaxableYes" value="Yes"
+                        class="size-5 mr-2 hover:cursor-pointer">
+                      <label for="otherCountryTaxableYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+                    </div>
+                    <div class="trustOption flex items-center mt-3 ml-5">
+                      <input type="radio" name="otherCountryTaxable" id="otherCountryTaxableNo" value="No"
+                        class="size-5 mr-2 hover:cursor-pointer">
+                      <label for="otherCountryTaxableNo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="tinIssuingCountry" class="text-gray-700 font-semibold my-1 pl-1">Provide your TIN issuing
+                  country</label>
+                <input type="text" name="tinIssuingCountry" id="tinIssuingCountry"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+              </div>
+
+              <div class="flex items-center">
+                <div class="mt-3">
+                  <div class="description text-gray-600 font-semibold">C. Please provide the following additional
+                    details, if you are not a Specified US Person:</div>
+                  <div class="flex flex-wrap">
+                    <div class="flex items-center mt-3">
+                      <input type="radio" name="additionalDetailOfUSPerson" id="activeNffe"
+                        class="size-5 mr-2 hover:cursor-pointer" value="Active NFFE">
+                      <label for="activeNffe" class="hover:cursor-pointer text-xl text-gray-700">Active NFFE</label>
+                    </div>
+
+                    <div class="flex items-center mt-3 ml-5">
+                      <input type="radio" name="additionalDetailOfUSPerson" id="passiveNffeWithoutControlPerson" class="size-5 mr-2 hover:cursor-pointer" value="Passive NFFE without any controlling Person">
+                      <label for="passiveNffeWithoutControlPerson" class="hover:cursor-pointer text-xl text-gray-700">Passive NFFE without any controlling Person</label>
+                    </div>
+
+                    <div class="flex items-center mt-3 ml-5">
+                      <input type="radio" name="additionalDetailOfUSPerson" id="passiveNffeWithControlPerson"
+                        class="size-5 mr-2 hover:cursor-pointer" value="Passive NFFE with controlling Person">
+                      <label for="passiveNffeWithControlPerson" class="hover:cursor-pointer text-xl text-gray-700">Passive NFFE with controlling Person:-</label>
+
+                      <input type="radio" name="USCountry" id="USCountryYes" value="USCountryYes" class="size-5 mr-2 hover:cursor-pointer ml-3">
+                      <label for="USCountryYes" class="hover:cursor-pointer text-xl text-gray-700">US</label>
+
+                      <input type="radio" name="USCountry" id="USCountryNo" value="USCountryNo"
+                        class="size-5 mr-2 hover:cursor-pointer ml-3">
+                      <label for="USCountryNo" class="hover:cursor-pointer text-xl text-gray-700">Other</label>
+                    </div>
+
+                    <div class="flex items-center mt-3">
+                      <input type="radio" name="additionalDetailOfUSPerson" id="directNffe"
+                        class="size-5 mr-2 hover:cursor-pointer" value="Direct Reporting NFFE">
+                      <label for="directNffe" class="hover:cursor-pointer text-xl text-gray-700">Direct Reporting
+                        NFFE</label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="mr-5 mt-5">
+                <label for="GIINNumber" class="text-gray-700 font-semibold my-1 pl-1">Please provide GIIN Number</label>
+                <input type="text" name="GIINNumber" id="GIINNumber"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+              </div>
+
+            </div>
+          </div>
+
+          <div class="sectionThree mt-8">
+            <div class="thirdectionHeading  mt-2 text-lg text-blue-800 font-semibold">Section 3: Classification of
+              Financial Instutitions (including Banks)</div>
+            <div class="text-gray-800 font-semibold">I/We (on behalf of the entity) certify that the entity is:</div>
+            <div>
+              <div class="flex items-center">
+                <div class="mt-3">
+                  <div class="description text-gray-600 font-semibold">A. An entity is a US financial institution:</div>
+                  <div class="flex">
+                    <div class="flex items-center mt-3">
+                      <input type="radio" name="USFinancialInstitute" id="USFinancialInstituteYes"
+                        class="size-5 mr-2 hover:cursor-pointer" value="USFinancialInstituteYes">
+                      <label for="USFinancialInstituteYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+                    </div>
+                    <div class="trustOption flex items-center mt-3 ml-5">
+                      <input type="radio" name="USFinancialInstitute" id="USFinancialInstituteNo"
+                        class="size-5 mr-2 hover:cursor-pointer" value="USFinancialInstituteNo">
+                      <label for="USFinancialInstituteNo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="ml-14">
+                  <div class="mr-5 mt-2">
+                    <label for="entityTaxpayerIdentificationNumber"
+                      class="block text-sm text-gray-700 font-semibold my-1 pl-1">(i) If Yes, Please provide your US
+                      Taxpayer Identification Number(TIN)</label>
+                    <input type="text" name="entityTaxpayerIdentificationNumber" id="entityTaxpayerIdentificationNumber"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                  <div class="mr-5 mt-2">
+                    <label for="usFinancialInstituteGiinNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">(ii) If Yes,
+                      Please provide
+                      your GIIN, if any</label>
+                    <input type="text" name="usFinancialInstituteGiinNumber" id="usFinancialInstituteGiinNumber"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                </div>
+              </div>
+              <div class="ifNo mt-5">
+                <div class="text-lg text-blue-800 font-semibold">If "No", please tick one of the following boxes below:
+                </div>
+                <div class="mt-3">
+                  <div class="desc text-gray-600 font-semibold">Reporting Foreign Financial Institution in a Model 1
+                    Inter-Govt. Afreement (IGA) Jurisdiction</div>
+                  <div>
+                    <input type="radio" name="fatcaNoClassification" id="igaModel1Btn" class="size-5 mr-2 hover:cursor-pointer" value="igaModel1">
+                    <input type="text" name="igaModel1" id="igaModel1"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <div class="desc text-gray-600 font-semibold">Reporting Foreign Financial Institution in a Model 2
+                    Inter-Govt.
+                    Afreement (IGA) Jurisdiction</div>
+                  <div>
+                    <input type="radio" name="fatcaNoClassification" id="igaModel2Btn" class="size-5 mr-2 hover:cursor-pointer" value="igaModel2">
+                    <input type="text" name="igaModel2" id="igaModel2"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <div class="desc text-gray-600 font-semibold">Participating FFI in a Non-IGA Jurisdiction</div>
+                  <div>
+                    <input type="radio" name="fatcaNoClassification" value="ffi" id="ffiBtn" class="size-5 mr-2 hover:cursor-pointer">
+                    <input type="text" name="ffi" id="ffi"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <div class="desc text-gray-600 font-semibold">Non-Reporting FI</div>
+                  <div>
+                    <input type="radio" name="fatcaNoClassification" id="nonReportingFiBtn" class="size-5 mr-2 hover:cursor-pointer" value="nonReportingFi">
+                    <input type="text" name="nonReportingFi" id="nonReportingFi"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <div class="desc text-gray-600 font-semibold">Non-Participating FI</div>
+                  <div>
+                    <input type="radio" name="fatcaNoClassification" id="nonParticipatingFiBtn" class="size-5 mr-2 hover:cursor-pointer" value="nonParticipatingFi">
+                    <input type="text" name="nonParticipatingFi" id="nonParticipatingFi"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <div class="desc text-gray-600 font-semibold">Owner documented FI with specified US owners</div>
+                  <div>
+                    <input type="radio" name="fatcaNoClassification" id="ownerDocumentedBtn" class="size-5 mr-2 hover:cursor-pointer" value="ownerDocumented">
+                    <input type="text" name="ownerDocumented" id="ownerDocumented"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sectionFourth mt-8">
+            <div class="fourthSectionHeading  mt-2 text-lg text-blue-800 font-semibold">Section 4: Controlling Person
+              Declaration</div>
+              <div class="text-gray-600 font-semibold">If you are classified as "Passive NFFE with Controlling Person(s)" or "Owner documented FFI" or "Specified US person", please provide the following details:</div>
+            <div>
+              <div class="controllingPersonInformation flex flex-wrap">
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonName"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Controlling Person Name</label>
+                  <input type="text" name="controllingPersonName" id="controllingPersonName"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonCorrespondenceAddress"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Correspondence Address</label>
+                  <input type="text" name="controllingPersonCorrespondenceAddress"
+                    id="controllingPersonCorrespondenceAddress"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-[35rem] h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonResidenceCountry"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Country of residence for tax
+                    purpose</label>
+                  <input type="text" name="controllingPersonResidenceCountry" id="controllingPersonResidenceCountry"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonTin"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">TIN</label>
+                  <input type="text" name="controllingPersonTin" id="controllingPersonTin"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonTinIssuingCountry"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">TIN Issuing Country</label>
+                  <input type="text" name="controllingPersonTinIssuingCountry" id="controllingPersonTinIssuingCountry"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonType"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Controlling Person Type</label>
+                  <input type="text" name="controllingPersonType" id="controllingPersonType"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+              </div>
+              <div class="controllingPersonIdentificationInfo flex flex-wrap">
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonIdenticationType"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Identification Type</label>
+                  <input type="text" name="controllingPersonIdenticationType" id="controllingPersonIdenticationType"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonIdentificationNumber"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Identification Number</label>
+                  <input type="text" name="controllingPersonIdentificationNumber"
+                    id="controllingPersonIdentificationNumber"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonOccupationType"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Occupation Type</label>
+                  <input type="text" name="controllingPersonOccupationType" id="controllingPersonOccupationType"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonOccupation"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Occupation</label>
+                  <input type="text" name="controllingPersonOccupation" id="controllingPersonOccupation"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonDob" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date of
+                    Birth</label>
+                  <input type="date" name="controllingPersonDob" id="controllingPersonDob"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonNationality"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Nationality</label>
+                  <input type="text" name="controllingPersonNationality" id="controllingPersonNationality"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+
+                <div class="mr-5 mt-2">
+                  <label for="controllingPersonBirthCountry"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Country of Birth</label>
+                  <input type="text" name="controllingPersonBirthCountry" id="controllingPersonBirthCountry"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sectionFive mt-8">
+            <div class="fifthSectionHeading  mt-2 text-lg text-blue-800 font-semibold">Section 5: Declaration</div>
+            <div class="text-gray-700 font-semibold">I/We hereby confirm that details provided are accurate, correct and complete.</div>
+            <div>
+              <div class="flex flex-wrap">
+                <div class="mr-5 mt-2">
+                  <label for="name" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Name</label>
+                  <input type="text" name="name" id="name"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+          
+                <div class="mr-5 mt-2">
+                  <label for="signingDate"
+                    class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date</label>
+                  <input type="date" name="signingDate" id="signingDate"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nextAndPrevButton flex justify-between mt-8">
+        <div class="prevBtn">
+          <a href="6_fatca.html"
+            class="border border-black rounded-md py-1.5 px-7 text-xl text-blue-700 bg-white hover:text-blue-800"><i
+              class="fa-solid fa-chevron-left"></i> Back</a>
+        </div>
+        <div class="nextBtn">
+          <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Next <i
+              class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <script src="fatcaPartTwo.js"></script>
+</body>
+
+</html>

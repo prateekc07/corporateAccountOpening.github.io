@@ -1,0 +1,123 @@
+let addAnotherRelatedPersonBtn = document.querySelector(".addAnotherRelatedPersonBtn");
+let relatedPersonArray = [
+  "Second",
+  "Third",
+  "Fourth",
+  "Fifth",
+  "Sixth",
+  "Seventh",
+  "Eighth",
+  "Ninth",
+  "Tenth",
+];
+let count = 0;
+addAnotherRelatedPersonBtn.addEventListener("click", (event) => {
+
+  let companyRelatedPersonDetails = document.querySelector(".companyRelatedPersonDetails");
+  let anotherRelatedPersonDiv = document.createElement("div");
+  anotherRelatedPersonDiv.style.marginTop = "10vh";
+  anotherRelatedPersonDiv.innerHTML = `
+    <div class="flex flex-wrap">
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Name</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonName" id="company${relatedPersonArray[count]}RelatedPersonName"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonAddress" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Residential
+                  Address</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonAddress" id="company${relatedPersonArray[count]}RelatedPersonAddress"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonDesignation"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">Designation</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonDesignation" id="company${relatedPersonArray[count]}RelatedPersonDesignation"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10">
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonPan" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pan
+                  Number</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonPan" id="company${relatedPersonArray[count]}RelatedPersonPan"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonContactNumber"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">Contact Number</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonContactNumber" id="company${relatedPersonArray[count]}RelatedPersonContactNumber"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonDob" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date
+                  of Birth</label>
+                <input type="date" name="company${relatedPersonArray[count]}RelatedPersonDob" id="company${relatedPersonArray[count]}RelatedPersonDob"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonDinUid"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">DIN/UID</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonDinUid" id="company${relatedPersonArray[count]}RelatedPersonDinUid"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonAadhar" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Aadhar
+                  Number</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonAadhar" id="company${relatedPersonArray[count]}RelatedPersonAadhar"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <div class="companyRelatedPersonPoliticalRelation text-lg text-gray-700 font-semibold">PEP/RPEP</div>
+                <div class="politicalRelations flex">
+                  <div class="mr-8 flex items-center">
+                    <input type="radio" name="political${relatedPersonArray[count]}RelationPepRpep" value="Yes" id="${relatedPersonArray[count]}politicalYes" class="size-5 mr-2">
+                    <label for="${relatedPersonArray[count]}politicalYes" class="text-lg text-gray-700">Yes</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input type="radio" name="political${relatedPersonArray[count]}RelationPepRpep" value="No" id="${relatedPersonArray[count]}politicalNo" class="size-5 mr-2">
+                    <label for="${relatedPersonArray[count]}politicalNo" class="text-lg text-gray-700">No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+  `;
+  companyRelatedPersonDetails.appendChild(anotherRelatedPersonDiv);
+  count++;
+});
+
+let kycApplicationFormSecondPageDetails = {};
+let kycApplicationFormSecondPageForm = document.querySelector("#kycApplicationFormSecondPageForm");
+
+kycApplicationFormSecondPageForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const kycApplicationFormSecondPageFormData = new FormData(event.target);
+  kycApplicationFormSecondPageFormData.forEach((value, key) => {
+    kycApplicationFormSecondPageDetails[key] = value;
+  });
+
+  localStorage.setItem(
+    "kycApplicationFormSecondPageDetails",
+    JSON.stringify(kycApplicationFormSecondPageDetails)
+  );
+  localStorage.setItem("totalPartners", totalPartners);
+  console.log(
+    JSON.parse(localStorage.getItem("kycApplicationFormSecondPageDetails"))
+  );
+
+  // Redirect to the next page
+  window.location.href = "5_acknowledgementDetails.html";
+});
+
+let totalPartners = 1;
+
+function addAnotherPartner() {
+  totalPartners++;
+}

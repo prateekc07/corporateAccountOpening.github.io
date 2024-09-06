@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Account Opening</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section
+    class="acknowledgementDetailsSection customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
+    <div class="ourLogo">
+      <img src="./images/DhanushLogo.png" alt="" class="my-2">
+    </div>
+
+    <form id="acknowledgementDetailsForm">
+      <div class="bookletIssueDetails mt-8">
+        <div
+          class="bookletIssueDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          19. Option form for issue of Dis Booklet:</div>
+        <div class="bookletIssueDetail">
+          <div class="detailsPara text-gray-700">
+            <p>To,</p>
+            <p class="my-1 font-semibold">Ashika Stock Broking Limited</p>
+            <p>Trinity, 226/1 AJC Bose Road, 7th floor, Kolkata, 700020</p>
+            <p class="text-blue-800 my-2 font-semibold">Dear Sir/Madam,</p>
+            <p>I/We hereby state that:</p>
+            <div class="firstOption flex items-center mt-3">
+              <input type="radio" name="bookletOptions" id="optionFirst" value="Option 1"
+                class="size-5 mr-2 hover:cursor-pointer">
+              <label for="optionFirst" class="hover:cursor-pointer text-xl">Option 1</label>
+            </div>
+            <div class="firstOptionDetail">
+              <p>I/We require you to issue Delivery Instruction Slip (DIS) booklet to me / us immediately on opening
+                my/our CDSL account though I/We have issued a Power of Attorney (POA)/executed PMS agreement in favour
+                of/with <input type="text" name="memberName1" id="memberName1"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                (name of the attorney/Clearing Member/PMS manager) for executing delivery instructions for
+                setting stock exchange trades [settlement related transactions] effected through such Clearing Member/
+                by PMS manager.</p>
+            </div>
+            <div class="divider flex justify-center items-center mt-3">
+              <div class="border-b-2 border-gray-500 w-[45vw]"></div>
+              <div class="text-xl mx-2">OR</div>
+              <div class="border-b-2 border-gray-500 w-[45vw]"></div>
+            </div>
+            <div class="secondOption flex items-center mt-3">
+              <input type="radio" name="bookletOptions" id="optionSecond" value="Option 2"
+                class="size-5 mr-2 hover:cursor-pointer">
+              <label for="optionSecond" class="hover:cursor-pointer text-xl">Option 2</label>
+            </div>
+            <div class="secondOptionDetail">
+              <p>I/We do not require the Delivery Instruction Slip (DIS) for the time being, since I/We have issued a
+                POA / executed PMS agreement in favour of /with <input type="text" name="memberName2" id="memberName2"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                (name of the attorney/Clearing Member/PMS manager) for executing delivery instructions for
+                setting stock exchange trades [settlement related transactions] effected through such Clearing Member/
+                by PMS manager. However, the Delivery Instruction Slip (DIS) booklet should be issued to me / us
+                immediately on my / our request at any later date.</p>
+              <p class="font-semibold text-gray-800 my-2">Yours faithfully</p>
+            </div>
+            <div class="flex flex-wrap">
+
+              <div class="mr-5 mt-2">
+                <label for="firstSoleHolderName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">First/Sole
+                  Holder Name</label>
+                <input type="text" name="firstSoleHolderName" id="firstSoleHolderName"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="secondJointHolderName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Second
+                  Joint Holder Name</label>
+                <input type="text" name="secondJointHolderName" id="secondJointHolderName"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+              </div>
+
+              <div class="mr-5 mt-2">
+                <label for="thirdJointHolderName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Third
+                  Joint Holder Name</label>
+                <input type="text" name="thirdJointHolderName" id="thirdJointHolderName"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trustTextingDetails mt-8">
+        <div
+          class="trustTextingDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          20. For CDSL:</div>
+        <div class="smsAlert">
+          <div class="smsAlertHeading text-lg text-blue-800 font-semibold mr-5">SMS Alert Facility</div>
+          <div class="mr-5 mt-2">
+            <label for="mobileForAlert" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Mobile
+              Number</label>
+            <div class="flex items-center">
+              <input type="text" name="mobileForAlert" id="mobileForAlert"
+                class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+              <label class="text-gray-500 ml-3 block">[(Mandatory, if you giving Power of Attorney/POA)]<br>(If POA is
+                not granted & you do not wish to
+                avail of this facility, cancel this option.)</label>
+            </div>
+          </div>
+        </div>
+        <div class="trustTexting mt-5">
+          <div class="trustTextingHeading text-lg text-blue-800 font-semibold">Transactions Using Secured Texting
+            Facility (TRUST)</div>
+          <div class="trustTextingDetail mt-3">
+            <div class="description text-gray-600">I wish to avail the TRUST facility using Mobile number registered for
+              SMS Alert Facility. I have read and understand the terms and conditions prescribed by CDSL for the same.
+            </div>
+            <div class="trustDetailOption flex">
+              <div class="trustOption flex items-center mt-3">
+                <input type="radio" name="textingOptionsByTrust" id="textingOptionsByTrustYes" value="Yes"
+                  class="size-5 mr-2 hover:cursor-pointer">
+                <label for="textingOptionsByTrustYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+              </div>
+              <div class="trustOption flex items-center mt-3 ml-5">
+                <input type="radio" name="textingOptionsByTrust" id="textingOptionsByTrustNo" value="No"
+                  class="size-5 mr-2 hover:cursor-pointer">
+                <label for="textingOptionsByTrustNo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nextAndPrevButton flex justify-between mt-8">
+        <div class="prevBtn">
+          <a href="4_kycApplicationFormSecondPage.html"
+            class="border border-black rounded-md py-1.5 px-7 text-xl text-blue-700 bg-white hover:text-blue-800"><i
+              class="fa-solid fa-chevron-left"></i> Back</a>
+        </div>
+        <div class="nextBtn">
+          <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Next <i
+              class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <script src="acknowledgementDetails.js"></script>
+</body>
+
+</html>
