@@ -28,17 +28,20 @@
 
           <div class="relatedPersonSelection flex justify-between px-5">
             <div>
-              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonAddition" value="Addition of Related Person" class="size-4">
+              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonAddition"
+                value="Addition of Related Person" class="size-4">
               <label for="relatedPersonAddition" class="text-xl text-gray-600">Addition of Related Person</label>
             </div>
 
             <div>
-              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonUpdation" value="Updation of Related Person" class="size-4">
+              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonUpdation"
+                value="Updation of Related Person" class="size-4">
               <label for="relatedPersonUpdation" class="text-xl text-gray-600">Updation of Related Person</label>
             </div>
 
             <div>
-              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonDeletion" value="Deletion of Related Person" class="size-4">
+              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonDeletion"
+                value="Deletion of Related Person" class="size-4">
               <label for="relatedPersonDeletion" class="text-xl text-gray-600">Deletion of Related Person</label>
             </div>
           </div>
@@ -57,7 +60,8 @@
               <label class="relatedPersonTypeHeading text-xl text-blue-800 font-semibold mr-3">Related Person
                 Type*</label>
               <select name="personType" id="personType"
-                class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-48 h-10" required>
+                class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-48 h-10"
+                required>
                 <option value="" selected disabled>Type Selection</option>
                 <option value="director">Director</option>
                 <option value="promoter">Promoter</option>
@@ -151,7 +155,7 @@
             <div class="dateOfBirthDetails flex">
               <div class="mr-5 mt-2">
                 <label for="dob" class="block text-sm text-gray-700 font-semibold my-1 pl-1">DOB</label>
-                <input type="date" name="dob" id="dob"
+                <input type="date" name="dob" id="dob" max=""
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
               </div>
 
@@ -199,9 +203,12 @@
             <div class="addressDetails flex flex-wrap">
 
               <div class="mr-5 mt-2">
-                <label for="relatedPersonIdentityProof" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Proof of
+                <label for="relatedPersonIdentityProof"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">Proof of
                   Identity</label>
-                <select name="relatedPersonIdentityProof" id="relatedPersonIdentityProof" class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10" required>
+                <select name="relatedPersonIdentityProof" id="relatedPersonIdentityProof"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
+                  required>
                   <option selected disabled>Select Proof Type</option>
                   <option value="Passport Number">Passport Number</option>
                   <option value="Passport Number">Voter ID Card</option>
@@ -223,15 +230,15 @@
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="relatedPersonCity"
-                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">City</label>
+                <label for="relatedPersonCity" class="block text-sm text-gray-700 font-semibold my-1 pl-1">City</label>
                 <input type="text" name="relatedPersonCity" id="relatedPersonCity"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                   required>
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="relatedPersonDistrict" class="block text-sm text-gray-700 font-semibold my-1 pl-1">District</label>
+                <label for="relatedPersonDistrict"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">District</label>
                 <input type="text" name="relatedPersonDistrict" id="relatedPersonDistrict"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                   required>
@@ -272,8 +279,9 @@
           9. Current Address:</div>
         <div class="currentAddressDetails">
           <div class="isLocalRegisteredAddressSame">
-            <input type="checkbox" name="isRelatedPersonLocalSame" id="isRelatedPersonLocalSame" value="Yes" class="size-4"> <span
-              class="font-semibold text-lg text-gray-500">Same as above mentioned address (in such case current address is need not
+            <input type="checkbox" name="isRelatedPersonLocalSame" id="isRelatedPersonLocalSame" value="Yes"
+              class="size-4"> <span class="font-semibold text-lg text-gray-500">Same as above mentioned address (in such
+              case current address is need not
               to be filled).</span>
           </div>
           <div class="addressHeading mt-2 text-xl font-semibold text-blue-800">Address</div>
@@ -281,8 +289,10 @@
             <div class="addressDetails flex flex-wrap">
 
               <div class="mr-5 mt-2">
-                <label for="currentIdentityProof" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Proof of Identity</label>
-                <select name="currentIdentityProof" id="currentIdentityProof" class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
+                <label for="currentIdentityProof" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Proof of
+                  Identity</label>
+                <select name="currentIdentityProof" id="currentIdentityProof"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
                   <option selected disabled>Select Proof Type</option>
                   <option value="Passport Number">Passport Number</option>
                   <option value="Passport Number">Voter ID Card</option>
@@ -310,7 +320,8 @@
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="relatedPersonCurrentDistrict" class="block text-sm text-gray-700 font-semibold my-1 pl-1">District</label>
+                <label for="relatedPersonCurrentDistrict"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">District</label>
                 <input type="text" name="relatedPersonCurrentDistrict" id="relatedPersonCurrentDistrict"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
               </div>
@@ -352,7 +363,7 @@
           <div class="mr-5 mt-2">
             <label for="relatedPersonMobileNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Mobile
               Number</label>
-            <input type="text" name="relatedPersonMobileNumber" id="relatedPersonMobileNumber"
+            <input type="tel" name="relatedPersonMobileNumber" id="relatedPersonMobileNumber"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
               required>
           </div>
@@ -368,14 +379,14 @@
           <div class="mr-5 mt-2">
             <label for="relatedPersonTelephoneOffice" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Tell
               (Office)</label>
-            <input type="text" name="relatedPersonTelephoneOffice" id="relatedPersonTelephoneOffice"
+            <input type="tel" name="relatedPersonTelephoneOffice" id="relatedPersonTelephoneOffice"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
           </div>
 
           <div class="mr-5 mt-2">
             <label for="relatedPersonTelephoneRes" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Tell
               (Res)</label>
-            <input type="text" name="relatedPersonTelephoneRes" id="relatedPersonTelephoneRes"
+            <input type="tel" name="relatedPersonTelephoneRes" id="relatedPersonTelephoneRes"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
           </div>
         </div>
@@ -397,6 +408,25 @@
   </section>
 
   <script src="relatedPersonDetails.js"></script>
+
+  <script>
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('dob').setAttribute('max', today);
+
+    // Get all input elements
+    const inputElements = document.getElementsByTagName('input');
+
+    // Loop through and find the input element(s) with type="tel"
+    for (let i = 0; i < inputElements.length; i++) {
+      if (inputElements[i].type === 'tel') {
+        inputElements[i].addEventListener('input', function (e) {
+          // Remove any character that is not a digit
+          this.value = this.value.replace(/[^0-9]/g, '');
+        });
+      }
+    }
+  </script>
 </body>
 
 </html>

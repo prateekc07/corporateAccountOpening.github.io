@@ -1,4 +1,6 @@
-let addAnotherRelatedPersonBtn = document.querySelector(".addAnotherRelatedPersonBtn");
+let addAnotherRelatedPersonBtn = document.querySelector(
+  ".addAnotherRelatedPersonBtn"
+);
 let relatedPersonArray = [
   "Second",
   "Third",
@@ -12,8 +14,9 @@ let relatedPersonArray = [
 ];
 let count = 0;
 addAnotherRelatedPersonBtn.addEventListener("click", (event) => {
-
-  let companyRelatedPersonDetails = document.querySelector(".companyRelatedPersonDetails");
+  let companyRelatedPersonDetails = document.querySelector(
+    ".companyRelatedPersonDetails"
+  );
   let anotherRelatedPersonDiv = document.createElement("div");
   anotherRelatedPersonDiv.style.marginTop = "10vh";
   anotherRelatedPersonDiv.innerHTML = `
@@ -48,14 +51,14 @@ addAnotherRelatedPersonBtn.addEventListener("click", (event) => {
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonContactNumber"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">Contact Number</label>
-                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonContactNumber" id="company${relatedPersonArray[count]}RelatedPersonContactNumber"
+                <input type="tel" pattern="[0-9]*" name="company${relatedPersonArray[count]}RelatedPersonContactNumber" id="company${relatedPersonArray[count]}RelatedPersonContactNumber"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
               </div>
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonDob" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date
                   of Birth</label>
-                <input type="date" name="company${relatedPersonArray[count]}RelatedPersonDob" id="company${relatedPersonArray[count]}RelatedPersonDob"
+                <input type="date" name="company${relatedPersonArray[count]}RelatedPersonDob" id="company${relatedPersonArray[count]}RelatedPersonDob" max=""
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
               </div>
               
@@ -93,7 +96,9 @@ addAnotherRelatedPersonBtn.addEventListener("click", (event) => {
 });
 
 let kycApplicationFormSecondPageDetails = {};
-let kycApplicationFormSecondPageForm = document.querySelector("#kycApplicationFormSecondPageForm");
+let kycApplicationFormSecondPageForm = document.querySelector(
+  "#kycApplicationFormSecondPageForm"
+);
 
 kycApplicationFormSecondPageForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -120,4 +125,105 @@ let totalPartners = 1;
 
 function addAnotherPartner() {
   totalPartners++;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  getkycApplicationFormSecondPageDetail();
+});
+
+function getkycApplicationFormSecondPageDetail() {
+  let kycApplicationFormSecondPageDetail = JSON.parse(
+    localStorage.getItem("kycApplicationFormSecondPageDetails")
+  );
+  let primaryAccountType = document.getElementById("primaryAccountType");
+  let primaryBankAccountNo = document.getElementById("primaryBankAccountNo");
+  let primaryBankName = document.getElementById("primaryBankName");
+  let primaryBranchAddress = document.getElementById("primaryBranchAddress");
+  let primaryMicrCode = document.getElementById("primaryMicrCode");
+  let primaryIfscCode = document.getElementById("primaryIfscCode");
+  let primaryUpiId = document.getElementById("primaryUpiId");
+
+  let secondaryAccountType = document.getElementById("secondaryAccountType");
+  let secondaryBankAccountNo = document.getElementById(
+    "secondaryBankAccountNo"
+  );
+  let secondaryBankName = document.getElementById("secondaryBankName");
+  let secondaryBranchAddress = document.getElementById(
+    "secondaryBranchAddress"
+  );
+  let secondaryMicrCode = document.getElementById("secondaryMicrCode");
+  let secondaryIfscCode = document.getElementById("secondaryIfscCode");
+  let secondaryUpiId = document.getElementById("secondaryUpiId");
+
+  let physicalContractNote = document.getElementById("physicalContractNote");
+  let electronicContractNote = document.getElementById(
+    "electronicContractNote"
+  );
+  let electronicEmailId = document.getElementById("electronicEmailId");
+  let tradingExperience = document.getElementById("tradingExperience");
+  let internetTradingOptionyes = document.getElementById(
+    "internetTradingOptionyes"
+  );
+  let internetTradingOptionno = document.getElementById(
+    "internetTradingOptionno"
+  );
+
+  if (kycApplicationFormSecondPageDetail !== null) {
+    primaryAccountType.value =
+      kycApplicationFormSecondPageDetail["primaryAccountType"];
+    primaryBankAccountNo.value =
+      kycApplicationFormSecondPageDetail["primaryBankAccountNo"];
+
+    primaryBankName.value =
+      kycApplicationFormSecondPageDetail["primaryBankName"];
+
+    primaryBranchAddress.value =
+      kycApplicationFormSecondPageDetail["primaryBranchAddress"];
+
+    primaryMicrCode.value =
+      kycApplicationFormSecondPageDetail["primaryMicrCode"];
+
+    primaryIfscCode.value =
+      kycApplicationFormSecondPageDetail["primaryIfscCode"];
+
+    primaryUpiId.value = kycApplicationFormSecondPageDetail["primaryUpiId"];
+
+    secondaryAccountType.value =
+      kycApplicationFormSecondPageDetail["secondaryAccountType"];
+
+    secondaryBankAccountNo.value =
+      kycApplicationFormSecondPageDetail["secondaryBankAccountNo"];
+
+    secondaryBankName.value =
+      kycApplicationFormSecondPageDetail["secondaryBankName"];
+
+    secondaryBranchAddress.value =
+      kycApplicationFormSecondPageDetail["secondaryBranchAddress"];
+
+    secondaryMicrCode.value =
+      kycApplicationFormSecondPageDetail["secondaryMicrCode"];
+
+    secondaryIfscCode.value =
+      kycApplicationFormSecondPageDetail["secondaryIfscCode"];
+
+    secondaryUpiId.value = kycApplicationFormSecondPageDetail["secondaryUpiId"];
+
+    if (kycApplicationFormSecondPageDetail["contractOption"] === "Physical") {
+      physicalContractNote.checked = true;
+    } else {
+      electronicContractNote.checked = true;
+    }
+
+    electronicEmailId.value =
+      kycApplicationFormSecondPageDetail["electronicEmailId"];
+
+    if (kycApplicationFormSecondPageDetail["internetTradingOption"] === "Yes") {
+      internetTradingOptionyes.checked = true;
+    } else {
+      internetTradingOptionno.checked = true;
+    }
+
+    tradingExperience.value =
+      kycApplicationFormSecondPageDetail["tradingExperience"];
+  }
 }

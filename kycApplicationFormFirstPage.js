@@ -1,7 +1,17 @@
 let anotherAccountHolderBtn = document.querySelector(".addAnotherHolderButton");
-let holderArray = ["Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"];
+let holderArray = [
+  "Second",
+  "Third",
+  "Fourth",
+  "Fifth",
+  "Sixth",
+  "Seventh",
+  "Eighth",
+  "Ninth",
+  "Tenth",
+];
 let count = 0;
-anotherAccountHolderBtn.addEventListener('click', (e) => {
+anotherAccountHolderBtn.addEventListener("click", (e) => {
   let otherDetailsValueBox = document.querySelector(".otherDetailsValues");
   let anotherHolderDiv = document.createElement("div");
   anotherHolderDiv.innerHTML = `
@@ -44,7 +54,7 @@ anotherAccountHolderBtn.addEventListener('click', (e) => {
                   
                     <div class="mr-5 mt-2">
                       <label for="${holderArray[count]}NetWorthDate" class="block text-sm text-gray-700 font-semibold my-1 pl-1">As on (Date)</label>
-                      <input type="date" name="${holderArray[count]}NetWorthDate" id="${holderArray[count]}NetWorthDate"
+                      <input type="date" name="${holderArray[count]}NetWorthDate" id="${holderArray[count]}NetWorthDate" max=""
                         class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
                     </div>
                   </div>
@@ -92,7 +102,9 @@ anotherAccountHolderBtn.addEventListener('click', (e) => {
 });
 
 let kycApplicationFormFirstPageDetails = {};
-let kycApplicationFormFirstPageForm = document.querySelector("#kycApplicationFormFirstPageForm");
+let kycApplicationFormFirstPageForm = document.querySelector(
+  "#kycApplicationFormFirstPageForm"
+);
 
 kycApplicationFormFirstPageForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -119,4 +131,133 @@ let totalHolders = 1;
 
 function addHolder() {
   totalHolders++;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  getkycApplicationFormFirstPageDetail();
+});
+
+function getkycApplicationFormFirstPageDetail() {
+  let kycApplicationFormFirstPageDetail = JSON.parse(
+    localStorage.getItem("kycApplicationFormFirstPageDetails")
+  );
+  let applicantName = document.getElementById("applicantName");
+  let incorporationDate = document.getElementById("incorporationDateKyc");
+  let incorporationPlace = document.getElementById("incorporationPlaceKyc");
+  let panNumber = document.getElementById("panNumber");
+  let gstRegistration = document.getElementById("gstRegistrationKyc");
+  let bussinessCommenceDate = document.getElementById(
+    "bussinessCommenceDateKyc"
+  );
+  let companyType = document.getElementById("companyType");
+  let correspondenceAddress = document.getElementById("correspondenceAddress");
+  let cityName = document.getElementById("cityName");
+  let stateName = document.getElementById("stateName");
+  let countryName = document.getElementById("countryName");
+  let pinCode = document.getElementById("pinCode");
+  let mobileNumber = document.getElementById("mobileNumber");
+  let emailId = document.getElementById("emailId");
+  let faxNumber = document.getElementById("faxNumber");
+  let officeTelephone = document.getElementById("officeTelephone");
+  let resTelephone = document.getElementById("resTelephone");
+
+  let registeredAddress = document.getElementById("registeredAddress");
+  let registeredCityName = document.getElementById("registeredCityName");
+  let registeredStateName = document.getElementById("registeredStateName");
+  let registeredCountryName = document.getElementById("registeredCountryName");
+  let registeredPinCodeKyc = document.getElementById("registeredPinCodeKyc");
+  let nsdl = document.getElementById("nsdl");
+  let cdsl = document.getElementById("cdsl");
+
+  let firstHolderName = document.getElementById("firstHolderName");
+  let firstHolderPanNumber = document.getElementById("firstHolderPanNumber");
+  let secondHolderName = document.getElementById("secondHolderName");
+  let secondHolderPanNumber = document.getElementById("secondHolderPanNumber");
+  let thirdHolderName = document.getElementById("thirdHolderName");
+  let thirdHolderPanNumber = document.getElementById("thirdHolderPanNumber");
+
+  if (kycApplicationFormFirstPageDetail !== null) {
+
+    applicantName.value = kycApplicationFormFirstPageDetail["applicantName"];
+
+    incorporationDate.value =
+      kycApplicationFormFirstPageDetail["incorporationDateKyc"];
+
+    incorporationPlace.value =
+      kycApplicationFormFirstPageDetail["incorporationPlaceKyc"];
+
+    panNumber.value = kycApplicationFormFirstPageDetail["panNumber"];
+
+    gstRegistration.value =
+      kycApplicationFormFirstPageDetail["gstRegistrationKyc"];
+
+    bussinessCommenceDate.value =
+      kycApplicationFormFirstPageDetail["bussinessCommenceDateKyc"];
+
+    companyType.value = kycApplicationFormFirstPageDetail["companyType"];
+
+    correspondenceAddress.value =
+      kycApplicationFormFirstPageDetail["correspondenceAddress"];
+
+    cityName.value = kycApplicationFormFirstPageDetail["cityName"];
+
+    stateName.value = kycApplicationFormFirstPageDetail["stateName"];
+
+    countryName.value = kycApplicationFormFirstPageDetail["countryName"];
+
+    pinCode.value = kycApplicationFormFirstPageDetail["pinCode"];
+
+    mobileNumber.value = kycApplicationFormFirstPageDetail["mobileNumber"];
+
+    emailId.value = kycApplicationFormFirstPageDetail["emailId"];
+
+    faxNumber.value = kycApplicationFormFirstPageDetail["faxNumber"];
+
+    officeTelephone.value =
+      kycApplicationFormFirstPageDetail["officeTelephone"];
+
+    resTelephone.value = kycApplicationFormFirstPageDetail["resTelephone"];
+
+    registeredAddress.value =
+      kycApplicationFormFirstPageDetail["registeredAddress"];
+
+    registeredCityName.value =
+      kycApplicationFormFirstPageDetail["registeredCityName"];
+
+    registeredStateName.value =
+      kycApplicationFormFirstPageDetail["registeredStateName"];
+
+    registeredCountryName.value =
+      kycApplicationFormFirstPageDetail["registeredCountryName"];
+
+    registeredPinCodeKyc.value =
+      kycApplicationFormFirstPageDetail["registeredPinCodeKyc"];
+
+    if (
+      kycApplicationFormFirstPageDetail["nsdlCdslOption"] ===
+      "National Securities Depository Limited"
+    ) {
+      nsdl.checked = true;
+    } else {
+      cdsl.checked = true;
+    }
+
+    firstHolderName.value =
+      kycApplicationFormFirstPageDetail["firstHolderName"];
+
+    firstHolderPanNumber.value =
+      kycApplicationFormFirstPageDetail["firstHolderPanNumber"];
+
+    secondHolderName.value =
+      kycApplicationFormFirstPageDetail["secondHolderName"];
+
+    secondHolderPanNumber.value =
+      kycApplicationFormFirstPageDetail["secondHolderPanNumber"];
+
+    thirdHolderName.value =
+      kycApplicationFormFirstPageDetail["thirdHolderName"];
+
+    thirdHolderPanNumber.value =
+      kycApplicationFormFirstPageDetail["thirdHolderPanNumber"];
+  }
 }

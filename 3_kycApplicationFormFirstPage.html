@@ -40,7 +40,7 @@
             <div class="mr-5 mt-2">
               <label for="incorporationDateKyc" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date of
                 incorporation</label>
-              <input type="date" name="incorporationDateKyc" id="incorporationDateKyc"
+              <input type="date" name="incorporationDateKyc" id="incorporationDateKyc" max=""
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
                 required>
             </div>
@@ -71,7 +71,7 @@
             <div class="mr-5 mt-2">
               <label for="bussinessCommenceDateKyc" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date of
                 Commence of Bussiness</label>
-              <input type="date" name="bussinessCommenceDateKyc" id="bussinessCommenceDateKyc"
+              <input type="date" name="bussinessCommenceDateKyc" id="bussinessCommenceDateKyc" max=""
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
                 required>
             </div>
@@ -158,35 +158,35 @@
             <div class="mr-5 mt-2">
               <label for="mobileNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Mobile
                 Number</label>
-              <input type="text" name="mobileNumber" id="mobileNumber"
+              <input type="tel" pattern="[0-9]*" name="mobileNumber" id="mobileNumber"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                 required>
             </div>
 
             <div class="mr-5 mt-2">
               <label for="emailId" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Email ID</label>
-              <input type="text" name="emailId" id="emailId"
+              <input type="email" name="emailId" id="emailId"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                 required>
             </div>
 
             <div class="mr-5 mt-2">
               <label for="faxNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Fax Number</label>
-              <input type="text" name="faxNumber" id="faxNumber"
+              <input type="tel" pattern="[0-9]*" name="faxNumber" id="faxNumber"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
             </div>
 
             <div class="mr-5 mt-2">
               <label for="officeTelephone" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Telephone
                 (Office)</label>
-              <input type="text" name="officeTelephone" id="officeTelephone"
+              <input type="tel" pattern="[0-9]*" name="officeTelephone" id="officeTelephone"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
             </div>
 
             <div class="mr-5 mt-2">
               <label for="resTelephone" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Telephone
                 (Res)</label>
-              <input type="text" name="resTelephone" id="resTelephone"
+              <input type="tel" pattern="[0-9]*" name="resTelephone" id="resTelephone"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
             </div>
           </div>
@@ -317,7 +317,7 @@
           class="otherDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
           15. Other Details:</div>
         <div class="otherDetailsValues">
-          <div>
+          <div id="firstAccHolderOtherDetail">
             <div class="FirstHolderOtherDetails text-lg text-blue-800 font-semibold">First Holder</div>
             <div class="details">
               <div class="grossAnnualIncome flex items-center justify-between">
@@ -364,7 +364,7 @@
                     <div class="mr-5 mt-2">
                       <label for="FirstNetWorthDate" class="block text-sm text-gray-700 font-semibold my-1 pl-1">As on
                         (Date)</label>
-                      <input type="date" name="FirstNetWorthDate" id="FirstNetWorthDate"
+                      <input type="date" name="FirstNetWorthDate" id="FirstNetWorthDate" max=""
                         class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
                     </div>
                   </div>
@@ -413,7 +413,7 @@
           </div>
         </div>
         <div class="addAnotherHolder flex justify-end mt-1">
-          <span
+          <span id="addAnotherHolderBtn"
             class="addAnotherHolderButton text-white bg-blue-600 px-10 py-1.5 hover:bg-blue-700 cursor-pointer rounded-lg" onclick="addHolder(event)">Add
             Holder</span>
         </div>
@@ -435,6 +435,37 @@
   </section>
 
   <script src="kycApplicationFormFirstPage.js"></script>
+  <script>
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('incorporationDateKyc').setAttribute('max', today);
+    document.getElementById('bussinessCommenceDateKyc').setAttribute('max', today);
+    document.getElementById('FirstNetWorthDate').setAttribute('max', today);
+    
+    let addAnotherHolderButton = document.getElementById("addAnotherHolderBtn");
+    addAnotherHolderButton.addEventListener('click', (e) => {
+      if (document.getElementById('SecondNetWorthDate') !== undefined && document.getElementById('SecondNetWorthDate') !== null) {
+        document.getElementById('SecondNetWorthDate').setAttribute('max', today);
+      }
+      if (document.getElementById('ThirdNetWorthDate') !== undefined && document.getElementById('ThirdNetWorthDate') !== null) {
+        document.getElementById('ThirdNetWorthDate').setAttribute('max', today);
+      }
+    });
+    
+
+    // Get all input elements
+    const inputElements = document.getElementsByTagName('input');
+
+    // Loop through and find the input element(s) with type="tel"
+    for (let i = 0; i < inputElements.length; i++) {
+      if (inputElements[i].type === 'tel') {
+        inputElements[i].addEventListener('input', function (e) {
+          // Remove any character that is not a digit
+          this.value = this.value.replace(/[^0-9]/g, '');
+        });
+      }
+    }
+  </script>
 </body>
 
 </html>

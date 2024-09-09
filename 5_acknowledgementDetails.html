@@ -102,7 +102,7 @@
             <label for="mobileForAlert" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Mobile
               Number</label>
             <div class="flex items-center">
-              <input type="text" name="mobileForAlert" id="mobileForAlert"
+              <input type="tel" pattern="[0-9]*" name="mobileForAlert" id="mobileForAlert"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
               <label class="text-gray-500 ml-3 block">[(Mandatory, if you giving Power of Attorney/POA)]<br>(If POA is
                 not granted & you do not wish to
@@ -149,6 +149,21 @@
   </section>
 
   <script src="acknowledgementDetails.js"></script>
+
+  <script>
+    // Get all input elements
+    const inputElements = document.getElementsByTagName('input');
+
+    // Loop through and find the input element(s) with type="tel"
+    for (let i = 0; i < inputElements.length; i++) {
+      if (inputElements[i].type === 'tel') {
+        inputElements[i].addEventListener('input', function (e) {
+          // Remove any character that is not a digit
+          this.value = this.value.replace(/[^0-9]/g, '');
+        });
+      }
+    }
+  </script>
 </body>
 
 </html>
