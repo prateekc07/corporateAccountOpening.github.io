@@ -7,7 +7,7 @@ let ThirdrelatedPersonDetailsForm = document.getElementById(
 let addFourth;
 let mainSubmit;
 
-function getAddThirdBtn() {
+function getAddFourthBtn() {
   addFourth = document.getElementById("addFourth");
 }
 
