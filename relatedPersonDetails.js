@@ -1,26 +1,39 @@
 let relatedPersonDetails = {};
 
-let relatedPersonDetailsForm = document.getElementById(
-  "relatedPersonDetailsForm"
-);
+document
+  .getElementById("addSecond")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+    handleSubmit("2_relatedPersonDetailsSecond.html");
+  });
 
-relatedPersonDetailsForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+document
+  .getElementById("mainSubmit")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+    handleSubmit("3_kycApplicationFormFirstPage.html");
+  });
 
-  const relatedPersonFormData = new FormData(event.target);
+function handleSubmit(actionUrl) {
+  const relatedPersonFormData = new FormData(
+    document.getElementById("relatedPersonDetailsForm")
+  );
   relatedPersonFormData.forEach((value, key) => {
     relatedPersonDetails[key] = value;
   });
 
   localStorage.setItem(
-    "relatedPersonDetail",
+    "relatedPersonDetails",
     JSON.stringify(relatedPersonDetails)
   );
   console.log(JSON.parse(localStorage.getItem("relatedPersonDetails")));
 
-  // Redirect to the next page
-  window.location.href = "3_kycApplicationFormFirstPage.html";
-});
+  // Set the form action dynamically
+  document.getElementById("relatedPersonDetailsForm").action = actionUrl;
+
+  // Submit the form programmatically
+  document.getElementById("relatedPersonDetailsForm").submit();
+}
 
 let checkbox = document.querySelector("#isRelatedPersonLocalSame");
 
@@ -69,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function getrelatedPersonDetail() {
   let relatedPersonDetail = JSON.parse(
-    localStorage.getItem("relatedPersonDetail")
+    localStorage.getItem("relatedPersonDetails")
   );
 
   let relatedPersonAddition = document.getElementById("relatedPersonAddition");

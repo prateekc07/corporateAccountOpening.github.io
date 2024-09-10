@@ -270,3 +270,74 @@ function getfatcaPartTwoDetail() {
     signingDate.value = fatcaPartTwoDetail["signingDate"];
   }
 }
+
+const USTaxableYes = document.getElementById("USTaxableYes");
+const USTaxableNo = document.getElementById("USTaxableNo");
+const taxpayerIdentificationNumber = document.getElementById(
+  "taxpayerIdentificationNumber"
+);
+
+// Function to toggle required attribute based on the selected radio button
+function toggleARequired() {
+  if (USTaxableYes.checked) {
+    taxpayerIdentificationNumber.setAttribute("required", "required");
+  } else if (USTaxableNo.checked) {
+    taxpayerIdentificationNumber.removeAttribute("required");
+  }
+}
+
+// Listen for changes on both radio buttons
+USTaxableYes.addEventListener("change", toggleARequired);
+USTaxableNo.addEventListener("change", toggleARequired);
+
+// Set the required field based on the initial selection
+toggleARequired();
+
+const otherCountryTaxableYes = document.getElementById(
+  "otherCountryTaxableYes"
+);
+const otherCountryTaxableNo = document.getElementById("otherCountryTaxableNo");
+const tinIssuingCountry = document.getElementById("tinIssuingCountry");
+
+// Function to toggle required attribute based on the selected radio button
+function toggleBRequired() {
+  if (otherCountryTaxableYes.checked) {
+    tinIssuingCountry.setAttribute("required", "required");
+  } else if (otherCountryTaxableNo.checked) {
+    tinIssuingCountry.removeAttribute("required");
+  }
+}
+
+// Listen for changes on both radio buttons
+otherCountryTaxableYes.addEventListener("change", toggleBRequired);
+otherCountryTaxableNo.addEventListener("change", toggleBRequired);
+
+// Set the required field based on the initial selection
+toggleBRequired();
+
+const USFinancialInstituteYes = document.getElementById("USTaxableYes");
+const USFinancialInstituteNo = document.getElementById("USTaxableNo");
+const entityTaxpayerIdentificationNumber = document.getElementById(
+  "entityTaxpayerIdentificationNumber"
+);
+const usFinancialInstituteGiinNumber = document.getElementById(
+  "usFinancialInstituteGiinNumber"
+);
+
+// Function to toggle required attribute based on the selected radio button
+function toggleCRequired() {
+  if (USFinancialInstituteYes.checked) {
+    entityTaxpayerIdentificationNumber.setAttribute("required", "required");
+    usFinancialInstituteGiinNumber.setAttribute("required", "required");
+  } else if (USFinancialInstituteNo.checked) {
+    entityTaxpayerIdentificationNumber.removeAttribute("required");
+    usFinancialInstituteGiinNumber.removeAttribute("required");
+  }
+}
+
+// Listen for changes on both radio buttons
+USFinancialInstituteYes.addEventListener("change", toggleCRequired);
+USFinancialInstituteNo.addEventListener("change", toggleCRequired);
+
+// Set the required field based on the initial selection
+toggleCRequired();

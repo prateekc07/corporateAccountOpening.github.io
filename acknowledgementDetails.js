@@ -70,3 +70,25 @@ function getacknowledgementDetail() {
     }
   }
 }
+
+const optionFirst = document.getElementById("optionFirst");
+const optionSecond = document.getElementById("optionSecond");
+const memberName1 = document.getElementById("memberName1");
+const memberName2 = document.getElementById("memberName2");
+
+function handleRequiredInput() {
+  if (optionFirst.checked) {
+    memberName1.setAttribute("required", "required");
+    memberName2.removeAttribute("required");
+  } else if (optionSecond.checked) {
+    memberName2.setAttribute("required", "required");
+    memberName1.removeAttribute("required");
+  }
+}
+
+// Listen for changes on the radio buttons
+optionFirst.addEventListener("change", handleRequiredInput);
+optionSecond.addEventListener("change", handleRequiredInput);
+
+// Set the required field based on initial selection
+handleRequiredInput();
