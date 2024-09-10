@@ -24,56 +24,56 @@ addAnotherRelatedPersonBtn.addEventListener("click", (event) => {
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Name</label>
                 <input type="text" name="company${relatedPersonArray[count]}RelatedPersonName" id="company${relatedPersonArray[count]}RelatedPersonName"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10" required>
               </div>
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonAddress" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Residential
                   Address</label>
                 <input type="text" name="company${relatedPersonArray[count]}RelatedPersonAddress" id="company${relatedPersonArray[count]}RelatedPersonAddress"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10" required>
               </div>
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonDesignation"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">Designation</label>
                 <input type="text" name="company${relatedPersonArray[count]}RelatedPersonDesignation" id="company${relatedPersonArray[count]}RelatedPersonDesignation"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10">
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10" required>
               </div>
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonPan" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pan
                   Number</label>
                 <input type="text" name="company${relatedPersonArray[count]}RelatedPersonPan" id="company${relatedPersonArray[count]}RelatedPersonPan"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
               </div>
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonContactNumber"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">Contact Number</label>
                 <input type="tel" pattern="[0-9]*" name="company${relatedPersonArray[count]}RelatedPersonContactNumber" id="company${relatedPersonArray[count]}RelatedPersonContactNumber"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
               </div>
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonDob" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date
                   of Birth</label>
                 <input type="date" name="company${relatedPersonArray[count]}RelatedPersonDob" id="company${relatedPersonArray[count]}RelatedPersonDob" max=""
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
               </div>
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonDinUid"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">DIN/UID</label>
                 <input type="text" name="company${relatedPersonArray[count]}RelatedPersonDinUid" id="company${relatedPersonArray[count]}RelatedPersonDinUid"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
               </div>
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonAadhar" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Aadhar
                   Number</label>
                 <input type="text" name="company${relatedPersonArray[count]}RelatedPersonAadhar" id="company${relatedPersonArray[count]}RelatedPersonAadhar"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10">
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
               </div>
               
               <div class="mr-5 mt-2">

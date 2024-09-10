@@ -49,13 +49,13 @@ anotherAccountHolderBtn.addEventListener("click", (e) => {
                     <div class="mr-5 mt-2">
                       <label for="${holderArray[count]}NetWorthAmount" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Amount</label>
                       <input type="text" name="${holderArray[count]}NetWorthAmount" id="${holderArray[count]}NetWorthAmount"
-                        class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                        class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10" required>
                     </div>
                   
                     <div class="mr-5 mt-2">
                       <label for="${holderArray[count]}NetWorthDate" class="block text-sm text-gray-700 font-semibold my-1 pl-1">As on (Date)</label>
                       <input type="date" name="${holderArray[count]}NetWorthDate" id="${holderArray[count]}NetWorthDate" max=""
-                        class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                        class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10" required>
                     </div>
                   </div>
                 </div>
@@ -65,7 +65,7 @@ anotherAccountHolderBtn.addEventListener("click", (e) => {
                   <div class="mr-5 mt-2">
                     <label for="${holderArray[count]}occupationType" class="block text-sm text-gray-700 font-semibold my-1 pl-1">3. Occupation</label>
                     <select name="${holderArray[count]}occupationType" id="${holderArray[count]}occupationType"
-                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10" required>
                       <option value="" selected disabled>Type Selection</option>
                       <option value="Private Sector">Private Sector</option>
                       <option value="Public Sector">Public Sector</option>
@@ -107,6 +107,17 @@ let kycApplicationFormFirstPageForm = document.querySelector(
 );
 
 kycApplicationFormFirstPageForm.addEventListener("submit", (event) => {
+
+  const isChecked = document.querySelector(
+    'input[name="FirstincomeRange"]:checked'
+  );
+
+  if (!isChecked) {
+    // Prevent form submission if no radio button is selected
+    alert("Please select Gross Annual Income");
+    return; // Prevent form submission
+  }
+
   event.preventDefault();
 
   const kycApplicationFormFirstPageFormData = new FormData(event.target);

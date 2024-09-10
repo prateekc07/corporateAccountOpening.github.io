@@ -92,3 +92,26 @@ optionSecond.addEventListener("change", handleRequiredInput);
 
 // Set the required field based on initial selection
 handleRequiredInput();
+
+const textingOptionsByTrustYes = document.getElementById(
+  "textingOptionsByTrustYes"
+);
+const textingOptionsByTrustNo = document.getElementById(
+  "textingOptionsByTrustNo"
+);
+const mobileForAlert = document.getElementById("mobileForAlert");
+
+function handleRequiredTrustInput() {
+  if (textingOptionsByTrustYes.checked) {
+    mobileForAlert.setAttribute("required", "required");
+  } else if (textingOptionsByTrustNo.checked) {
+    mobileForAlert.removeAttribute("required");
+  }
+}
+
+// Listen for changes on the radio buttons
+textingOptionsByTrustYes.addEventListener("change", handleRequiredTrustInput);
+textingOptionsByTrustNo.addEventListener("change", handleRequiredTrustInput);
+
+// Set the required field based on initial selection
+handleRequiredTrustInput();
