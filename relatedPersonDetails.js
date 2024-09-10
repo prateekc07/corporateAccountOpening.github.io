@@ -1,23 +1,24 @@
 let relatedPersonDetails = {};
 
-document
-  .getElementById("addSecond")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the form from submitting immediately
-    handleSubmit("2_relatedPersonDetailsSecond.html");
-  });
+let relatedPersonDetailsForm = document.getElementById(
+  "relatedPersonDetailsForm"
+);
 
-document
-  .getElementById("mainSubmit")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the form from submitting immediately
-    handleSubmit("3_kycApplicationFormFirstPage.html");
-  });
+let addSecond;
+let mainSubmit;
 
-function handleSubmit(actionUrl) {
-  const relatedPersonFormData = new FormData(
-    document.getElementById("relatedPersonDetailsForm")
-  );
+function getAddSecondBtn() {
+  addSecond = document.getElementById("addSecond");
+}
+
+function getSubmitBtn() {
+  mainSubmit = document.getElementById("mainSubmit");
+}
+
+relatedPersonDetailsForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const relatedPersonFormData = new FormData(event.target);
   relatedPersonFormData.forEach((value, key) => {
     relatedPersonDetails[key] = value;
   });
@@ -28,12 +29,13 @@ function handleSubmit(actionUrl) {
   );
   console.log(JSON.parse(localStorage.getItem("relatedPersonDetails")));
 
-  // Set the form action dynamically
-  document.getElementById("relatedPersonDetailsForm").action = actionUrl;
-
-  // Submit the form programmatically
-  document.getElementById("relatedPersonDetailsForm").submit();
-}
+  // Redirect to the next page
+  if (addSecond !== undefined) {
+    window.location.href = "2_relatedPersonDetailsSecond.html";
+  } else if (mainSubmit !== undefined) {
+    window.location.href = "3_kycApplicationFormFirstPage.html";
+  }
+});
 
 let checkbox = document.querySelector("#isRelatedPersonLocalSame");
 

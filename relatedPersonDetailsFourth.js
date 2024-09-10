@@ -1,21 +1,24 @@
 let FourthrelatedPersonDetails = {};
 
-document.getElementById("addFifth").addEventListener("click", function (event) {
-  event.preventDefault(); // Prevent the form from submitting immediately
-  handleSubmit("2_relatedPersonDetailsFifth.html");
-});
+let FourthrelatedPersonDetailsForm = document.getElementById(
+  "FourthrelatedPersonDetailsForm"
+);
 
-document
-  .getElementById("mainSubmit")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the form from submitting immediately
-    handleSubmit("3_kycApplicationFormFirstPage.html");
-  });
+let addFifth;
+let mainSubmit;
 
-function handleSubmit(actionUrl) {
-  const FourthrelatedPersonFormData = new FormData(
-    document.getElementById("FourthrelatedPersonDetailsForm")
-  );
+function getAddFourthBtn() {
+  addFifth = document.getElementById("addFifth");
+}
+
+function getSubmitBtn() {
+  mainSubmit = document.getElementById("mainSubmit");
+}
+
+FourthrelatedPersonDetailsForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const FourthrelatedPersonFormData = new FormData(event.target);
   FourthrelatedPersonFormData.forEach((value, key) => {
     FourthrelatedPersonDetails[key] = value;
   });
@@ -26,12 +29,13 @@ function handleSubmit(actionUrl) {
   );
   console.log(JSON.parse(localStorage.getItem("FourthrelatedPersonDetails")));
 
-  // Set the form action dynamically
-  document.getElementById("FourthrelatedPersonDetailsForm").action = actionUrl;
-
-  // Submit the form programmatically
-  document.getElementById("FourthrelatedPersonDetailsForm").submit();
-}
+  // Redirect to the next page
+  if (addFifth !== undefined) {
+    window.location.href = "2_relatedPersonDetailsFifth.html";
+  } else if (mainSubmit !== undefined) {
+    window.location.href = "3_kycApplicationFormFirstPage.html";
+  }
+});
 
 let checkbox = document.querySelector("#FourthisRelatedPersonLocalSame");
 

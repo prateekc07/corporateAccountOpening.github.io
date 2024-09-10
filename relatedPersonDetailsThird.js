@@ -1,21 +1,24 @@
 let ThirdrelatedPersonDetails = {};
 
-document.getElementById("addFourth").addEventListener("click", function (event) {
-  event.preventDefault(); // Prevent the form from submitting immediately
-  handleSubmit("2_relatedPersonDetailsFourth.html");
-});
+let ThirdrelatedPersonDetailsForm = document.getElementById(
+  "ThirdrelatedPersonDetailsForm"
+);
 
-document
-  .getElementById("mainSubmit")
-  .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the form from submitting immediately
-    handleSubmit("3_kycApplicationFormFirstPage.html");
-  });
+let addFourth;
+let mainSubmit;
 
-function handleSubmit(actionUrl) {
-  const ThirdrelatedPersonFormData = new FormData(
-    document.getElementById("ThirdrelatedPersonDetailsForm")
-  );
+function getAddThirdBtn() {
+  addFourth = document.getElementById("addFourth");
+}
+
+function getSubmitBtn() {
+  mainSubmit = document.getElementById("mainSubmit");
+}
+
+ThirdrelatedPersonDetailsForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const ThirdrelatedPersonFormData = new FormData(event.target);
   ThirdrelatedPersonFormData.forEach((value, key) => {
     ThirdrelatedPersonDetails[key] = value;
   });
@@ -26,12 +29,13 @@ function handleSubmit(actionUrl) {
   );
   console.log(JSON.parse(localStorage.getItem("ThirdrelatedPersonDetails")));
 
-  // Set the form action dynamically
-  document.getElementById("ThirdrelatedPersonDetailsForm").action = actionUrl;
-
-  // Submit the form programmatically
-  document.getElementById("ThirdrelatedPersonDetailsForm").submit();
-}
+  // Redirect to the next page
+  if (addFourth !== undefined) {
+    window.location.href = "2_relatedPersonDetailsFourth.html";
+  } else if (mainSubmit !== undefined) {
+    window.location.href = "3_kycApplicationFormFirstPage.html";
+  }
+});
 
 let checkbox = document.querySelector("#ThirdisRelatedPersonLocalSame");
 
