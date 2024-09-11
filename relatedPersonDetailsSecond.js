@@ -1,7 +1,9 @@
 let SecondrelatedPersonDetails = {};
 
-let SecondrelatedPersonDetailsForm = document.getElementById(
-  "SecondrelatedPersonDetailsForm"
+let relatedPersonDetails;
+
+let relatedPersonDetailsForm = document.getElementById(
+  "relatedPersonDetailsForm"
 );
 
 let addThird;
@@ -15,11 +17,11 @@ function getSubmitBtn() {
   mainSubmit = document.getElementById("mainSubmit");
 }
 
-SecondrelatedPersonDetailsForm.addEventListener("submit", (event) => {
+relatedPersonDetailsForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const SecondrelatedPersonFormData = new FormData(event.target);
-  SecondrelatedPersonFormData.forEach((value, key) => {
+  const relatedPersonFormData = new FormData(event.target);
+  relatedPersonFormData.forEach((value, key) => {
     SecondrelatedPersonDetails[key] = value;
   });
 
@@ -29,6 +31,11 @@ SecondrelatedPersonDetailsForm.addEventListener("submit", (event) => {
   );
   console.log(JSON.parse(localStorage.getItem("SecondrelatedPersonDetails")));
 
+  relatedPersonDetails = JSON.parse(
+    localStorage.getItem("SecondrelatedPersonDetails")
+  );
+  await downloadRelatedPerson();
+
   // Redirect to the next page
   if (addThird !== undefined) {
     window.location.href = "2_relatedPersonDetailsThird.html";
@@ -37,54 +44,44 @@ SecondrelatedPersonDetailsForm.addEventListener("submit", (event) => {
   }
 });
 
-let checkbox = document.querySelector("#SecondisRelatedPersonLocalSame");
+let checkbox = document.querySelector("#isRelatedPersonLocalSame");
 
 checkbox.addEventListener("click", () => {
   if (checkbox.checked) {
-    let SecondrelatedPersonIdentityProof = document.querySelector(
-      "#SecondrelatedPersonIdentityProof"
+    let relatedPersonIdentityProof = document.querySelector(
+      "#relatedPersonIdentityProof"
     );
-    let SecondrelatedPersonAddress = document.querySelector(
-      "#SecondrelatedPersonAddress"
+    let relatedPersonAddress = document.querySelector("#relatedPersonAddress");
+    let relatedPersonCity = document.querySelector("#relatedPersonCity");
+    let relatedPersonDistrict = document.querySelector(
+      "#relatedPersonDistrict"
     );
-    let SecondrelatedPersonCity = document.querySelector(
-      "#SecondrelatedPersonCity"
-    );
-    let SecondrelatedPersonDistrict = document.querySelector(
-      "#SecondrelatedPersonDistrict"
-    );
-    let SecondrelatedPersonPinCode = document.querySelector(
-      "#SecondrelatedPersonPinCode"
-    );
-    let SecondrelatedPersonState = document.querySelector(
-      "#SecondrelatedPersonState"
-    );
-    let SecondrelatedPersonCountry = document.querySelector(
-      "#SecondrelatedPersonCountry"
-    );
+    let relatedPersonPinCode = document.querySelector("#relatedPersonPinCode");
+    let relatedPersonState = document.querySelector("#relatedPersonState");
+    let relatedPersonCountry = document.querySelector("#relatedPersonCountry");
 
-    document.querySelector("#SecondcurrentIdentityProof").value =
-      SecondrelatedPersonIdentityProof.value;
-    document.querySelector("#SecondrelatedPersonCurrentAddress").value =
-      SecondrelatedPersonAddress.value;
-    document.querySelector("#SecondrelatedPersonCurrentCity").value =
-      SecondrelatedPersonCity.value;
-    document.querySelector("#SecondrelatedPersonCurrentDistrict").value =
-      SecondrelatedPersonDistrict.value;
-    document.querySelector("#SecondrelatedPersonCurrentPinCode").value =
-      SecondrelatedPersonPinCode.value;
-    document.querySelector("#SecondrelatedPersonCurrentState").value =
-      SecondrelatedPersonState.value;
-    document.querySelector("#SecondrelatedPersonCurrentCountry").value =
-      SecondrelatedPersonCountry.value;
+    document.querySelector("#currentIdentityProof").value =
+      relatedPersonIdentityProof.value;
+    document.querySelector("#relatedPersonCurrentAddress").value =
+      relatedPersonAddress.value;
+    document.querySelector("#relatedPersonCurrentCity").value =
+      relatedPersonCity.value;
+    document.querySelector("#relatedPersonCurrentDistrict").value =
+      relatedPersonDistrict.value;
+    document.querySelector("#relatedPersonCurrentPinCode").value =
+      relatedPersonPinCode.value;
+    document.querySelector("#relatedPersonCurrentState").value =
+      relatedPersonState.value;
+    document.querySelector("#relatedPersonCurrentCountry").value =
+      relatedPersonCountry.value;
   } else {
-    document.querySelector("#SecondcurrentIdentityProof").value = "";
-    document.querySelector("#SecondrelatedPersonCurrentAddress").value = "";
-    document.querySelector("#SecondrelatedPersonCurrentCity").value = "";
-    document.querySelector("#SecondrelatedPersonCurrentDistrict").value = "";
-    document.querySelector("#SecondrelatedPersonCurrentPinCode").value = "";
-    document.querySelector("#SecondrelatedPersonCurrentState").value = "";
-    document.querySelector("#SecondrelatedPersonCurrentCountry").value = "";
+    document.querySelector("#currentIdentityProof").value = "";
+    document.querySelector("#relatedPersonCurrentAddress").value = "";
+    document.querySelector("#relatedPersonCurrentCity").value = "";
+    document.querySelector("#relatedPersonCurrentDistrict").value = "";
+    document.querySelector("#relatedPersonCurrentPinCode").value = "";
+    document.querySelector("#relatedPersonCurrentState").value = "";
+    document.querySelector("#relatedPersonCurrentCountry").value = "";
   }
 });
 
@@ -97,97 +94,79 @@ function getrelatedPersonDetail() {
     localStorage.getItem("SecondrelatedPersonDetails")
   );
 
-  let relatedPersonAddition = document.getElementById(
-    "SecondrelatedPersonAddition"
-  );
-  let relatedPersonUpdation = document.getElementById(
-    "SecondrelatedPersonUpdation"
-  );
-  let relatedPersonDeletion = document.getElementById(
-    "SecondrelatedPersonDeletion"
-  );
+  let relatedPersonAddition = document.getElementById("relatedPersonAddition");
+  let relatedPersonUpdation = document.getElementById("relatedPersonUpdation");
+  let relatedPersonDeletion = document.getElementById("relatedPersonDeletion");
 
-  let kycNumber = document.getElementById("SecondkycNumber");
-  let personType = document.getElementById("SecondpersonType");
-  let din = document.getElementById("Seconddin");
-  let firstName = document.getElementById("SecondfirstName");
-  let lastName = document.getElementById("SecondlastName");
-  let familyFirstName = document.getElementById("SecondfamilyFirstName");
-  let familyLastName = document.getElementById("SecondfamilyLastName");
-  let motherFirstName = document.getElementById("SecondmotherFirstName");
-  let motherLastName = document.getElementById("SecondmotherLastName");
-  let dob = document.getElementById("Seconddob");
-  let gender = document.getElementById("Secondgender");
+  let kycNumber = document.getElementById("kycNumber");
+  let personType = document.getElementById("personType");
+  let din = document.getElementById("din");
+  let firstName = document.getElementById("firstName");
+  let lastName = document.getElementById("lastName");
+  let familyFirstName = document.getElementById("familyFirstName");
+  let familyLastName = document.getElementById("familyLastName");
+  let motherFirstName = document.getElementById("motherFirstName");
+  let motherLastName = document.getElementById("motherLastName");
+  let dob = document.getElementById("dob");
+  let gender = document.getElementById("gender");
 
-  let indian = document.getElementById("Secondindian");
-  let otherCountry = document.getElementById("SecondotherCountry");
-  let otherCountryCode = document.getElementById("SecondotherCountryCode");
+  let indian = document.getElementById("indian");
+  let otherCountry = document.getElementById("otherCountry");
+  let otherCountryCode = document.getElementById("otherCountryCode");
 
   let relatedPersonPanNumber = document.getElementById(
-    "SecondrelatedPersonPanNumber"
+    "relatedPersonPanNumber"
   );
   let relatedPersonIdentityProof = document.getElementById(
-    "SecondrelatedPersonIdentityProof"
+    "relatedPersonIdentityProof"
   );
-  let relatedPersonAddress = document.getElementById(
-    "SecondrelatedPersonAddress"
-  );
-  let relatedPersonCity = document.getElementById("SecondrelatedPersonCity");
-  let relatedPersonDistrict = document.getElementById(
-    "SecondrelatedPersonDistrict"
-  );
-  let relatedPersonPinCode = document.getElementById(
-    "SecondrelatedPersonPinCode"
-  );
-  let relatedPersonState = document.getElementById("SecondrelatedPersonState");
-  let relatedPersonCountry = document.getElementById(
-    "SecondrelatedPersonCountry"
-  );
+  let relatedPersonAddress = document.getElementById("relatedPersonAddress");
+  let relatedPersonCity = document.getElementById("relatedPersonCity");
+  let relatedPersonDistrict = document.getElementById("relatedPersonDistrict");
+  let relatedPersonPinCode = document.getElementById("relatedPersonPinCode");
+  let relatedPersonState = document.getElementById("relatedPersonState");
+  let relatedPersonCountry = document.getElementById("relatedPersonCountry");
   let isRelatedPersonLocalSame = document.getElementById(
-    "SecondisRelatedPersonLocalSame"
+    "isRelatedPersonLocalSame"
   );
-  let currentIdentityProof = document.getElementById(
-    "SecondcurrentIdentityProof"
-  );
+  let currentIdentityProof = document.getElementById("currentIdentityProof");
   let relatedPersonCurrentAddress = document.getElementById(
-    "SecondrelatedPersonCurrentAddress"
+    "relatedPersonCurrentAddress"
   );
   let relatedPersonCurrentCity = document.getElementById(
-    "SecondrelatedPersonCurrentCity"
+    "relatedPersonCurrentCity"
   );
   let relatedPersonCurrentDistrict = document.getElementById(
-    "SecondrelatedPersonCurrentDistrict"
+    "relatedPersonCurrentDistrict"
   );
   let relatedPersonCurrentPinCode = document.getElementById(
-    "SecondrelatedPersonCurrentPinCode"
+    "relatedPersonCurrentPinCode"
   );
   let relatedPersonCurrentState = document.getElementById(
-    "SecondrelatedPersonCurrentState"
+    "relatedPersonCurrentState"
   );
   let relatedPersonCurrentCountry = document.getElementById(
-    "SecondrelatedPersonCurrentCountry"
+    "relatedPersonCurrentCountry"
   );
   let relatedPersonMobileNumber = document.getElementById(
-    "SecondrelatedPersonMobileNumber"
+    "relatedPersonMobileNumber"
   );
-  let relatedPersonEmailId = document.getElementById(
-    "SecondrelatedPersonEmailId"
-  );
+  let relatedPersonEmailId = document.getElementById("relatedPersonEmailId");
   let relatedPersonTelephoneOffice = document.getElementById(
-    "SecondrelatedPersonTelephoneOffice"
+    "relatedPersonTelephoneOffice"
   );
   let relatedPersonTelephoneRes = document.getElementById(
-    "SecondrelatedPersonTelephoneRes"
+    "relatedPersonTelephoneRes"
   );
 
   if (relatedPersonDetail !== null) {
     if (
-      relatedPersonDetail["selectSecondRelatedPersonAction"] ===
+      relatedPersonDetail["selectRelatedPersonAction"] ===
       "Addition of Related Person"
     ) {
       relatedPersonAddition.checked = true;
     } else if (
-      relatedPersonDetail["selectSecondRelatedPersonAction"] ===
+      relatedPersonDetail["selectRelatedPersonAction"] ===
       "Updation of Related Person"
     ) {
       relatedPersonUpdation.checked = true;
@@ -195,91 +174,298 @@ function getrelatedPersonDetail() {
       relatedPersonDeletion.checked = true;
     }
 
-    kycNumber.value = relatedPersonDetail["SecondkycNumber"];
+    kycNumber.value = relatedPersonDetail["kycNumber"];
 
-    personType.value = relatedPersonDetail["SecondpersonType"];
-    din.value = relatedPersonDetail["Seconddin"];
+    personType.value = relatedPersonDetail["personType"];
+    din.value = relatedPersonDetail["din"];
 
-    firstName.value = relatedPersonDetail["SecondfirstName"];
+    firstName.value = relatedPersonDetail["firstName"];
 
-    lastName.value = relatedPersonDetail["SecondlastName"];
+    lastName.value = relatedPersonDetail["lastName"];
 
-    familyFirstName.value = relatedPersonDetail["SecondfamilyFirstName"];
+    familyFirstName.value = relatedPersonDetail["familyFirstName"];
 
-    familyLastName.value = relatedPersonDetail["SecondfamilyLastName"];
+    familyLastName.value = relatedPersonDetail["familyLastName"];
 
-    motherFirstName.value = relatedPersonDetail["SecondmotherFirstName"];
+    motherFirstName.value = relatedPersonDetail["motherFirstName"];
 
-    motherLastName.value = relatedPersonDetail["SecondmotherLastName"];
+    motherLastName.value = relatedPersonDetail["motherLastName"];
 
-    dob.value = relatedPersonDetail["Seconddob"];
+    dob.value = relatedPersonDetail["dob"];
 
-    gender.value = relatedPersonDetail["Secondgender"];
+    gender.value = relatedPersonDetail["gender"];
 
-    if (relatedPersonDetail["Secondnationality"] === "IN") {
+    if (relatedPersonDetail["nationality"] === "IN") {
       indian.checked = true;
     } else {
       otherCountry.checked = true;
-      otherCountryCode.value = relatedPersonDetail["SecondotherCountryCode"];
+      otherCountryCode.value = relatedPersonDetail["otherCountryCode"];
     }
 
     relatedPersonPanNumber.value =
-      relatedPersonDetail["SecondrelatedPersonPanNumber"];
+      relatedPersonDetail["relatedPersonPanNumber"];
 
     relatedPersonIdentityProof.value =
-      relatedPersonDetail["SecondrelatedPersonIdentityProof"];
+      relatedPersonDetail["relatedPersonIdentityProof"];
 
-    relatedPersonAddress.value =
-      relatedPersonDetail["SecondrelatedPersonAddress"];
+    relatedPersonAddress.value = relatedPersonDetail["relatedPersonAddress"];
 
-    relatedPersonCity.value = relatedPersonDetail["SecondrelatedPersonCity"];
+    relatedPersonCity.value = relatedPersonDetail["relatedPersonCity"];
 
-    relatedPersonDistrict.value =
-      relatedPersonDetail["SecondrelatedPersonDistrict"];
+    relatedPersonDistrict.value = relatedPersonDetail["relatedPersonDistrict"];
 
-    relatedPersonPinCode.value =
-      relatedPersonDetail["SecondrelatedPersonPinCode"];
+    relatedPersonPinCode.value = relatedPersonDetail["relatedPersonPinCode"];
 
-    relatedPersonState.value = relatedPersonDetail["SecondrelatedPersonState"];
+    relatedPersonState.value = relatedPersonDetail["relatedPersonState"];
 
-    relatedPersonCountry.value =
-      relatedPersonDetail["SecondrelatedPersonCountry"];
+    relatedPersonCountry.value = relatedPersonDetail["relatedPersonCountry"];
 
-    if (relatedPersonDetail["SecondisRelatedPersonLocalSame"] === "Yes") {
+    if (relatedPersonDetail["isRelatedPersonLocalSame"] === "Yes") {
       isRelatedPersonLocalSame.checked = true;
     }
 
-    currentIdentityProof.value =
-      relatedPersonDetail["SecondcurrentIdentityProof"];
+    currentIdentityProof.value = relatedPersonDetail["currentIdentityProof"];
 
     relatedPersonCurrentAddress.value =
-      relatedPersonDetail["SecondrelatedPersonCurrentAddress"];
+      relatedPersonDetail["relatedPersonCurrentAddress"];
 
     relatedPersonCurrentCity.value =
-      relatedPersonDetail["SecondrelatedPersonCurrentCity"];
+      relatedPersonDetail["relatedPersonCurrentCity"];
 
     relatedPersonCurrentDistrict.value =
-      relatedPersonDetail["SecondrelatedPersonCurrentDistrict"];
+      relatedPersonDetail["relatedPersonCurrentDistrict"];
 
     relatedPersonCurrentPinCode.value =
-      relatedPersonDetail["SecondrelatedPersonCurrentPinCode"];
+      relatedPersonDetail["relatedPersonCurrentPinCode"];
 
     relatedPersonCurrentState.value =
-      relatedPersonDetail["SecondrelatedPersonCurrentState"];
+      relatedPersonDetail["relatedPersonCurrentState"];
 
     relatedPersonCurrentCountry.value =
-      relatedPersonDetail["SecondrelatedPersonCurrentCountry"];
+      relatedPersonDetail["relatedPersonCurrentCountry"];
 
     relatedPersonMobileNumber.value =
-      relatedPersonDetail["SecondrelatedPersonMobileNumber"];
+      relatedPersonDetail["relatedPersonMobileNumber"];
 
-    relatedPersonEmailId.value =
-      relatedPersonDetail["SecondrelatedPersonEmailId"];
+    relatedPersonEmailId.value = relatedPersonDetail["relatedPersonEmailId"];
 
     relatedPersonTelephoneOffice.value =
-      relatedPersonDetail["SecondrelatedPersonTelephoneOffice"];
+      relatedPersonDetail["relatedPersonTelephoneOffice"];
 
     relatedPersonTelephoneRes.value =
-      relatedPersonDetail["SecondrelatedPersonTelephoneRes"];
+      relatedPersonDetail["relatedPersonTelephoneRes"];
   }
+}
+
+async function downloadRelatedPerson() {
+  // editing pdf file
+  // Fetch the PDF file from the server
+  const url = "./RELATED_PERSONS.pdf"; // Path to your PDF file
+  const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
+  // Load the existing PDF
+  const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
+  // Get the form
+  const form = pdfDoc.getForm();
+
+  if (relatedPersonDetails !== null) {
+    if (
+      relatedPersonDetails["selectRelatedPersonAction"] ===
+      "Addition of Related Person"
+    ) {
+      form.getCheckBox("relatedPersonAddition").check();
+    } else if (
+      relatedPersonDetails["selectRelatedPersonAction"] ===
+      "Updation of Related Person"
+    ) {
+      form.getCheckBox("relatedPersonUpdation").check();
+    } else {
+      form.getCheckBox("relatedPersonDeletion").check();
+    }
+
+    form
+      .getTextField("kycNumber")
+      .setText(relatedPersonDetails["kycNumber"].toUpperCase());
+
+    if (relatedPersonDetails["personType"] === "director") {
+      form.getCheckBox("director").check();
+    } else if (relatedPersonDetails["personType"] === "promoter") {
+      form.getCheckBox("promoter").check();
+    } else if (relatedPersonDetails["personType"] === "karta") {
+      form.getCheckBox("karta").check();
+    } else if (relatedPersonDetails["personType"] === "trustee") {
+      form.getCheckBox("trustee").check();
+    } else if (relatedPersonDetails["personType"] === "partner") {
+      form.getCheckBox("partner").check();
+    } else if (relatedPersonDetails["personType"] === "beneficiary") {
+      form.getCheckBox("beneficiary").check();
+    } else if (relatedPersonDetails["personType"] === "authorisedSignatory") {
+      form.getCheckBox("authorisedSignatory").check();
+    } else if (relatedPersonDetails["personType"] === "beneficiaryOwner") {
+      form.getCheckBox("beneficiaryOwner").check();
+    } else if (relatedPersonDetails["personType"] === "proprietor") {
+      form.getCheckBox("proprietor").check();
+    } else if (
+      relatedPersonDetails["personType"] === "countAppointmentOfficial"
+    ) {
+      form.getCheckBox("courtAppointmentOfficial").check();
+    } else {
+      form.getCheckBox("other").check();
+    }
+
+    form.getTextField("din").setText(relatedPersonDetails["din"].toUpperCase());
+
+    form
+      .getTextField("firstName")
+      .setText(relatedPersonDetails["firstName"].toUpperCase());
+
+    form
+      .getTextField("lastName")
+      .setText(relatedPersonDetails["lastName"].toUpperCase());
+
+    form
+      .getTextField("familyFirstName")
+      .setText(relatedPersonDetails["familyFirstName"].toUpperCase());
+
+    form
+      .getTextField("familyLastName")
+      .setText(relatedPersonDetails["familyLastName"].toUpperCase());
+
+    form
+      .getTextField("motherFirstName")
+      .setText(relatedPersonDetails["motherFirstName"].toUpperCase());
+
+    form
+      .getTextField("motherLastName")
+      .setText(relatedPersonDetails["motherLastName"].toUpperCase());
+
+    form.getTextField("dob").setText(formatDate(relatedPersonDetails["dob"]));
+
+    if (relatedPersonDetails["gender"] === "male") {
+      form.getCheckBox("male").check();
+    } else if (relatedPersonDetails["gender"] === "female") {
+      form.getCheckBox("female").check();
+    } else {
+      form.getCheckBox("otherGender").check();
+    }
+
+    if (relatedPersonDetails["nationality"] === "IN") {
+      form.getCheckBox("india").check();
+    } else {
+      form.getCheckBox("otherCountry").check();
+      form
+        .getTextField("otherCountryCode")
+        .setText(relatedPersonDetails["otherCountryCode"].toUpperCase());
+    }
+
+    form
+      .getTextField("panNumber")
+      .setText(relatedPersonDetails["relatedPersonPanNumber"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonAddress")
+      .setText(relatedPersonDetails["relatedPersonAddress"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonCity")
+      .setText(relatedPersonDetails["relatedPersonCity"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonDistrict")
+      .setText(relatedPersonDetails["relatedPersonDistrict"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonPinCode")
+      .setText(relatedPersonDetails["relatedPersonPinCode"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonState")
+      .setText(relatedPersonDetails["relatedPersonState"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonCountry")
+      .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
+
+    if (relatedPersonDetails["isRelatedPersonLocalSame"] === "Yes") {
+      form.getCheckBox("isLocalSame").check();
+    }
+
+    form
+      .getTextField("relatedPersonCurrentAddress")
+      .setText(
+        relatedPersonDetails["relatedPersonCurrentAddress"].toUpperCase()
+      );
+
+    form
+      .getTextField("relatedPersonCurrentCity")
+      .setText(relatedPersonDetails["relatedPersonCurrentCity"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonCurrentDistrict")
+      .setText(
+        relatedPersonDetails["relatedPersonCurrentDistrict"].toUpperCase()
+      );
+
+    form
+      .getTextField("relatedPersonCurrentPinCode")
+      .setText(
+        relatedPersonDetails["relatedPersonCurrentPinCode"].toUpperCase()
+      );
+
+    form
+      .getTextField("relatedPersonCurrentState")
+      .setText(relatedPersonDetails["relatedPersonCurrentState"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonCurrentCountry")
+      .setText(
+        relatedPersonDetails["relatedPersonCurrentCountry"].toUpperCase()
+      );
+
+    form
+      .getTextField("relatedPersonMobileNumber")
+      .setText(relatedPersonDetails["relatedPersonMobileNumber"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonEmailId")
+      .setText(relatedPersonDetails["relatedPersonEmailId"].toUpperCase());
+
+    form
+      .getTextField("relatedPersonTelephoneOffice")
+      .setText(
+        relatedPersonDetails["relatedPersonTelephoneOffice"].toUpperCase()
+      );
+
+    form
+      .getTextField("relatedPersonTelephoneRes")
+      .setText(relatedPersonDetails["relatedPersonTelephoneRes"].toUpperCase());
+
+    form
+      .getTextField("declarationPlace")
+      .setText(localStorage.getItem("declarationPlace").toUpperCase());
+
+    form
+      .getTextField("declarationDate")
+      .setText(new Date().toLocaleDateString("en-GB"));
+  }
+
+  // Serialize the PDFDocument to bytes (a Uint8Array)
+  const pdfBytes = await pdfDoc.save();
+  // Create a Blob from the bytes
+  const blob = new Blob([pdfBytes], { type: "application/pdf" });
+
+  // Create a link element to download the filled PDF
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "second_related_person.pdf";
+  link.click();
+}
+
+function formatDate(dateString) {
+  // Split the date string into components [yyyy, mm, dd]
+  const parts = dateString.split("-");
+
+  // Rearrange the components to [dd, mm, yyyy]
+  const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+
+  return formattedDate;
 }

@@ -38,6 +38,7 @@ companyForm.addEventListener("submit", (event) => {
   });
 
   localStorage.setItem("companyDetails", JSON.stringify(companyDetails));
+  localStorage.setItem("declarationPlace", document.getElementById("declarationPlace").value);
   console.log(JSON.parse(localStorage.getItem("companyDetails")));
 
   // Redirect to the next page
@@ -160,5 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     companyFaxNumber.value = companyDetail["companyFaxNumber"];
 
     relatedPersonCount.value = companyDetail["relatedPersonCount"];
+
+    document.getElementById("declarationPlace").value = localStorage.getItem("declarationPlace");
   }
 });

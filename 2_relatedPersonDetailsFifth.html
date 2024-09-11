@@ -19,47 +19,47 @@
       <img src="./images/DhanushLogo.png" alt="" class="my-2">
     </div>
 
-    <form id="FifthrelatedPersonDetailsForm">
-      <div class="FifthrelatedPersonDetails mt-8">
+    <form id="relatedPersonDetailsForm">
+      <div class="relatedPersonDetails mt-8">
         <div
-          class="FifthrelatedPersonHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          class="relatedPersonHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
           6. Details of Related Person:</div>
-        <div class="FifthrelatedPersonDetail">
+        <div class="relatedPersonDetail">
 
-          <div class="FifthrelatedPersonSelection flex flex-wrap justify-between px-5">
+          <div class="relatedPersonSelection flex flex-wrap justify-between px-5">
             <div>
-              <input type="radio" name="selectFifthRelatedPersonAction" id="FifthrelatedPersonAddition"
+              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonAddition"
                 value="Addition of Related Person" class="size-4">
-              <label for="FifthrelatedPersonAddition" class="text-xl text-gray-600">Addition of Related Person</label>
+              <label for="relatedPersonAddition" class="text-xl text-gray-600">Addition of Related Person</label>
             </div>
 
             <div>
-              <input type="radio" name="selectFifthRelatedPersonAction" id="FifthrelatedPersonUpdation"
+              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonUpdation"
                 value="Updation of Related Person" class="size-4">
-              <label for="FifthrelatedPersonUpdation" class="text-xl text-gray-600">Updation of Related Person</label>
+              <label for="relatedPersonUpdation" class="text-xl text-gray-600">Updation of Related Person</label>
             </div>
 
             <div>
-              <input type="radio" name="selectFifthRelatedPersonAction" id="FifthrelatedPersonDeletion"
+              <input type="radio" name="selectRelatedPersonAction" id="relatedPersonDeletion"
                 value="Deletion of Related Person" class="size-4">
-              <label for="FifthrelatedPersonDeletion" class="text-xl text-gray-600">Deletion of Related Person</label>
+              <label for="relatedPersonDeletion" class="text-xl text-gray-600">Deletion of Related Person</label>
             </div>
           </div>
 
-          <div class="FifthkycNumberRelatedPerson my-4">
-            <label for="FifthkycNumber" class="text-gray-600 font-semibold mr-2">KYC Number of Relatred Person (If
+          <div class="kycNumberRelatedPerson my-4">
+            <label for="kycNumber" class="text-gray-600 font-semibold mr-2">KYC Number of Relatred Person (If
               available)</label>
-            <input type="text" name="FifthkycNumber" id="FifthkycNumber"
+            <input type="text" name="kycNumber" id="kycNumber"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-48 h-10">
-            <label for="FifthkycNumber" class="text-gray-600 font-semibold ml-2">If KYC Number is available only 'Related
+            <label for="kycNumber" class="text-gray-600 font-semibold ml-2">If KYC Number is available only 'Related
               Person Type' & 'Name' is mandatory</label>
           </div>
 
-          <div class="FifthrelatedPersonType flex flex-wrap mt-5">
+          <div class="relatedPersonType flex flex-wrap mt-5">
             <div>
-              <label class="FifthrelatedPersonTypeHeading text-xl text-blue-800 font-semibold mr-3">Related Person
+              <label class="relatedPersonTypeHeading text-xl text-blue-800 font-semibold mr-3">Related Person
                 Type*</label>
-              <select name="FifthpersonType" id="FifthpersonType"
+              <select name="personType" id="personType"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-48 h-10"
                 required>
                 <option value="" selected disabled>Type Selection</option>
@@ -76,9 +76,9 @@
                 <option value="other">Other</option>
               </select>
             </div>
-            <div class="FifthdirectIdentificationNumber ml-14">
-              <label for="Fifthdin" class="text-xl text-blue-800 font-semibold mr-2">DIN</label>
-              <input type="text" name="Fifthdin" id="Fifthdin"
+            <div class="directIdentificationNumber ml-14">
+              <label for="din" class="text-xl text-blue-800 font-semibold mr-2">DIN</label>
+              <input type="text" name="din" id="din"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-64 h-10"
                 placeholder="Direct Identification Number">
               <span class="text-lg text-gray-600">(Mandatory if Related Person Type is Director)</span>
@@ -87,81 +87,81 @@
         </div>
       </div>
 
-      <div class="FifthpersonDetails mt-8">
+      <div class="personDetails mt-8">
         <div
-          class="FifthrelatedPersonHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          class="relatedPersonHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
           7. Personal Details:</div>
-        <div class="FifthpersonDetail flex flex-wrap">
+        <div class="personDetail flex flex-wrap">
 
-          <div class="FifthpersonName">
-            <div class="FifthpersonNameHeading text-xl text-blue-800 font-semibold">Name (same as ID proof)</div>
-            <div class="FifthfirstLastName flex flex-wrap">
+          <div class="personName">
+            <div class="personNameHeading text-xl text-blue-800 font-semibold">Name (same as ID proof)</div>
+            <div class="firstLastName flex flex-wrap">
               <div class="mr-5 mt-2">
-                <label for="FifthfirstName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">First Name</label>
-                <input type="text" name="FifthfirstName" id="FifthfirstName"
+                <label for="firstName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">First Name</label>
+                <input type="text" name="firstName" id="firstName"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
                   required>
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthlastName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Last Name</label>
-                <input type="text" name="FifthlastName" id="FifthlastName"
+                <label for="lastName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Last Name</label>
+                <input type="text" name="lastName" id="lastName"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
                   required>
               </div>
             </div>
           </div>
 
-          <div class="FifthfamilyName">
-            <div class="FifthfamilyNameHeading text-xl text-blue-800 font-semibold">Father/Spouse Name</div>
-            <div class="FifthfamilyFirstLastName flex flex-wrap">
+          <div class="familyName">
+            <div class="familyNameHeading text-xl text-blue-800 font-semibold">Father/Spouse Name</div>
+            <div class="familyFirstLastName flex flex-wrap">
               <div class="mr-5 mt-2">
-                <label for="FifthfamilyFirstName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">First
+                <label for="familyFirstName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">First
                   Name</label>
-                <input type="text" name="FifthfamilyFirstName" id="FifthfamilyFirstName"
+                <input type="text" name="familyFirstName" id="familyFirstName"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthfamilyLastName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Last
+                <label for="familyLastName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Last
                   Name</label>
-                <input type="text" name="FifthfamilyLastName" id="FifthfamilyLastName"
+                <input type="text" name="familyLastName" id="familyLastName"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
               </div>
             </div>
           </div>
 
-          <div class="FifthmotherName">
-            <div class="FifthmotherNameHeading text-xl text-blue-800 font-semibold">Mother Name</div>
-            <div class="FifthmotherFirstLastName flex flex-wrap">
+          <div class="motherName">
+            <div class="motherNameHeading text-xl text-blue-800 font-semibold">Mother Name</div>
+            <div class="motherFirstLastName flex flex-wrap">
               <div class="mr-5 mt-2">
-                <label for="FifthmotherFirstName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">First
+                <label for="motherFirstName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">First
                   Name</label>
-                <input type="text" name="FifthmotherFirstName" id="FifthmotherFirstName"
+                <input type="text" name="motherFirstName" id="motherFirstName"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthmotherLastName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Last
+                <label for="motherLastName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Last
                   Name</label>
-                <input type="text" name="FifthmotherLastName" id="FifthmotherLastName"
+                <input type="text" name="motherLastName" id="motherLastName"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
               </div>
             </div>
           </div>
 
-          <div class="FifthdateOfBirth">
-            <div class="FifthdateOfBirthHeading text-xl text-blue-800 font-semibold">Date of Birth</div>
-            <div class="FifthdateOfBirthDetails flex flex-wrap">
+          <div class="dateOfBirth">
+            <div class="dateOfBirthHeading text-xl text-blue-800 font-semibold">Date of Birth</div>
+            <div class="dateOfBirthDetails flex flex-wrap">
               <div class="mr-5 mt-2">
-                <label for="Fifthdob" class="block text-sm text-gray-700 font-semibold my-1 pl-1">DOB</label>
-                <input type="date" name="Fifthdob" id="Fifthdob" max=""
+                <label for="dob" class="block text-sm text-gray-700 font-semibold my-1 pl-1">DOB</label>
+                <input type="date" name="dob" id="dob" max=""
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="Fifthgender" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Gender</label>
-                <select name="Fifthgender" id="Fifthgender"
+                <label for="gender" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Gender</label>
+                <select name="gender" id="gender"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-48 h-10">
                   <option value="" selected disabled>Gender</option>
                   <option value="male">Male</option>
@@ -172,41 +172,41 @@
             </div>
           </div>
 
-          <div class="FifthnationalitySection mt-8">
+          <div class="nationalitySection mt-8">
             <label class="text-xl text-blue-800 font-semibold mr-3">Nationality:</label>
-            <input type="radio" name="Fifthnationality" id="Fifthindian" value="IN" class="size-4">
-            <label for="Fifthindian" class="font-semibold text-lg text-gray-600 mr-2">IN-Indian</label>
+            <input type="radio" name="nationality" id="indian" value="IN" class="size-4">
+            <label for="indian" class="font-semibold text-lg text-gray-600 mr-2">IN-Indian</label>
 
-            <input type="radio" name="Fifthnationality" id="FifthotherCountry" value="otherCountry" class="size-4 ml-2">
-            <label for="FifthotherCountry" class="font-semibold text-lg text-gray-600">Other (IS) 3166 Country Code</label>
-            <input type="text" name="FifthotherCountryCode" id="FifthotherCountryCode" maxlength="4"
+            <input type="radio" name="nationality" id="otherCountry" value="otherCountry" class="size-4 ml-2">
+            <label for="otherCountry" class="font-semibold text-lg text-gray-600">Other (IS) 3166 Country Code</label>
+            <input type="text" name="otherCountryCode" id="otherCountryCode" maxlength="4"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-28 h-10 ml-2">
           </div>
 
-          <div class="FifthpanNumberSection mt-8 ml-20 flex">
+          <div class="panNumberSection mt-8 ml-20 flex">
             <div>
-              <label for="FifthrelatedPersonPanNumber" class="text-xl text-blue-800 font-semibold mr-3">PAN:</label>
-              <input type="text" name="FifthrelatedPersonPanNumber" id="FifthrelatedPersonPanNumber" maxlength="10"
+              <label for="relatedPersonPanNumber" class="text-xl text-blue-800 font-semibold mr-3">PAN:</label>
+              <input type="text" name="relatedPersonPanNumber" id="relatedPersonPanNumber" maxlength="10"
                 class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10 mx-2">
             </div>
           </div>
         </div>
       </div>
 
-      <div class="FifthidentityProofAndAddress mt-8">
+      <div class="identityProofAndAddress mt-8">
         <div
-          class="FifthidentityProofHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          class="identityProofHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
           8. Proof of Identity and Address:</div>
-        <div class="FifthaddressDetails">
-          <div class="FifthaddressHeading mt-2 text-xl font-semibold text-blue-800">Address</div>
-          <div class="FifthaddressDetail">
-            <div class="FifthaddressDetails flex flex-wrap">
+        <div class="addressDetails">
+          <div class="addressHeading mt-2 text-xl font-semibold text-blue-800">Address</div>
+          <div class="addressDetail">
+            <div class="addressDetails flex flex-wrap">
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonIdentityProof"
+                <label for="relatedPersonIdentityProof"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">Proof of
                   Identity</label>
-                <select name="FifthrelatedPersonIdentityProof" id="FifthrelatedPersonIdentityProof"
+                <select name="relatedPersonIdentityProof" id="relatedPersonIdentityProof"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                   required>
                   <option selected disabled>Select Proof Type</option>
@@ -222,49 +222,49 @@
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonAddress"
+                <label for="relatedPersonAddress"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">Address</label>
-                <input type="text" name="FifthrelatedPersonAddress" id="FifthrelatedPersonAddress"
+                <input type="text" name="relatedPersonAddress" id="relatedPersonAddress"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10"
                   required>
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonCity" class="block text-sm text-gray-700 font-semibold my-1 pl-1">City</label>
-                <input type="text" name="FifthrelatedPersonCity" id="FifthrelatedPersonCity"
+                <label for="relatedPersonCity" class="block text-sm text-gray-700 font-semibold my-1 pl-1">City</label>
+                <input type="text" name="relatedPersonCity" id="relatedPersonCity"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                   required>
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonDistrict"
+                <label for="relatedPersonDistrict"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">District</label>
-                <input type="text" name="FifthrelatedPersonDistrict" id="FifthrelatedPersonDistrict"
+                <input type="text" name="relatedPersonDistrict" id="relatedPersonDistrict"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                   required>
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonPinCode" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pin
+                <label for="relatedPersonPinCode" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pin
                   Code</label>
-                <input type="text" name="FifthrelatedPersonPinCode" id="FifthrelatedPersonPinCode"
+                <input type="text" name="relatedPersonPinCode" id="relatedPersonPinCode"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                   required>
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonState" class="block text-sm text-gray-700 font-semibold my-1 pl-1">State/UT
+                <label for="relatedPersonState" class="block text-sm text-gray-700 font-semibold my-1 pl-1">State/UT
                   Code</label>
-                <input type="text" name="FifthrelatedPersonState" id="FifthrelatedPersonState" maxlength="4"
+                <input type="text" name="relatedPersonState" id="relatedPersonState" maxlength="4"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                   required>
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonCountry" class="block text-sm text-gray-700 font-semibold my-1 pl-1">ISO
+                <label for="relatedPersonCountry" class="block text-sm text-gray-700 font-semibold my-1 pl-1">ISO
                   3166 Country
                   Code</label>
-                <input type="text" name="FifthrelatedPersonCountry" id="FifthrelatedPersonCountry" maxlength="4"
+                <input type="text" name="relatedPersonCountry" id="relatedPersonCountry" maxlength="4"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10"
                   required>
               </div>
@@ -273,25 +273,25 @@
         </div>
       </div>
 
-      <div class="FifthidentityProofAndCurrentAddress mt-8">
+      <div class="identityProofAndCurrentAddress mt-8">
         <div
-          class="FifthidentityProofHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          class="identityProofHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
           9. Current Address:</div>
-        <div class="FifthcurrentAddressDetails">
-          <div class="FifthisLocalRegisteredAddressSame">
-            <input type="checkbox" name="FifthisRelatedPersonLocalSame" id="FifthisRelatedPersonLocalSame" value="Yes"
+        <div class="currentAddressDetails">
+          <div class="isLocalRegisteredAddressSame">
+            <input type="checkbox" name="isRelatedPersonLocalSame" id="isRelatedPersonLocalSame" value="Yes"
               class="size-4"> <span class="font-semibold text-lg text-gray-500">Same as above mentioned address (in such
               case current address is need not
               to be filled).</span>
           </div>
-          <div class="FifthaddressHeading mt-2 text-xl font-semibold text-blue-800">Address</div>
-          <div class="FifthaddressDetail">
-            <div class="FifthaddressDetails flex flex-wrap">
+          <div class="addressHeading mt-2 text-xl font-semibold text-blue-800">Address</div>
+          <div class="addressDetail">
+            <div class="addressDetails flex flex-wrap">
 
               <div class="mr-5 mt-2">
-                <label for="FifthcurrentIdentityProof" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Proof of
+                <label for="currentIdentityProof" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Proof of
                   Identity</label>
-                <select name="FifthcurrentIdentityProof" id="FifthcurrentIdentityProof"
+                <select name="currentIdentityProof" id="currentIdentityProof"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
                   <option selected disabled>Select Proof Type</option>
                   <option value="Passport Number">Passport Number</option>
@@ -306,47 +306,47 @@
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonCurrentAddress"
+                <label for="relatedPersonCurrentAddress"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">Address</label>
-                <input type="text" name="FifthrelatedPersonCurrentAddress" id="FifthrelatedPersonCurrentAddress"
+                <input type="text" name="relatedPersonCurrentAddress" id="relatedPersonCurrentAddress"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonCurrentCity"
+                <label for="relatedPersonCurrentCity"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">City</label>
-                <input type="text" name="FifthrelatedPersonCurrentCity" id="FifthrelatedPersonCurrentCity"
+                <input type="text" name="relatedPersonCurrentCity" id="relatedPersonCurrentCity"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonCurrentDistrict"
+                <label for="relatedPersonCurrentDistrict"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">District</label>
-                <input type="text" name="FifthrelatedPersonCurrentDistrict" id="FifthrelatedPersonCurrentDistrict"
+                <input type="text" name="relatedPersonCurrentDistrict" id="relatedPersonCurrentDistrict"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonCurrentPinCode" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pin
+                <label for="relatedPersonCurrentPinCode" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pin
                   Code</label>
-                <input type="text" name="FifthrelatedPersonCurrentPinCode" id="FifthrelatedPersonCurrentPinCode"
+                <input type="text" name="relatedPersonCurrentPinCode" id="relatedPersonCurrentPinCode"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonCurrentState"
+                <label for="relatedPersonCurrentState"
                   class="block text-sm text-gray-700 font-semibold my-1 pl-1">State/UT
                   Code</label>
-                <input type="text" name="FifthrelatedPersonCurrentState" id="FifthrelatedPersonCurrentState" maxlength="4"
+                <input type="text" name="relatedPersonCurrentState" id="relatedPersonCurrentState" maxlength="4"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
               </div>
 
               <div class="mr-5 mt-2">
-                <label for="FifthrelatedPersonCurrentCountry" class="block text-sm text-gray-700 font-semibold my-1 pl-1">ISO
+                <label for="relatedPersonCurrentCountry" class="block text-sm text-gray-700 font-semibold my-1 pl-1">ISO
                   3166
                   Country
                   Code</label>
-                <input type="text" name="FifthrelatedPersonCurrentCountry" id="FifthrelatedPersonCurrentCountry" maxlength="4"
+                <input type="text" name="relatedPersonCurrentCountry" id="relatedPersonCurrentCountry" maxlength="4"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10">
               </div>
             </div>
@@ -354,39 +354,39 @@
         </div>
       </div>
 
-      <div class="FifthrelatedPersonContactInfos mt-8">
+      <div class="relatedPersonContactInfos mt-8">
         <div
-          class="FifthrelatedPersonContactHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          class="relatedPersonContactHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
           10. Contact Details (All communications will be sent to Mobile Number/Email Id):</div>
-        <div class="FifthrelatedPersonContactDetails flex flex-wrap">
+        <div class="relatedPersonContactDetails flex flex-wrap">
 
           <div class="mr-5 mt-2">
-            <label for="FifthrelatedPersonMobileNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Mobile
+            <label for="relatedPersonMobileNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Mobile
               Number</label>
-            <input type="tel" name="FifthrelatedPersonMobileNumber" id="FifthrelatedPersonMobileNumber"
+            <input type="tel" name="relatedPersonMobileNumber" id="relatedPersonMobileNumber"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
               required>
           </div>
 
           <div class="mr-5 mt-2">
-            <label for="FifthrelatedPersonEmailId" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Email
+            <label for="relatedPersonEmailId" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Email
               ID</label>
-            <input type="email" name="FifthrelatedPersonEmailId" id="FifthrelatedPersonEmailId"
+            <input type="email" name="relatedPersonEmailId" id="relatedPersonEmailId"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
               required>
           </div>
 
           <div class="mr-5 mt-2">
-            <label for="FifthrelatedPersonTelephoneOffice" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Tell
+            <label for="relatedPersonTelephoneOffice" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Tell
               (Office)</label>
-            <input type="tel" name="FifthrelatedPersonTelephoneOffice" id="FifthrelatedPersonTelephoneOffice"
+            <input type="tel" name="relatedPersonTelephoneOffice" id="relatedPersonTelephoneOffice"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
           </div>
 
           <div class="mr-5 mt-2">
-            <label for="FifthrelatedPersonTelephoneRes" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Tell
+            <label for="relatedPersonTelephoneRes" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Tell
               (Res)</label>
-            <input type="tel" name="FifthrelatedPersonTelephoneRes" id="FifthrelatedPersonTelephoneRes"
+            <input type="tel" name="relatedPersonTelephoneRes" id="relatedPersonTelephoneRes"
               class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
           </div>
         </div>
@@ -399,20 +399,21 @@
               class="fa-solid fa-chevron-left"></i> Back</a>
         </div>
         <div class="nextBtn">
-          <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Next <i
-              class="fa-solid fa-chevron-right"></i></button>
+          <button type="submit" id="mainSubmit"
+            class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Next <i class="fa-solid fa-chevron-right"></i></button>
         </div>
       </div>
 
     </form>
   </section>
 
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
   <script src="relatedPersonDetailsFifth.js"></script>
 
   <script>
     // Get today's date in YYYY-MM-DD format
     const today = new Date().toISOString().split('T')[0];
-    document.getElementById('Fifthdob').setAttribute('max', today);
+    document.getElementById('dob').setAttribute('max', today);
 
     // Get all input elements
     const inputElements = document.getElementsByTagName('input');

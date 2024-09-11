@@ -107,18 +107,17 @@ let kycApplicationFormFirstPageForm = document.querySelector(
 );
 
 kycApplicationFormFirstPageForm.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent form submission
 
-  const isChecked = document.querySelector(
+  const isFirstChecked = document.querySelector(
     'input[name="FirstincomeRange"]:checked'
   );
 
-  if (!isChecked) {
+  if (!isFirstChecked) {
     // Prevent form submission if no radio button is selected
     alert("Please select Gross Annual Income");
-    return; // Prevent form submission
+    return;
   }
-
-  event.preventDefault();
 
   const kycApplicationFormFirstPageFormData = new FormData(event.target);
   kycApplicationFormFirstPageFormData.forEach((value, key) => {

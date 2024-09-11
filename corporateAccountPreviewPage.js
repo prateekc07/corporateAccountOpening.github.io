@@ -2469,6 +2469,33 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(formatDate(fatcaPartTwoDetails["signingDate"]));
   }
 
+  form
+    .getTextField("declarationDate1")
+    .setText(new Date().toLocaleDateString("en-GB"));
+  form
+    .getTextField("declarationDate2")
+    .setText(new Date().toLocaleDateString("en-GB"));
+  form
+    .getTextField("declarationDate3")
+    .setText(new Date().toLocaleDateString("en-GB"));
+  form
+    .getTextField("declarationDate4")
+    .setText(new Date().toLocaleDateString("en-GB"));
+  form
+    .getTextField("declarationPlace1")
+    .setText(localStorage.getItem("declarationPlace").toUpperCase());
+  form
+    .getTextField("declarationPlace2")
+    .setText(localStorage.getItem("declarationPlace").toUpperCase());
+  form
+    .getTextField("declarationPlace3")
+    .setText(localStorage.getItem("declarationPlace").toUpperCase());
+  form
+    .getTextField("declarationPlace4")
+    .setText(localStorage.getItem("declarationPlace").toUpperCase());
+  form
+    .getCheckBox("nonIndividualBodyCorporate").check();
+
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save();
   // Create a Blob from the bytes
