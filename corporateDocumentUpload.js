@@ -1,6 +1,8 @@
-let corporateDocuments = {};
+let corporateDocuments = [];
 
-let corporateDocumentUploadForm = document.getElementById("corporateDocumentUploadForm");
+let corporateDocumentUploadForm = document.getElementById(
+  "corporateDocumentUploadForm"
+);
 
 corporateDocumentUploadForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -10,13 +12,36 @@ corporateDocumentUploadForm.addEventListener("submit", (event) => {
     // Adjust the upper limit to the number of file inputs
     const fileInput = document.getElementById(`inputFile${i}`);
     if (fileInput && fileInput.files[0]) {
-      corporateDocuments[`file${i}`] = fileInput.files[0];
+      corporateDocuments.push(fileInput.files[0]);
     }
   }
 
- localStorage.setItem("corporateDocuments", JSON.stringify(corporateDocuments));
- console.log(JSON.parse(localStorage.getItem("corporateDocuments")));
+  const corporatePdfDocuments = [];
 
-  // Redirect to the next page
-  window.location.href = "9_corporateAccountPreviewPage.html";
+  corporateDocuments.forEach((file, index) => {
+    if (file) {
+      const fileReader = new FileReader();
+
+      fileReader.onload = function (e) {
+        const fileData = {
+          name: file.name,
+          type: file.type,
+          data: e.target.result,
+        };
+
+        corporatePdfDocuments.push(fileData);
+
+        // Once all files are processed, store the data and navigate
+        if (corporatePdfDocuments.length === corporateDocuments.length) {
+          sessionStorage.setItem(
+            "corporatePdfDocuments",
+            JSON.stringify(corporatePdfDocuments)
+          );
+          // Redirect to the next page
+          window.location.href = "9_corporateAccountPreviewPage.html";
+        }
+      };
+      fileReader.readAsDataURL(file);
+    }
+  });
 });

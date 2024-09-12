@@ -2038,19 +2038,29 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("primaryBranchAddress")
-      .setText(kycApplicationFormSecondPageDetails["primaryBranchAddress"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails[
+          "primaryBranchAddress"
+        ].toUpperCase()
+      );
 
     form
       .getTextField("primaryMicrCode")
-      .setText(kycApplicationFormSecondPageDetails["primaryMicrCode"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails["primaryMicrCode"].toUpperCase()
+      );
 
     form
       .getTextField("primaryIfscCode")
-      .setText(kycApplicationFormSecondPageDetails["primaryIfscCode"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails["primaryIfscCode"].toUpperCase()
+      );
 
     form
       .getTextField("primaryUpiId")
-      .setText(kycApplicationFormSecondPageDetails["primaryUpiId"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails["primaryUpiId"].toUpperCase()
+      );
 
     if (
       kycApplicationFormSecondPageDetails["secondaryAccountType"] === "saving"
@@ -2066,23 +2076,37 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("secondaryBankAccountNo")
-      .setText(kycApplicationFormSecondPageDetails["secondaryBankAccountNo"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails[
+          "secondaryBankAccountNo"
+        ].toUpperCase()
+      );
 
     form
       .getTextField("secondaryBankName")
-      .setText(kycApplicationFormSecondPageDetails["secondaryBankName"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails["secondaryBankName"].toUpperCase()
+      );
 
     form
       .getTextField("secondaryBranchAddress")
-      .setText(kycApplicationFormSecondPageDetails["secondaryBranchAddress"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails[
+          "secondaryBranchAddress"
+        ].toUpperCase()
+      );
 
     form
       .getTextField("secondaryMicrCode")
-      .setText(kycApplicationFormSecondPageDetails["secondaryMicrCode"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails["secondaryMicrCode"].toUpperCase()
+      );
 
     form
       .getTextField("secondaryIfscCode")
-      .setText(kycApplicationFormSecondPageDetails["secondaryIfscCode"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails["secondaryIfscCode"].toUpperCase()
+      );
 
     form
       .getTextField("secondaryUpiId")
@@ -2096,7 +2120,9 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("electronicEmailId")
-      .setText(kycApplicationFormSecondPageDetails["electronicEmailId"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails["electronicEmailId"].toUpperCase()
+      );
 
     if (
       kycApplicationFormSecondPageDetails["internetTradingOption"] === "Yes"
@@ -2108,7 +2134,9 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("tradingExperience")
-      .setText(kycApplicationFormSecondPageDetails["tradingExperience"].toUpperCase());
+      .setText(
+        kycApplicationFormSecondPageDetails["tradingExperience"].toUpperCase()
+      );
 
     let totalPartners = localStorage.getItem("totalPartners");
     let partnersArray = [
@@ -2281,13 +2309,19 @@ submitDetails.addEventListener("submit", async (event) => {
 
   if (fatcaPartTwoDetails !== null) {
     // section1
-    form.getTextField("EntityName").setText(fatcaPartTwoDetails["EntityName"].toUpperCase());
+    form
+      .getTextField("EntityName")
+      .setText(fatcaPartTwoDetails["EntityName"].toUpperCase());
 
-    form.getTextField("customerId").setText(fatcaPartTwoDetails["customerId"].toUpperCase());
+    form
+      .getTextField("customerId")
+      .setText(fatcaPartTwoDetails["customerId"].toUpperCase());
 
     form
       .getTextField("entityConsitutionType")
-      .setText(fatcaPartTwoDetails["entityConsitutionType"].toUpperCase().toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["entityConsitutionType"].toUpperCase().toUpperCase()
+      );
 
     if (fatcaPartTwoDetails["entityIdentificationType"] === "TIN") {
       form.getCheckBox("TIN").check();
@@ -2307,7 +2341,9 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("entityIdentificationIssuingCountry")
-      .setText(fatcaPartTwoDetails["entityIdentificationIssuingCountry"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["entityIdentificationIssuingCountry"].toUpperCase()
+      );
 
     form
       .getTextField("countryOfResidence")
@@ -2318,7 +2354,9 @@ submitDetails.addEventListener("submit", async (event) => {
       form.getCheckBox("USTaxableYes").check();
       form
         .getTextField("taxpayerIdentificationNumber")
-        .setText(fatcaPartTwoDetails["taxpayerIdentificationNumber"].toUpperCase());
+        .setText(
+          fatcaPartTwoDetails["taxpayerIdentificationNumber"].toUpperCase()
+        );
     } else {
       form.getCheckBox("USTaxableNo").check();
     }
@@ -2366,11 +2404,17 @@ submitDetails.addEventListener("submit", async (event) => {
       form.getCheckBox("USFinancialInstituteYes").check();
       form
         .getTextField("entityTaxpayerIdentificationNumber")
-        .setText(fatcaPartTwoDetails["entityTaxpayerIdentificationNumber"].toUpperCase());
+        .setText(
+          fatcaPartTwoDetails[
+            "entityTaxpayerIdentificationNumber"
+          ].toUpperCase()
+        );
 
       form
         .getTextField("usFinancialInstituteGiinNumber")
-        .setText(fatcaPartTwoDetails["usFinancialInstituteGiinNumber"].toUpperCase());
+        .setText(
+          fatcaPartTwoDetails["usFinancialInstituteGiinNumber"].toUpperCase()
+        );
     } else {
       form.getCheckBox("USFinancialInstituteNo").check();
       if (fatcaPartTwoDetails["fatcaNoClassification"] === "igaModel1") {
@@ -2385,7 +2429,9 @@ submitDetails.addEventListener("submit", async (event) => {
           .setText(fatcaPartTwoDetails["igaModel2"]);
       } else if (fatcaPartTwoDetails["fatcaNoClassification"] === "ffi") {
         form.getCheckBox("nonIgaFfi").check();
-        form.getTextField("ffi").setText(fatcaPartTwoDetails["ffi"].toUpperCase());
+        form
+          .getTextField("ffi")
+          .setText(fatcaPartTwoDetails["ffi"].toUpperCase());
       } else if (
         fatcaPartTwoDetails["fatcaNoClassification"] === "nonReportingFi"
       ) {
@@ -2415,11 +2461,17 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("controllingPersonCorrespondenceAddress")
-      .setText(fatcaPartTwoDetails["controllingPersonCorrespondenceAddress"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails[
+          "controllingPersonCorrespondenceAddress"
+        ].toUpperCase()
+      );
 
     form
       .getTextField("controllingPersonResidenceCountry")
-      .setText(fatcaPartTwoDetails["controllingPersonResidenceCountry"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["controllingPersonResidenceCountry"].toUpperCase()
+      );
 
     form
       .getTextField("controllingPersonTin")
@@ -2427,7 +2479,9 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("controllingPersonTinIssuingCountry")
-      .setText(fatcaPartTwoDetails["controllingPersonTinIssuingCountry"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["controllingPersonTinIssuingCountry"].toUpperCase()
+      );
 
     form
       .getTextField("controllingPersonType")
@@ -2435,19 +2489,29 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("controllingPersonIdenticationType")
-      .setText(fatcaPartTwoDetails["controllingPersonIdenticationType"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["controllingPersonIdenticationType"].toUpperCase()
+      );
 
     form
       .getTextField("controllingPersonIdentificationNumber")
-      .setText(fatcaPartTwoDetails["controllingPersonIdentificationNumber"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails[
+          "controllingPersonIdentificationNumber"
+        ].toUpperCase()
+      );
 
     form
       .getTextField("controllingPersonOccupationType")
-      .setText(fatcaPartTwoDetails["controllingPersonOccupationType"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["controllingPersonOccupationType"].toUpperCase()
+      );
 
     form
       .getTextField("controllingPersonOccupation")
-      .setText(fatcaPartTwoDetails["controllingPersonOccupation"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["controllingPersonOccupation"].toUpperCase()
+      );
 
     form
       .getTextField("controllingPersonDob")
@@ -2455,14 +2519,20 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("controllingPersonNationality")
-      .setText(fatcaPartTwoDetails["controllingPersonNationality"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["controllingPersonNationality"].toUpperCase()
+      );
 
     form
       .getTextField("controllingPersonBirthCountry")
-      .setText(fatcaPartTwoDetails["controllingPersonBirthCountry"].toUpperCase());
+      .setText(
+        fatcaPartTwoDetails["controllingPersonBirthCountry"].toUpperCase()
+      );
 
     // section5
-    form.getTextField("name").setText(fatcaPartTwoDetails["name"].toUpperCase());
+    form
+      .getTextField("name")
+      .setText(fatcaPartTwoDetails["name"].toUpperCase());
 
     form
       .getTextField("signingDate")
@@ -2493,8 +2563,7 @@ submitDetails.addEventListener("submit", async (event) => {
   form
     .getTextField("declarationPlace4")
     .setText(localStorage.getItem("declarationPlace").toUpperCase());
-  form
-    .getCheckBox("nonIndividualBodyCorporate").check();
+  form.getCheckBox("nonIndividualBodyCorporate").check();
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save();
@@ -2509,6 +2578,31 @@ submitDetails.addEventListener("submit", async (event) => {
 
   // Redirect to the next page
   // window.location.href = "2_relatedPersonDetails.html";
+
+  const corporatePdfDocuments = JSON.parse(
+    sessionStorage.getItem("corporatePdfDocuments")
+  );
+
+  const mergedPdf = await PDFLib.PDFDocument.create();
+
+  for (const fileData of corporatePdfDocuments) {
+    
+    // Extract the base64 data part
+    const base64 = fileData.data.split(",")[1];
+    const pdfBytes = base64ToArrayBuffer(base64);
+
+    const pdf = await PDFLib.PDFDocument.load(pdfBytes);
+    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+    copiedPages.forEach((page) => mergedPdf.addPage(page));
+  }
+  const combinedPdfBytes = await mergedPdf.save();
+  const blobPdf = new Blob([combinedPdfBytes], { type: "application/pdf" });
+  const pdfUrl = URL.createObjectURL(blobPdf);
+
+  const pdfLink = document.createElement("a");
+  pdfLink.href = pdfUrl;
+  pdfLink.download = "allCorporateDocuments.pdf";
+  pdfLink.click();
 });
 
 function formatDate(dateString) {
@@ -2520,3 +2614,35 @@ function formatDate(dateString) {
 
   return formattedDate;
 }
+
+function base64ToArrayBuffer(base64) {
+  const binaryString = window.atob(base64);
+  const len = binaryString.length;
+  const bytes = new Uint8Array(len);
+  for (let i = 0; i < len; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  return bytes.buffer;
+}
+
+window.onload = function () {
+  const corporatePdfDocuments = JSON.parse(
+    sessionStorage.getItem("corporatePdfDocuments")
+  );
+
+  if (corporatePdfDocuments && corporatePdfDocuments.length > 0) {
+    const previewContainer = document.getElementById("documentPreview");
+
+    corporatePdfDocuments.forEach((fileData) => {
+
+      // Display based on file type
+      const iframe = document.createElement("iframe");
+      iframe.src = fileData.data;
+      iframe.width = "30%";
+      iframe.height = "400px";
+      iframe.style.paddingTop = "10px";
+      iframe.style.paddingBottom = "10px";
+      previewContainer.appendChild(iframe);
+    });
+  }
+};
