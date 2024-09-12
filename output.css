@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.float-start {
+  float: inline-start;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -674,6 +678,10 @@ video {
   margin-top: 2rem;
 }
 
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -768,8 +776,28 @@ video {
   width: 95%;
 }
 
+.w-\[96\] {
+  width: 96;
+}
+
+.w-\[10vw\] {
+  width: 10vw;
+}
+
+.w-\[30vw\] {
+  width: 30vw;
+}
+
+.w-\[50vw\] {
+  width: 50vw;
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-wrap {
@@ -912,6 +940,10 @@ video {
   padding-top: 0.125rem;
 }
 
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -932,8 +964,16 @@ video {
   line-height: 1.75rem;
 }
 
+.text-\[1rem\] {
+  font-size: 1rem;
+}
+
 .font-semibold {
   font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .text-blue-700 {

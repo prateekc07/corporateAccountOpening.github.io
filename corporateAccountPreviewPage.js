@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getKycApplicationFormSecondPageDetails();
   getAcknowledgementDetails();
   getFatcaPartOneDetails();
-  getFatcaPartTwoDetails();
+  // getFatcaPartTwoDetails();
 });
 
 // Company Details section manages from here
@@ -46,14 +46,6 @@ function getCompanyDetails() {
   let commenceBussinessDate = document.getElementById("bussinessCommenceDate");
 
   // 2
-  let incorporationCertificate = document.getElementById(
-    "incorporationCertificate"
-  );
-  let registrationCertificate = document.getElementById(
-    "registrationCertificate"
-  );
-  let otherDocuments = document.getElementById("otherDocuments");
-
   let companyAddress = document.getElementById("companyAddress");
   let companyCity = document.getElementById("registeredCity");
   let companyDistrict = document.getElementById("registeredDistrict");
@@ -79,7 +71,7 @@ function getCompanyDetails() {
   let companyFaxNumber = document.getElementById("companyFaxNumber");
 
   // 5
-  let relatedPersonCount = document.getElementById("relatedPersonCount");
+  let declarationPlace = document.getElementById("declarationPlace");
 
   if (companyDetails !== null) {
     companyName.value = companyDetails["companyName"];
@@ -99,14 +91,6 @@ function getCompanyDetails() {
     gstReg.value = companyDetails["gstRegistration"];
 
     commenceBussinessDate.value = companyDetails["bussinessCommenceDate"];
-
-    if (companyDetails["addressProof"] === "Certificate of incorporation") {
-      incorporationCertificate.checked = true;
-    } else if (companyDetails["addressProof"] === "Registration Certificate") {
-      registrationCertificate.checked = true;
-    } else {
-      otherDocuments.checked = true;
-    }
 
     companyAddress.value = companyDetails["companyAddress"];
 
@@ -143,7 +127,7 @@ function getCompanyDetails() {
 
     companyFaxNumber.value = companyDetails["companyFaxNumber"];
 
-    relatedPersonCount.value = companyDetails["relatedPersonCount"];
+    declarationPlace.value = companyDetails["declarationPlace"];
   }
 }
 
@@ -314,96 +298,10 @@ function getRelatedPersonDetails() {
 
 // kycApplicationFormFirstPageDetails section manages from here
 function getKycApplicationFormFirstPageDetails() {
-  let applicantName = document.getElementById("applicantName");
-  let incorporationDate = document.getElementById("incorporationDateKyc");
-  let incorporationPlace = document.getElementById("incorporationPlaceKyc");
-  let panNumber = document.getElementById("panNumber");
-  let gstRegistration = document.getElementById("gstRegistrationKyc");
-  let bussinessCommenceDate = document.getElementById(
-    "bussinessCommenceDateKyc"
-  );
-  let companyType = document.getElementById("companyType");
-  let correspondenceAddress = document.getElementById("correspondenceAddress");
-  let cityName = document.getElementById("cityName");
-  let stateName = document.getElementById("stateName");
-  let countryName = document.getElementById("countryName");
-  let pinCode = document.getElementById("pinCode");
-  let mobileNumber = document.getElementById("mobileNumber");
-  let emailId = document.getElementById("emailId");
-  let faxNumber = document.getElementById("faxNumber");
-  let officeTelephone = document.getElementById("officeTelephone");
-  let resTelephone = document.getElementById("resTelephone");
-
-  let registeredAddress = document.getElementById("registeredAddress");
-  let registeredCityName = document.getElementById("registeredCityName");
-  let registeredStateName = document.getElementById("registeredStateName");
-  let registeredCountryName = document.getElementById("registeredCountryName");
-  let registeredPinCodeKyc = document.getElementById("registeredPinCodeKyc");
   let nsdl = document.getElementById("nsdl");
   let cdsl = document.getElementById("cdsl");
 
-  let firstHolderName = document.getElementById("firstHolderName");
-  let firstHolderPanNumber = document.getElementById("firstHolderPanNumber");
-  let secondHolderName = document.getElementById("secondHolderName");
-  let secondHolderPanNumber = document.getElementById("secondHolderPanNumber");
-  let thirdHolderName = document.getElementById("thirdHolderName");
-  let thirdHolderPanNumber = document.getElementById("thirdHolderPanNumber");
-
   if (kycApplicationFormFirstPageDetails !== null) {
-    applicantName.value = kycApplicationFormFirstPageDetails["applicantName"];
-
-    incorporationDate.value =
-      kycApplicationFormFirstPageDetails["incorporationDateKyc"];
-
-    incorporationPlace.value =
-      kycApplicationFormFirstPageDetails["incorporationPlaceKyc"];
-
-    panNumber.value = kycApplicationFormFirstPageDetails["panNumber"];
-
-    gstRegistration.value =
-      kycApplicationFormFirstPageDetails["gstRegistrationKyc"];
-
-    bussinessCommenceDate.value =
-      kycApplicationFormFirstPageDetails["bussinessCommenceDateKyc"];
-
-    companyType.value = kycApplicationFormFirstPageDetails["companyType"];
-
-    correspondenceAddress.value =
-      kycApplicationFormFirstPageDetails["correspondenceAddress"];
-
-    cityName.value = kycApplicationFormFirstPageDetails["cityName"];
-
-    stateName.value = kycApplicationFormFirstPageDetails["stateName"];
-
-    countryName.value = kycApplicationFormFirstPageDetails["countryName"];
-
-    pinCode.value = kycApplicationFormFirstPageDetails["pinCode"];
-
-    mobileNumber.value = kycApplicationFormFirstPageDetails["mobileNumber"];
-
-    emailId.value = kycApplicationFormFirstPageDetails["emailId"];
-
-    faxNumber.value = kycApplicationFormFirstPageDetails["faxNumber"];
-
-    officeTelephone.value =
-      kycApplicationFormFirstPageDetails["officeTelephone"];
-
-    resTelephone.value = kycApplicationFormFirstPageDetails["resTelephone"];
-
-    registeredAddress.value =
-      kycApplicationFormFirstPageDetails["registeredAddress"];
-
-    registeredCityName.value =
-      kycApplicationFormFirstPageDetails["registeredCityName"];
-
-    registeredStateName.value =
-      kycApplicationFormFirstPageDetails["registeredStateName"];
-
-    registeredCountryName.value =
-      kycApplicationFormFirstPageDetails["registeredCountryName"];
-
-    registeredPinCodeKyc.value =
-      kycApplicationFormFirstPageDetails["registeredPinCodeKyc"];
 
     if (
       kycApplicationFormFirstPageDetails["nsdlCdslOption"] ===
@@ -414,36 +312,11 @@ function getKycApplicationFormFirstPageDetails() {
       cdsl.checked = true;
     }
 
-    firstHolderName.value =
-      kycApplicationFormFirstPageDetails["firstHolderName"];
-
-    firstHolderPanNumber.value =
-      kycApplicationFormFirstPageDetails["firstHolderPanNumber"];
-
-    secondHolderName.value =
-      kycApplicationFormFirstPageDetails["secondHolderName"];
-
-    secondHolderPanNumber.value =
-      kycApplicationFormFirstPageDetails["secondHolderPanNumber"];
-
-    thirdHolderName.value =
-      kycApplicationFormFirstPageDetails["thirdHolderName"];
-
-    thirdHolderPanNumber.value =
-      kycApplicationFormFirstPageDetails["thirdHolderPanNumber"];
-
     let totalHolders = localStorage.getItem("totalHolders");
     let holderArray = [
       "First",
       "Second",
       "Third",
-      "Fourth",
-      "Fifth",
-      "Sixth",
-      "Seventh",
-      "Eighth",
-      "Ninth",
-      "Tenth",
     ];
 
     for (let i = 1; i <= totalHolders; i++) {
@@ -578,125 +451,7 @@ function getKycApplicationFormFirstPageDetails() {
                 </div>
               </div>
               <div class="flex items-center">
-                <div class="occupation flex">
-                  <div class="mr-5 mt-2">
-                    <label for="${
-                      holderArray[i - 1]
-                    }occupationType" class="block text-sm text-gray-700 font-semibold my-1 pl-1">3. Occupation</label>
-                    <select name="${holderArray[i - 1]}occupationType" id="${
-        holderArray[i - 1]
-      }occupationType"
-                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-56 h-10" value="${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ]
-                      }" disabled>
-                      <option value="" selected disabled>Type Selection</option>
-
-                      <option value="Private Sector" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Private Sector"
-                          ? "selected"
-                          : ""
-                      }>Private Sector</option>
-
-                      <option value="Public Sector" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Public Sector"
-                          ? "selected"
-                          : ""
-                      }>Public Sector</option>
-
-                      <option value="Govt. Service" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Govt. Service"
-                          ? "selected"
-                          : ""
-                      }>Govt. Service</option>
-
-                      <option value="Bussiness" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Bussiness"
-                          ? "selected"
-                          : ""
-                      }>Bussiness</option>
-
-                      <option value="Professional" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Professional"
-                          ? "selected"
-                          : ""
-                      }>Professional</option>
-
-                      <option value="Agriculturist" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Agriculturist"
-                          ? "selected"
-                          : ""
-                      }>Agriculturist</option>
-
-                      <option value="Retired" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Retired"
-                          ? "selected"
-                          : ""
-                      }>Retired</option>
-
-                      <option value="Housewife" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Housewife"
-                          ? "selected"
-                          : ""
-                      }>Housewife</option>
-
-                      <option value="Student" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Student"
-                          ? "selected"
-                          : ""
-                      }>Student</option>
-
-                      <option value="Forex Dealer" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "Forex Dealer"
-                          ? "selected"
-                          : ""
-                      }>Forex Dealer</option>
-
-                      <option value="other" ${
-                        kycApplicationFormFirstPageDetails !== null &&
-                        kycApplicationFormFirstPageDetails[
-                          holderArray[i - 1] + "occupationType"
-                        ] === "other"
-                          ? "selected"
-                          : ""
-                      }>Other</option>
-
-                    </select>
-                  </div>
-                </div>
-                <div class="politicalRelation ml-8">
+                <div class="politicalRelation">
                   <label class="block font-semibold text-gray-700">4. Please Tick (if applicable)</label>
                   <div class="${
                     holderArray[i - 1]
@@ -1044,45 +799,44 @@ function getKycApplicationFormSecondPageDetails() {
 
 // acknowledgementDetails section manages from here
 function getAcknowledgementDetails() {
-  let optionFirst = document.getElementById("optionFirst");
-  let memberName1 = document.getElementById("memberName1");
-  let optionSecond = document.getElementById("optionSecond");
-  let memberName2 = document.getElementById("memberName2");
-  let firstSoleHolderName = document.getElementById("firstSoleHolderName");
-  let secondJointHolderName = document.getElementById("secondJointHolderName");
-  let thirdJointHolderName = document.getElementById("thirdJointHolderName");
 
-  let mobileForAlert = document.getElementById("mobileForAlert");
-  let textingOptionsByTrustYes = document.getElementById(
-    "textingOptionsByTrustYes"
+  let ecnClientMandateName = document.getElementById("ecnClientMandateName");
+  let ecnClientEmail = document.getElementById("ecnClientEmail");
+  let ecnClientName = document.getElementById("ecnClientName");
+  let ecnClientAddress = document.getElementById("ecnClientAddress");
+  let ecnClientPan = document.getElementById("ecnClientPan");
+  let ecnClientNameDesignation = document.getElementById(
+    "ecnClientNameDesignation"
   );
-  let textingOptionsByTrustNo = document.getElementById(
-    "textingOptionsByTrustNo"
+  let internetEmailId = document.getElementById("internetEmailId");
+  let internetApplicantName = document.getElementById("internetApplicantName");
+  let internetApplicantAddress = document.getElementById(
+    "internetApplicantAddress"
+  );
+  let internetApplicantMobileNumber = document.getElementById(
+    "internetApplicantMobileNumber"
+  );
+  let internetApplicantTelephoneNumber = document.getElementById(
+    "internetApplicantTelephoneNumber"
   );
 
   if (acknowledgementDetails !== null) {
-    if (acknowledgementDetails["bookletOptions"] === "Option 1") {
-      optionFirst.checked = true;
-      memberName1.value = acknowledgementDetails["memberName1"];
-    } else {
-      optionSecond.checked = true;
-      memberName2.value = acknowledgementDetails["memberName2"];
-    }
-
-    firstSoleHolderName.value = acknowledgementDetails["firstSoleHolderName"];
-
-    secondJointHolderName.value =
-      acknowledgementDetails["secondJointHolderName"];
-
-    thirdJointHolderName.value = acknowledgementDetails["thirdJointHolderName"];
-
-    mobileForAlert.value = acknowledgementDetails["mobileForAlert"];
-
-    if (acknowledgementDetails["textingOptionsByTrust"] === "Yes") {
-      textingOptionsByTrustYes.checked = true;
-    } else {
-      textingOptionsByTrustNo.checked = true;
-    }
+    ecnClientMandateName.value = acknowledgementDetails["ecnClientMandateName"];
+    ecnClientEmail.value = acknowledgementDetails["ecnClientEmail"];
+    ecnClientName.value = acknowledgementDetails["ecnClientName"];
+    ecnClientAddress.value = acknowledgementDetails["ecnClientAddress"];
+    ecnClientPan.value = acknowledgementDetails["ecnClientPan"];
+    ecnClientNameDesignation.value =
+      acknowledgementDetails["ecnClientNameDesignation"];
+    internetEmailId.value = acknowledgementDetails["internetEmailId"];
+    internetApplicantName.value =
+      acknowledgementDetails["internetApplicantName"];
+    internetApplicantAddress.value =
+      acknowledgementDetails["internetApplicantAddress"];
+    internetApplicantMobileNumber.value =
+      acknowledgementDetails["internetApplicantMobileNumber"];
+    internetApplicantTelephoneNumber.value =
+      acknowledgementDetails["internetApplicantTelephoneNumber"];
   }
 }
 
@@ -1399,6 +1153,9 @@ submitDetails.addEventListener("submit", async (event) => {
 
   // Fill the form fields
   if (companyDetails !== null) {
+    form.getCheckBox("applicationTypeNew").check();
+    form.getCheckBox("entityDetails").check();
+
     form
       .getTextField("companyName")
       .setText(companyDetails["companyName"].toUpperCase());
@@ -1435,13 +1192,7 @@ submitDetails.addEventListener("submit", async (event) => {
       .getTextField("bussinessCommenceDate")
       .setText(formatDate(companyDetails["bussinessCommenceDate"]));
 
-    if (companyDetails["addressProof"] === "Certificate of incorporation") {
-      form.getCheckBox("incorporationCertificate").check();
-    } else if (companyDetails["addressProof"] === "Registration Certificate") {
-      form.getCheckBox("registrationCertificate").check();
-    } else {
-      form.getCheckBox("otherDocuments").check();
-    }
+    form.getCheckBox("otherDocuments").check();
 
     form
       .getTextField("companyAddress")
@@ -1506,10 +1257,9 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("companyFaxNumber")
       .setText(companyDetails["companyFaxNumber"].toUpperCase());
+    
+    form.getCheckBox("certifiedCopy").check();
 
-    form
-      .getTextField("relatedPersonCount")
-      .setText(companyDetails["relatedPersonCount"].toUpperCase());
   }
 
   if (relatedPersonDetails !== null) {
@@ -1518,14 +1268,20 @@ submitDetails.addEventListener("submit", async (event) => {
       "Addition of Related Person"
     ) {
       form.getCheckBox("relatedPersonAddition").check();
+      form.getCheckBox("newRelatedPerson").check();
     } else if (
       relatedPersonDetails["selectRelatedPersonAction"] ===
       "Updation of Related Person"
     ) {
       form.getCheckBox("relatedPersonUpdation").check();
+      form.getCheckBox("updateRelatedPerson").check();
     } else {
       form.getCheckBox("relatedPersonDeletion").check();
+      form.getCheckBox("deleteRelatedPerson").check();
     }
+
+    form.getCheckBox("relatedPersonNameSection").check();
+    form.getCheckBox("relatedPersonCertifiedCopy").check();
 
     form
       .getTextField("kycNumber")
@@ -1688,180 +1444,89 @@ submitDetails.addEventListener("submit", async (event) => {
   if (kycApplicationFormFirstPageDetails !== null) {
     form
       .getTextField("applicantName")
-      .setText(
-        kycApplicationFormFirstPageDetails["applicantName"].toUpperCase()
-      );
+      .setText(companyDetails["companyName"].toUpperCase());
 
     form
       .getTextField("incorporationDateKyc")
-      .setText(
-        formatDate(kycApplicationFormFirstPageDetails["incorporationDateKyc"])
-      );
+      .setText(formatDate(companyDetails["incorporationDate"]));
 
     form
       .getTextField("incorporationPlaceKyc")
-      .setText(
-        kycApplicationFormFirstPageDetails[
-          "incorporationPlaceKyc"
-        ].toUpperCase()
-      );
+      .setText(companyDetails["incorporationPlace"].toUpperCase());
 
     form
       .getTextField("panNumberKyc")
-      .setText(kycApplicationFormFirstPageDetails["panNumber"].toUpperCase());
+      .setText(companyDetails["companyPan"].toUpperCase());
 
     form
       .getTextField("gstRegistrationKyc")
-      .setText(
-        kycApplicationFormFirstPageDetails["gstRegistrationKyc"].toUpperCase()
-      );
+      .setText(companyDetails["gstRegistration"].toUpperCase());
 
     form
       .getTextField("bussinessCommenceDateKyc")
-      .setText(
-        formatDate(
-          kycApplicationFormFirstPageDetails[
-            "bussinessCommenceDateKyc"
-          ].toUpperCase()
-        )
-      );
+      .setText(formatDate(companyDetails["bussinessCommenceDate"]));
 
-    if (kycApplicationFormFirstPageDetails["companyType"] === "Pvt. Ltd. Co.") {
-      form.getCheckBox("pvtLtd").check();
-    } else if (
-      kycApplicationFormFirstPageDetails["companyType"] === "Public Ltd. Co."
-    ) {
-      form.getCheckBox("publicLtd").check();
-    } else if (
-      kycApplicationFormFirstPageDetails["companyType"] === "Body Corporate"
-    ) {
-      form.getCheckBox("bodyCorporate").check();
-    } else if (
-      kycApplicationFormFirstPageDetails["companyType"] === "Partnership"
-    ) {
-      form.getCheckBox("partnership").check();
-    } else if (
-      kycApplicationFormFirstPageDetails["companyType"] === "Charities"
-    ) {
-      form.getCheckBox("charities").check();
-    } else if (kycApplicationFormFirstPageDetails["companyType"] === "Bank") {
-      form.getCheckBox("bank").check();
-    } else if (
-      kycApplicationFormFirstPageDetails["companyType"] === "Society"
-    ) {
-      form.getCheckBox("society").check();
-    } else if (kycApplicationFormFirstPageDetails["companyType"] === "Trust") {
-      form.getCheckBox("trust").check();
-    } else if (
-      kycApplicationFormFirstPageDetails["companyType"] ===
-      "Defence Establishment"
-    ) {
-      form.getCheckBox("defenceEstablishment").check();
-    } else if (kycApplicationFormFirstPageDetails["companyType"] === "FII") {
-      form.getCheckBox("fii").check();
-    } else if (kycApplicationFormFirstPageDetails["companyType"] === "HUF") {
-      form.getCheckBox("huf").check();
-    } else if (kycApplicationFormFirstPageDetails["companyType"] === "AOP") {
-      form.getCheckBox("aop").check();
-    } else if (
-      kycApplicationFormFirstPageDetails["companyType"] ===
-      "Non Govt. Organisation"
-    ) {
-      form.getCheckBox("nonGovOrganisation").check();
-    } else if (kycApplicationFormFirstPageDetails["companyType"] === "LLP") {
-      form.getCheckBox("llp").check();
-    } else if (kycApplicationFormFirstPageDetails["companyType"] === "FI") {
-      form.getCheckBox("fi").check();
-    } else if (kycApplicationFormFirstPageDetails["companyType"] === "BOI") {
-      form.getCheckBox("boi").check();
-    } else if (
-      kycApplicationFormFirstPageDetails["companyType"] === "Government Body"
-    ) {
-      form.getCheckBox("govtBody").check();
-    } else {
-      form.getCheckBox("otherStatus").check();
-    }
+    form.getCheckBox("bodyCorporate").check();
+
     form
       .getTextField("correspondenceAddress")
-      .setText(
-        kycApplicationFormFirstPageDetails[
-          "correspondenceAddress"
-        ].toUpperCase()
-      );
+      .setText(companyDetails["companyAddress"].toUpperCase());
 
     form
       .getTextField("cityName")
-      .setText(kycApplicationFormFirstPageDetails["cityName"].toUpperCase());
+      .setText(companyDetails["registeredCity"].toUpperCase());
 
     form
       .getTextField("stateName")
-      .setText(kycApplicationFormFirstPageDetails["stateName"].toUpperCase());
+      .setText(companyDetails["registeredState"].toUpperCase());
 
     form
       .getTextField("countryName")
-      .setText(kycApplicationFormFirstPageDetails["countryName"].toUpperCase());
+      .setText(companyDetails["registeredCountry"].toUpperCase());
 
     form
       .getTextField("pinCode")
-      .setText(kycApplicationFormFirstPageDetails["pinCode"].toUpperCase());
+      .setText(companyDetails["registeredPinCode"].toUpperCase());
 
     form
       .getTextField("mobileNumber")
-      .setText(
-        kycApplicationFormFirstPageDetails["mobileNumber"].toUpperCase()
-      );
+      .setText(companyDetails["companyPhoneNumber"].toUpperCase());
 
     form
       .getTextField("emailId")
-      .setText(kycApplicationFormFirstPageDetails["emailId"].toUpperCase());
+      .setText(companyDetails["companyEmailId"].toUpperCase());
 
     form
       .getTextField("faxNumber")
-      .setText(kycApplicationFormFirstPageDetails["faxNumber"].toUpperCase());
+      .setText(companyDetails["companyFaxNumber"].toUpperCase());
 
     form
       .getTextField("officeTelephone")
-      .setText(
-        kycApplicationFormFirstPageDetails["officeTelephone"].toUpperCase()
-      );
+      .setText(companyDetails["companyTelephoneNumber"].toUpperCase());
 
     form
       .getTextField("resTelephone")
-      .setText(
-        kycApplicationFormFirstPageDetails["resTelephone"].toUpperCase()
-      );
+      .setText(companyDetails["companyTelephoneNumber"].toUpperCase());
 
     form
       .getTextField("registeredAddress")
-      .setText(
-        kycApplicationFormFirstPageDetails["registeredAddress"].toUpperCase()
-      );
+      .setText(companyDetails["localAddress"].toUpperCase());
 
     form
       .getTextField("registeredCityName")
-      .setText(
-        kycApplicationFormFirstPageDetails["registeredCityName"].toUpperCase()
-      );
+      .setText(companyDetails["localCity"].toUpperCase());
 
     form
       .getTextField("registeredStateName")
-      .setText(
-        kycApplicationFormFirstPageDetails["registeredStateName"].toUpperCase()
-      );
+      .setText(companyDetails["localState"].toUpperCase());
 
     form
       .getTextField("registeredCountryName")
-      .setText(
-        kycApplicationFormFirstPageDetails[
-          "registeredCountryName"
-        ].toUpperCase()
-      );
+      .setText(companyDetails["localCountry"].toUpperCase());
 
     form
       .getTextField("registeredPinCodeKyc")
-      .setText(
-        kycApplicationFormFirstPageDetails["registeredPinCodeKyc"].toUpperCase()
-      );
+      .setText(companyDetails["localPinCode"].toUpperCase());
 
     if (
       kycApplicationFormFirstPageDetails["nsdlCdslOption"] ===
@@ -1874,54 +1539,25 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("firstHolderName")
-      .setText(
-        kycApplicationFormFirstPageDetails["firstHolderName"].toUpperCase()
-      );
+      .setText(companyDetails["companyName"].toUpperCase());
+    
+    form
+      .getTextField("kycApplicantName")
+      .setText(companyDetails["companyName"].toUpperCase());
 
     form
       .getTextField("firstHolderPanNumber")
-      .setText(
-        kycApplicationFormFirstPageDetails["firstHolderPanNumber"].toUpperCase()
-      );
-
+      .setText(companyDetails["companyPan"].toUpperCase());
+    
     form
-      .getTextField("secondHolderName")
-      .setText(
-        kycApplicationFormFirstPageDetails["secondHolderName"].toUpperCase()
-      );
-
-    form
-      .getTextField("secondHolderPanNumber")
-      .setText(
-        kycApplicationFormFirstPageDetails[
-          "secondHolderPanNumber"
-        ].toUpperCase()
-      );
-
-    form
-      .getTextField("thirdHolderName")
-      .setText(
-        kycApplicationFormFirstPageDetails["thirdHolderName"].toUpperCase()
-      );
-
-    form
-      .getTextField("thirdHolderPanNumber")
-      .setText(
-        kycApplicationFormFirstPageDetails["thirdHolderPanNumber"].toUpperCase()
-      );
+      .getTextField("kycApplicantPan")
+      .setText(companyDetails["companyPan"].toUpperCase());
 
     let totalHolders = localStorage.getItem("totalHolders");
     let holderArray = [
       "First",
       "Second",
       "Third",
-      "Fourth",
-      "Fifth",
-      "Sixth",
-      "Seventh",
-      "Eighth",
-      "Ninth",
-      "Tenth",
     ];
 
     for (let i = 1; i <= totalHolders; i++) {
@@ -1965,48 +1601,6 @@ submitDetails.addEventListener("submit", async (event) => {
       } else if (politicalInfo === "Related to Politically Exposed Person") {
         form.getCheckBox(`${holderArray[i - 1]}RPEP`).check();
       }
-
-      let occupation =
-        kycApplicationFormFirstPageDetails[
-          `${holderArray[i - 1]}occupationType`
-        ];
-      if (occupation === "Private Sector") {
-        form
-          .getCheckBox(`${holderArray[i - 1].toLowerCase()}PrivateSector`)
-          .check();
-      } else if (occupation === "Public Sector") {
-        form
-          .getCheckBox(`${holderArray[i - 1].toLowerCase()}PublicSector`)
-          .check();
-      } else if (occupation === "Govt. Service") {
-        form
-          .getCheckBox(`${holderArray[i - 1].toLowerCase()}GovService`)
-          .check();
-      } else if (occupation === "Business") {
-        form.getCheckBox(`${holderArray[i - 1].toLowerCase()}Business`).check();
-      } else if (occupation === "Professional") {
-        form
-          .getCheckBox(`${holderArray[i - 1].toLowerCase()}Professional`)
-          .check();
-      } else if (occupation === "Agriculturist") {
-        form
-          .getCheckBox(`${holderArray[i - 1].toLowerCase()}Agriculturist`)
-          .check();
-      } else if (occupation === "Retired") {
-        form.getCheckBox(`${holderArray[i - 1].toLowerCase()}Retired`).check();
-      } else if (occupation === "Housewife") {
-        form
-          .getCheckBox(`${holderArray[i - 1].toLowerCase()}Housewife`)
-          .check();
-      } else if (occupation === "Student") {
-        form.getCheckBox(`${holderArray[i - 1].toLowerCase()}Student`).check();
-      } else if (occupation === "Forex Dealer") {
-        form
-          .getCheckBox(`${holderArray[i - 1].toLowerCase()}ForexDealer`)
-          .check();
-      } else {
-        form.getCheckBox(`${holderArray[i - 1].toLowerCase()}Other`).check();
-      }
     }
   }
 
@@ -2015,12 +1609,15 @@ submitDetails.addEventListener("submit", async (event) => {
       kycApplicationFormSecondPageDetails["primaryAccountType"] === "saving"
     ) {
       form.getCheckBox("primarySavingAccount").check();
+      form.getCheckBox("primaryBankProof").check();
     } else if (
       kycApplicationFormSecondPageDetails["primaryAccountType"] === "current"
     ) {
       form.getCheckBox("primaryCurrentAccount").check();
+      form.getCheckBox("primaryBankProof").check();
     } else {
       form.getCheckBox("primaryOtherAccount").check();
+      form.getCheckBox("primaryBankProof").check();
     }
     form
       .getTextField("primaryBankAccountNo")
@@ -2066,12 +1663,15 @@ submitDetails.addEventListener("submit", async (event) => {
       kycApplicationFormSecondPageDetails["secondaryAccountType"] === "saving"
     ) {
       form.getCheckBox("secondarySavingAccount").check();
+      form.getCheckBox("secondaryBankProof").check();
     } else if (
       kycApplicationFormSecondPageDetails["secondaryAccountType"] === "current"
     ) {
       form.getCheckBox("secondaryCurrentAccount").check();
+      form.getCheckBox("secondaryBankProof").check();
     } else {
       form.getCheckBox("secondaryOtherAccount").check();
+      form.getCheckBox("secondaryBankProof").check();
     }
 
     form
@@ -2231,39 +1831,21 @@ submitDetails.addEventListener("submit", async (event) => {
   }
 
   if (acknowledgementDetails !== null) {
-    if (acknowledgementDetails["bookletOptions"] === "Option 1") {
-      form.getCheckBox("optionFirst").check();
-      form
-        .getTextField("memberName1")
-        .setText(acknowledgementDetails["memberName1"].toUpperCase());
-    } else {
-      form.getCheckBox("optionSecond").check();
-      form
-        .getTextField("memberName2")
-        .setText(acknowledgementDetails["memberName2"].toUpperCase());
-    }
+    form.getCheckBox("optionSecond").check();
+    form
+      .getTextField("memberName2")
+      .setText(companyDetails["companyName"].toUpperCase());
 
     form
       .getTextField("firstSoleHolderName")
-      .setText(acknowledgementDetails["firstSoleHolderName"].toUpperCase());
-
-    form
-      .getTextField("secondJointHolderName")
-      .setText(acknowledgementDetails["secondJointHolderName"].toUpperCase());
-
-    form
-      .getTextField("thirdJointHolderName")
-      .setText(acknowledgementDetails["thirdJointHolderName"].toUpperCase());
+      .setText(companyDetails["companyName"].toUpperCase());
 
     form
       .getTextField("mobileForAlert")
-      .setText(acknowledgementDetails["mobileForAlert"]);
+      .setText(companyDetails["companyPhoneNumber"]);
+    form.getCheckBox("trustNo").check();
+    form.getCheckBox("schemeB").check();
 
-    if (acknowledgementDetails["textingOptionsByTrust"] === "Yes") {
-      form.getCheckBox("trustYes").check();
-    } else {
-      form.getCheckBox("trustNo").check();
-    }
   }
 
   if (fatcaPartOneDetails !== null) {
@@ -2272,6 +1854,10 @@ submitDetails.addEventListener("submit", async (event) => {
     } else {
       form.getCheckBox("30Days").check();
     }
+
+    form
+      .getTextField("fatcaApplicantName")
+      .setText(companyDetails["companyName"].toUpperCase());
 
     if (fatcaPartOneDetails["QuesAOptions"] === "Yes") {
       form.getCheckBox("optionAYes").check();
@@ -2307,237 +1893,237 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(companyDetails["companyName"].toUpperCase());
   }
 
-  if (fatcaPartTwoDetails !== null) {
-    // section1
-    form
-      .getTextField("EntityName")
-      .setText(fatcaPartTwoDetails["EntityName"].toUpperCase());
+  // if (fatcaPartTwoDetails !== null) {
+  //   // section1
+  //   form
+  //     .getTextField("EntityName")
+  //     .setText(fatcaPartTwoDetails["EntityName"].toUpperCase());
 
-    form
-      .getTextField("customerId")
-      .setText(fatcaPartTwoDetails["customerId"].toUpperCase());
+  //   form
+  //     .getTextField("customerId")
+  //     .setText(fatcaPartTwoDetails["customerId"].toUpperCase());
 
-    form
-      .getTextField("entityConsitutionType")
-      .setText(
-        fatcaPartTwoDetails["entityConsitutionType"].toUpperCase().toUpperCase()
-      );
+  //   form
+  //     .getTextField("entityConsitutionType")
+  //     .setText(
+  //       fatcaPartTwoDetails["entityConsitutionType"].toUpperCase().toUpperCase()
+  //     );
 
-    if (fatcaPartTwoDetails["entityIdentificationType"] === "TIN") {
-      form.getCheckBox("TIN").check();
-    } else if (fatcaPartTwoDetails["entityIdentificationType"] === "US_GIIN") {
-      form.getCheckBox("US_GIIN").check();
-    } else if (fatcaPartTwoDetails["entityIdentificationType"] === "CIN") {
-      form.getCheckBox("CIN").check();
-    } else if (fatcaPartTwoDetails["entityIdentificationType"] === "EIN") {
-      form.getCheckBox("EIN").check();
-    } else {
-      form.getCheckBox("otherEIT").check();
-    }
+  //   if (fatcaPartTwoDetails["entityIdentificationType"] === "TIN") {
+  //     form.getCheckBox("TIN").check();
+  //   } else if (fatcaPartTwoDetails["entityIdentificationType"] === "US_GIIN") {
+  //     form.getCheckBox("US_GIIN").check();
+  //   } else if (fatcaPartTwoDetails["entityIdentificationType"] === "CIN") {
+  //     form.getCheckBox("CIN").check();
+  //   } else if (fatcaPartTwoDetails["entityIdentificationType"] === "EIN") {
+  //     form.getCheckBox("EIN").check();
+  //   } else {
+  //     form.getCheckBox("otherEIT").check();
+  //   }
 
-    form
-      .getTextField("entityIdentificationNumber")
-      .setText(fatcaPartTwoDetails["entityIdentificationNumber"].toUpperCase());
+  //   form
+  //     .getTextField("entityIdentificationNumber")
+  //     .setText(fatcaPartTwoDetails["entityIdentificationNumber"].toUpperCase());
 
-    form
-      .getTextField("entityIdentificationIssuingCountry")
-      .setText(
-        fatcaPartTwoDetails["entityIdentificationIssuingCountry"].toUpperCase()
-      );
+  //   form
+  //     .getTextField("entityIdentificationIssuingCountry")
+  //     .setText(
+  //       fatcaPartTwoDetails["entityIdentificationIssuingCountry"].toUpperCase()
+  //     );
 
-    form
-      .getTextField("countryOfResidence")
-      .setText(fatcaPartTwoDetails["countryOfResidence"].toUpperCase());
+  //   form
+  //     .getTextField("countryOfResidence")
+  //     .setText(fatcaPartTwoDetails["countryOfResidence"].toUpperCase());
 
-    // section2
-    if (fatcaPartTwoDetails["USTaxable"] === "Yes") {
-      form.getCheckBox("USTaxableYes").check();
-      form
-        .getTextField("taxpayerIdentificationNumber")
-        .setText(
-          fatcaPartTwoDetails["taxpayerIdentificationNumber"].toUpperCase()
-        );
-    } else {
-      form.getCheckBox("USTaxableNo").check();
-    }
+  //   // section2
+  //   if (fatcaPartTwoDetails["USTaxable"] === "Yes") {
+  //     form.getCheckBox("USTaxableYes").check();
+  //     form
+  //       .getTextField("taxpayerIdentificationNumber")
+  //       .setText(
+  //         fatcaPartTwoDetails["taxpayerIdentificationNumber"].toUpperCase()
+  //       );
+  //   } else {
+  //     form.getCheckBox("USTaxableNo").check();
+  //   }
 
-    if (fatcaPartTwoDetails["otherCountryTaxable"] === "Yes") {
-      form.getCheckBox("otherCountryTaxableYes").check();
-    } else {
-      form.getCheckBox("otherCountryTaxableNo").check();
-    }
-    form
-      .getTextField("tinIssuingCountry")
-      .setText(fatcaPartTwoDetails["tinIssuingCountry"].toUpperCase());
+  //   if (fatcaPartTwoDetails["otherCountryTaxable"] === "Yes") {
+  //     form.getCheckBox("otherCountryTaxableYes").check();
+  //   } else {
+  //     form.getCheckBox("otherCountryTaxableNo").check();
+  //   }
+  //   form
+  //     .getTextField("tinIssuingCountry")
+  //     .setText(fatcaPartTwoDetails["tinIssuingCountry"].toUpperCase());
 
-    if (fatcaPartTwoDetails["additionalDetailOfUSPerson"] === "Active NFFE") {
-      form.getCheckBox("activeNffe").check();
-    } else if (
-      fatcaPartTwoDetails["additionalDetailOfUSPerson"] ===
-      "Passive NFFE without any controlling Person"
-    ) {
-      form.getCheckBox("passiveNffeWithoutControlPerson").check();
-    } else if (
-      fatcaPartTwoDetails["additionalDetailOfUSPerson"] ===
-      "Passive NFFE with controlling Person"
-    ) {
-      form.getCheckBox("passiveNffeWithControlPerson").check();
-      if (fatcaPartTwoDetails["USCountry"] == "USCountryYes") {
-        form.getCheckBox("USCountryYes").check();
-      } else {
-        form.getCheckBox("USCountryNo").check();
-      }
-    } else if (
-      fatcaPartTwoDetails["additionalDetailOfUSPerson"] ===
-      "Direct Reporting NFFE"
-    ) {
-      form.getCheckBox("directNffe").check();
-    }
-    form
-      .getTextField("giinNumberFatcaTwo")
-      .setText(fatcaPartTwoDetails["GIINNumber"].toUpperCase());
+  //   if (fatcaPartTwoDetails["additionalDetailOfUSPerson"] === "Active NFFE") {
+  //     form.getCheckBox("activeNffe").check();
+  //   } else if (
+  //     fatcaPartTwoDetails["additionalDetailOfUSPerson"] ===
+  //     "Passive NFFE without any controlling Person"
+  //   ) {
+  //     form.getCheckBox("passiveNffeWithoutControlPerson").check();
+  //   } else if (
+  //     fatcaPartTwoDetails["additionalDetailOfUSPerson"] ===
+  //     "Passive NFFE with controlling Person"
+  //   ) {
+  //     form.getCheckBox("passiveNffeWithControlPerson").check();
+  //     if (fatcaPartTwoDetails["USCountry"] == "USCountryYes") {
+  //       form.getCheckBox("USCountryYes").check();
+  //     } else {
+  //       form.getCheckBox("USCountryNo").check();
+  //     }
+  //   } else if (
+  //     fatcaPartTwoDetails["additionalDetailOfUSPerson"] ===
+  //     "Direct Reporting NFFE"
+  //   ) {
+  //     form.getCheckBox("directNffe").check();
+  //   }
+  //   form
+  //     .getTextField("giinNumberFatcaTwo")
+  //     .setText(fatcaPartTwoDetails["GIINNumber"].toUpperCase());
 
-    // section3
-    if (
-      fatcaPartTwoDetails["USFinancialInstitute"] === "USFinancialInstituteYes"
-    ) {
-      form.getCheckBox("USFinancialInstituteYes").check();
-      form
-        .getTextField("entityTaxpayerIdentificationNumber")
-        .setText(
-          fatcaPartTwoDetails[
-            "entityTaxpayerIdentificationNumber"
-          ].toUpperCase()
-        );
+  //   // section3
+  //   if (
+  //     fatcaPartTwoDetails["USFinancialInstitute"] === "USFinancialInstituteYes"
+  //   ) {
+  //     form.getCheckBox("USFinancialInstituteYes").check();
+  //     form
+  //       .getTextField("entityTaxpayerIdentificationNumber")
+  //       .setText(
+  //         fatcaPartTwoDetails[
+  //           "entityTaxpayerIdentificationNumber"
+  //         ].toUpperCase()
+  //       );
 
-      form
-        .getTextField("usFinancialInstituteGiinNumber")
-        .setText(
-          fatcaPartTwoDetails["usFinancialInstituteGiinNumber"].toUpperCase()
-        );
-    } else {
-      form.getCheckBox("USFinancialInstituteNo").check();
-      if (fatcaPartTwoDetails["fatcaNoClassification"] === "igaModel1") {
-        form.getCheckBox("iga1").check();
-        form
-          .getTextField("igaModel1")
-          .setText(fatcaPartTwoDetails["igaModel1"].toUpperCase());
-      } else if (fatcaPartTwoDetails["fatcaNoClassification"] === "igaModel2") {
-        form.getCheckBox("iga2").check();
-        form
-          .getTextField("igaModel2")
-          .setText(fatcaPartTwoDetails["igaModel2"]);
-      } else if (fatcaPartTwoDetails["fatcaNoClassification"] === "ffi") {
-        form.getCheckBox("nonIgaFfi").check();
-        form
-          .getTextField("ffi")
-          .setText(fatcaPartTwoDetails["ffi"].toUpperCase());
-      } else if (
-        fatcaPartTwoDetails["fatcaNoClassification"] === "nonReportingFi"
-      ) {
-        form.getCheckBox("nonFi").check();
-        form
-          .getTextField("nonReportingFi")
-          .setText(fatcaPartTwoDetails["nonReportingFi"].toUpperCase());
-      } else if (
-        fatcaPartTwoDetails["fatcaNoClassification"] === "nonParticipatingFi"
-      ) {
-        form.getCheckBox("nonPartFi").check();
-        form
-          .getTextField("nonParticipatingFi")
-          .setText(fatcaPartTwoDetails["nonParticipatingFi"].toUpperCase());
-      } else {
-        form.getCheckBox("ownerDocumentedFi").check();
-        form
-          .getTextField("ownerDocumented")
-          .setText(fatcaPartTwoDetails["ownerDocumented"].toUpperCase());
-      }
-    }
+  //     form
+  //       .getTextField("usFinancialInstituteGiinNumber")
+  //       .setText(
+  //         fatcaPartTwoDetails["usFinancialInstituteGiinNumber"].toUpperCase()
+  //       );
+  //   } else {
+  //     form.getCheckBox("USFinancialInstituteNo").check();
+  //     if (fatcaPartTwoDetails["fatcaNoClassification"] === "igaModel1") {
+  //       form.getCheckBox("iga1").check();
+  //       form
+  //         .getTextField("igaModel1")
+  //         .setText(fatcaPartTwoDetails["igaModel1"].toUpperCase());
+  //     } else if (fatcaPartTwoDetails["fatcaNoClassification"] === "igaModel2") {
+  //       form.getCheckBox("iga2").check();
+  //       form
+  //         .getTextField("igaModel2")
+  //         .setText(fatcaPartTwoDetails["igaModel2"]);
+  //     } else if (fatcaPartTwoDetails["fatcaNoClassification"] === "ffi") {
+  //       form.getCheckBox("nonIgaFfi").check();
+  //       form
+  //         .getTextField("ffi")
+  //         .setText(fatcaPartTwoDetails["ffi"].toUpperCase());
+  //     } else if (
+  //       fatcaPartTwoDetails["fatcaNoClassification"] === "nonReportingFi"
+  //     ) {
+  //       form.getCheckBox("nonFi").check();
+  //       form
+  //         .getTextField("nonReportingFi")
+  //         .setText(fatcaPartTwoDetails["nonReportingFi"].toUpperCase());
+  //     } else if (
+  //       fatcaPartTwoDetails["fatcaNoClassification"] === "nonParticipatingFi"
+  //     ) {
+  //       form.getCheckBox("nonPartFi").check();
+  //       form
+  //         .getTextField("nonParticipatingFi")
+  //         .setText(fatcaPartTwoDetails["nonParticipatingFi"].toUpperCase());
+  //     } else {
+  //       form.getCheckBox("ownerDocumentedFi").check();
+  //       form
+  //         .getTextField("ownerDocumented")
+  //         .setText(fatcaPartTwoDetails["ownerDocumented"].toUpperCase());
+  //     }
+  //   }
 
-    // section4
-    form
-      .getTextField("controllingPersonName")
-      .setText(fatcaPartTwoDetails["controllingPersonName"].toUpperCase());
+  //   // section4
+  //   form
+  //     .getTextField("controllingPersonName")
+  //     .setText(fatcaPartTwoDetails["controllingPersonName"].toUpperCase());
 
-    form
-      .getTextField("controllingPersonCorrespondenceAddress")
-      .setText(
-        fatcaPartTwoDetails[
-          "controllingPersonCorrespondenceAddress"
-        ].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonCorrespondenceAddress")
+  //     .setText(
+  //       fatcaPartTwoDetails[
+  //         "controllingPersonCorrespondenceAddress"
+  //       ].toUpperCase()
+  //     );
 
-    form
-      .getTextField("controllingPersonResidenceCountry")
-      .setText(
-        fatcaPartTwoDetails["controllingPersonResidenceCountry"].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonResidenceCountry")
+  //     .setText(
+  //       fatcaPartTwoDetails["controllingPersonResidenceCountry"].toUpperCase()
+  //     );
 
-    form
-      .getTextField("controllingPersonTin")
-      .setText(fatcaPartTwoDetails["controllingPersonTin"].toUpperCase());
+  //   form
+  //     .getTextField("controllingPersonTin")
+  //     .setText(fatcaPartTwoDetails["controllingPersonTin"].toUpperCase());
 
-    form
-      .getTextField("controllingPersonTinIssuingCountry")
-      .setText(
-        fatcaPartTwoDetails["controllingPersonTinIssuingCountry"].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonTinIssuingCountry")
+  //     .setText(
+  //       fatcaPartTwoDetails["controllingPersonTinIssuingCountry"].toUpperCase()
+  //     );
 
-    form
-      .getTextField("controllingPersonType")
-      .setText(fatcaPartTwoDetails["controllingPersonType"].toUpperCase());
+  //   form
+  //     .getTextField("controllingPersonType")
+  //     .setText(fatcaPartTwoDetails["controllingPersonType"].toUpperCase());
 
-    form
-      .getTextField("controllingPersonIdenticationType")
-      .setText(
-        fatcaPartTwoDetails["controllingPersonIdenticationType"].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonIdenticationType")
+  //     .setText(
+  //       fatcaPartTwoDetails["controllingPersonIdenticationType"].toUpperCase()
+  //     );
 
-    form
-      .getTextField("controllingPersonIdentificationNumber")
-      .setText(
-        fatcaPartTwoDetails[
-          "controllingPersonIdentificationNumber"
-        ].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonIdentificationNumber")
+  //     .setText(
+  //       fatcaPartTwoDetails[
+  //         "controllingPersonIdentificationNumber"
+  //       ].toUpperCase()
+  //     );
 
-    form
-      .getTextField("controllingPersonOccupationType")
-      .setText(
-        fatcaPartTwoDetails["controllingPersonOccupationType"].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonOccupationType")
+  //     .setText(
+  //       fatcaPartTwoDetails["controllingPersonOccupationType"].toUpperCase()
+  //     );
 
-    form
-      .getTextField("controllingPersonOccupation")
-      .setText(
-        fatcaPartTwoDetails["controllingPersonOccupation"].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonOccupation")
+  //     .setText(
+  //       fatcaPartTwoDetails["controllingPersonOccupation"].toUpperCase()
+  //     );
 
-    form
-      .getTextField("controllingPersonDob")
-      .setText(formatDate(fatcaPartTwoDetails["controllingPersonDob"]));
+  //   form
+  //     .getTextField("controllingPersonDob")
+  //     .setText(formatDate(fatcaPartTwoDetails["controllingPersonDob"]));
 
-    form
-      .getTextField("controllingPersonNationality")
-      .setText(
-        fatcaPartTwoDetails["controllingPersonNationality"].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonNationality")
+  //     .setText(
+  //       fatcaPartTwoDetails["controllingPersonNationality"].toUpperCase()
+  //     );
 
-    form
-      .getTextField("controllingPersonBirthCountry")
-      .setText(
-        fatcaPartTwoDetails["controllingPersonBirthCountry"].toUpperCase()
-      );
+  //   form
+  //     .getTextField("controllingPersonBirthCountry")
+  //     .setText(
+  //       fatcaPartTwoDetails["controllingPersonBirthCountry"].toUpperCase()
+  //     );
 
-    // section5
-    form
-      .getTextField("name")
-      .setText(fatcaPartTwoDetails["name"].toUpperCase());
+  //   // section5
+  //   form
+  //     .getTextField("name")
+  //     .setText(fatcaPartTwoDetails["name"].toUpperCase());
 
-    form
-      .getTextField("signingDate")
-      .setText(formatDate(fatcaPartTwoDetails["signingDate"]));
-  }
+  //   form
+  //     .getTextField("signingDate")
+  //     .setText(formatDate(fatcaPartTwoDetails["signingDate"]));
+  // }
 
   form
     .getTextField("declarationDate1")

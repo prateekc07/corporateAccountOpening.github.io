@@ -38,7 +38,6 @@ companyForm.addEventListener("submit", (event) => {
   });
 
   localStorage.setItem("companyDetails", JSON.stringify(companyDetails));
-  localStorage.setItem("declarationPlace", document.getElementById("declarationPlace").value);
   console.log(JSON.parse(localStorage.getItem("companyDetails")));
 
   // Redirect to the next page
@@ -63,14 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let commenceBussinessDate = document.getElementById("bussinessCommenceDate");
 
   // 2
-  let incorporationCertificate = document.getElementById(
-    "incorporationCertificate"
-  );
-  let registrationCertificate = document.getElementById(
-    "registrationCertificate"
-  );
-  let otherDocuments = document.getElementById("otherDocuments");
-
   let companyAddress = document.getElementById("companyAddress");
   let companyCity = document.getElementById("registeredCity");
   let companyDistrict = document.getElementById("registeredDistrict");
@@ -94,9 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "companyTelephoneNumber"
   );
   let companyFaxNumber = document.getElementById("companyFaxNumber");
-
-  // 5
-  let relatedPersonCount = document.getElementById("relatedPersonCount");
+  let declarationPlace = document.getElementById("declarationPlace");
 
   if (companyDetail !== null) {
     companyName.value = companyDetail["companyName"];
@@ -116,14 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gstReg.value = companyDetail["gstRegistration"];
 
     commenceBussinessDate.value = companyDetail["bussinessCommenceDate"];
-
-    if (companyDetail["addressProof"] === "Certificate of incorporation") {
-      incorporationCertificate.checked = true;
-    } else if (companyDetail["addressProof"] === "Registration Certificate") {
-      registrationCertificate.checked = true;
-    } else {
-      otherDocuments.checked = true;
-    }
 
     companyAddress.value = companyDetail["companyAddress"];
 
@@ -160,8 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     companyFaxNumber.value = companyDetail["companyFaxNumber"];
 
-    relatedPersonCount.value = companyDetail["relatedPersonCount"];
-
-    document.getElementById("declarationPlace").value = localStorage.getItem("declarationPlace");
+    declarationPlace.value = companyDetail["declarationPlace"];
   }
 });

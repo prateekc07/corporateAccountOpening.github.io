@@ -17,16 +17,7 @@ fatcaForm.addEventListener("submit", (event) => {
   console.log(JSON.parse(localStorage.getItem("fatcaPartOneDetails")));
 
   // Redirect to the next page
-  if (
-    fatcaPartOneDetails["QuesBOptions"] === "Yes" ||
-    fatcaPartOneDetails["QuesDOptions"] === "Yes"
-  ) {
-    console.log("fatca part two is loaded....");
-    window.location.href = "7_fatcaPartTwo.html";
-  } else {
-    console.log("document page is loaded.....");
-    window.location.href = "8_corporateDocumentUpload.html";
-  }
+  window.location.href = "8_corporateDocumentUpload.html";
 });
 
 document.addEventListener("DOMContentLoaded", () => {

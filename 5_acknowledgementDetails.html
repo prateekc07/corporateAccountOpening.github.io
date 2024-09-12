@@ -20,113 +20,110 @@
     </div>
 
     <form id="acknowledgementDetailsForm">
-      <div class="bookletIssueDetails mt-8">
+
+      <div class="ecnMandateDetails mt-8">
         <div
-          class="bookletIssueDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
-          19. Option form for issue of Dis Booklet:</div>
-        <div class="bookletIssueDetail">
-          <div class="detailsPara text-gray-700">
-            <p>To,</p>
-            <p class="my-1 font-semibold">Ashika Stock Broking Limited</p>
-            <p>Trinity, 226/1 AJC Bose Road, 7th floor, Kolkata, 700020</p>
-            <p class="text-blue-800 my-2 font-semibold">Dear Sir/Madam,</p>
-            <p>I/We hereby state that:</p>
-            <div class="firstOption flex items-center mt-3">
-              <input type="radio" name="bookletOptions" id="optionFirst" value="Option 1"
-                class="size-5 mr-2 hover:cursor-pointer">
-              <label for="optionFirst" class="hover:cursor-pointer text-xl">Option 1</label>
-            </div>
-            <div class="firstOptionDetail">
-              <p>I/We require you to issue Delivery Instruction Slip (DIS) booklet to me / us immediately on opening
-                my/our CDSL account though I/We have issued a Power of Attorney (POA)/executed PMS agreement in favour
-                of/with <input type="text" name="memberName1" id="memberName1"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
-                (name of the attorney/Clearing Member/PMS manager) for executing delivery instructions for
-                setting stock exchange trades [settlement related transactions] effected through such Clearing Member/
-                by PMS manager.</p>
-            </div>
-            <div class="divider flex justify-center items-center mt-3">
-              <div class="border-b-2 border-gray-500 w-[45vw]"></div>
-              <div class="text-xl mx-2">OR</div>
-              <div class="border-b-2 border-gray-500 w-[45vw]"></div>
-            </div>
-            <div class="secondOption flex items-center mt-3">
-              <input type="radio" name="bookletOptions" id="optionSecond" value="Option 2"
-                class="size-5 mr-2 hover:cursor-pointer">
-              <label for="optionSecond" class="hover:cursor-pointer text-xl">Option 2</label>
-            </div>
-            <div class="secondOptionDetail">
-              <p>I/We do not require the Delivery Instruction Slip (DIS) for the time being, since I/We have issued a
-                POA / executed PMS agreement in favour of /with <input type="text" name="memberName2" id="memberName2"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
-                (name of the attorney/Clearing Member/PMS manager) for executing delivery instructions for
-                setting stock exchange trades [settlement related transactions] effected through such Clearing Member/
-                by PMS manager. However, the Delivery Instruction Slip (DIS) booklet should be issued to me / us
-                immediately on my / our request at any later date.</p>
-              <p class="font-semibold text-gray-800 my-2">Yours faithfully</p>
-            </div>
-            <div class="flex flex-wrap">
-
+          class="ecnMandateDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          16. ECN Mandate:</div>
+        <div class="">
+          <p>To,</p>
+          <p class="my-1 font-semibold">Ashika Stock Broking Limited</p>
+          <p>Trinity, 226/1 AJC Bose Road, 7th floor, Kolkata, 700020</p>
+          <p class="text-blue-800 my-2 font-semibold">Dear Sir/Madam,</p>
+          <div class="ecnMandateDeclaration">
+            <p class="text-gray-800">I/We <input type="text" name="ecnClientMandateName" id="ecnClientMandateName"
+                class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10" required>,
+              a client with Member, M/s. Ashika Stock Broking Limited, member of respective Exchanges undertake as
+              follows:</p>
+            <ul class="list-disc ml-8 pt-3 text-gray-600">
+              <li>I/We am/are aware that the Member has to provide physical contract note in respect of all the trades placed by me/us unless I/We myself/ourselves want the same in the electronic form.</li>
+              <li>I/We am/are aware that the Member has to provide electronic contract note for my/our convenience on my/our request only.</li>
+              <li>Though the Member is required to deliver physical contract note, I/We find that it is inconvenient for me/us to receive physical contract notes. Therefore, I/We am/are voluntarily requesting for delivery of electronic contract note pertaining to all the trades carried out / ordered by me/us.</li>
+              <li>I/We have access to a computer and am/are a regular internet user, having sufficient knowledge of handling the email
+              operations.</li>
+              <li>My/Our email Id is/are * <input type="text" name="ecnClientEmail" id="ecnClientEmail"
+                class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10" required>. This has been created by me/us and not by someone else.</li>
+              <li>I/We am/are aware that this declaration form should be in English or in any other Indian language known to me/us.</li>
+              <li>I/We am/are aware that non-receipt of bounced mail notification by the member shall amount to delivery of the contract
+              note at the above e-mail ID.</li>
+            </ul>
+            <p class="font-semibold mt-5 text-gray-800">The above declaration and the guidelines on ECN as envisaged by the exchange have been read and understood by me/us.
+            I/We am/are aware of the risk involved in dispensing with the physical contract note, and do hereby take full
+            responsibility
+            for the same.</p>
+            <div class="clientDetails flex flex-wrap">
               <div class="mr-5 mt-2">
-                <label for="firstSoleHolderName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">First/Sole
-                  Holder Name</label>
-                <input type="text" name="firstSoleHolderName" id="firstSoleHolderName"
+                <label for="ecnClientName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Client Name</label>
+                <input type="text" name="ecnClientName" id="ecnClientName"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10" required>
+              </div>
+              <div class="mr-5 mt-2">
+                <label for="ecnClientAddress" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Address</label>
+                <input type="text" name="ecnClientAddress" id="ecnClientAddress"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-[50vw] h-10" required>
+              </div>
+              <div class="mr-5 mt-2">
+                <label for="ecnClientPan" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pan</label>
+                <input type="text" name="ecnClientPan" id="ecnClientPan"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10" required>
+              </div>
+              <div class="mr-5 mt-2">
+                <label for="ecnClientNameDesignation" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Name & Designation of the designated officer of the Member</label>
+                <input type="text" name="ecnClientNameDesignation" id="ecnClientNameDesignation"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10" required>
-              </div>
-
-              <div class="mr-5 mt-2">
-                <label for="secondJointHolderName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Second
-                  Joint Holder Name</label>
-                <input type="text" name="secondJointHolderName" id="secondJointHolderName"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
-              </div>
-
-              <div class="mr-5 mt-2">
-                <label for="thirdJointHolderName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Third
-                  Joint Holder Name</label>
-                <input type="text" name="thirdJointHolderName" id="thirdJointHolderName"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="trustTextingDetails mt-8">
+      <div class="internetWirelessTradingDetails mt-8">
         <div
-          class="trustTextingDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
-          20. For CDSL:</div>
-        <div class="smsAlert">
-          <div class="smsAlertHeading text-lg text-blue-800 font-semibold mr-5">SMS Alert Facility</div>
-          <div class="mr-5 mt-2">
-            <label for="mobileForAlert" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Mobile
-              Number</label>
-            <div class="flex items-center">
-              <input type="tel" name="mobileForAlert" id="mobileForAlert"
-                class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
-              <label class="text-gray-500 ml-3 block">[(Mandatory, if you giving Power of Attorney/POA)]<br>(If POA is
-                not granted & you do not wish to
-                avail of this facility, cancel this option.)</label>
-            </div>
-          </div>
-        </div>
-        <div class="trustTexting mt-5">
-          <div class="trustTextingHeading text-lg text-blue-800 font-semibold">Transactions Using Secured Texting
-            Facility (TRUST)</div>
-          <div class="trustTextingDetail mt-3">
-            <div class="description text-gray-600">I wish to avail the TRUST facility using Mobile number registered for
-              SMS Alert Facility. I have read and understand the terms and conditions prescribed by CDSL for the same.
-            </div>
-            <div class="trustDetailOption flex">
-              <div class="trustOption flex items-center mt-3">
-                <input type="radio" name="textingOptionsByTrust" id="textingOptionsByTrustYes" value="Yes"
-                  class="size-5 mr-2 hover:cursor-pointer">
-                <label for="textingOptionsByTrustYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+          class="internetWirelessTradingDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          17. Internet & Wireless Technology Based Trading Letter:</div>
+        <div class="">
+          <p>To,</p>
+          <p class="my-1 font-semibold">Ashika Stock Broking Limited</p>
+          <p>Trinity, 226/1 AJC Bose Road, 7th floor, Kolkata, 700020</p>
+          <p class="my-2 font-bold">Sub :- Internet Trading</p>
+          <div class="ecnMandateDeclaration">
+            <p class="text-gray-700">I/We wish to trade through internet in various segments as opted by me/us and confirm that I am / we are fully aware of
+            and understands the risk associated with availing of a service of routing orders through internet including the risk of
+            misuse and unauthorized use of my/our Username and/or Password by a third party and the risk of a person hacking into
+            our account on your ITORS system and unauthorized routing order on behalf of us through the system. I/we agree that
+            we shall be fully liable and responsible for any and all unauthorized use and misuse of my/our Password and /or
+            Username and also for any and all acts done by any person through your ITORS system on our Username in any manner
+            whatsoever. I/We shall not held ASBL or any of its employees liable for non execution of trades due to failure of
+            networking or for any other reason thereof.</p>
+            <p class="text-gray-700">I/We hereby confirm you to send our Username and Password on the below mentioned e-mail address.</p>
+            <p class="text-gray-700">Email Address: <input type="text" name="internetEmailId" id="internetEmailId"
+              class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
+              required></p>
+            <p class="text-gray-700">The non-receipt of bounced email notification by you shall not be construed as a ground for dispute in the future.</p>
+            <p class="text-gray-700">Thanks and best regards,</p>
+            <div class="clientDetails flex flex-wrap">
+              <div class="mr-5 mt-2">
+                <label for="internetApplicantName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Applicant's Name</label>
+                <input type="text" name="internetApplicantName" id="internetApplicantName"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
+                  required>
               </div>
-              <div class="trustOption flex items-center mt-3 ml-5">
-                <input type="radio" name="textingOptionsByTrust" id="textingOptionsByTrustNo" value="No"
-                  class="size-5 mr-2 hover:cursor-pointer">
-                <label for="textingOptionsByTrustNo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+              <div class="mr-5 mt-2">
+                <label for="internetApplicantAddress" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Applicant's Address</label>
+                <input type="text" name="internetApplicantAddress" id="internetApplicantAddress"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-[50vw] h-10"
+                  required>
+              </div>
+              <div class="mr-5 mt-2">
+                <label for="internetApplicantMobileNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Mobile No.</label>
+                <input type="text" name="internetApplicantMobileNumber" id="internetApplicantMobileNumber"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10"
+                  required>
+              </div>
+              <div class="mr-5 mt-2">
+                <label for="internetApplicantTelephoneNumber" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Telephone No.</label>
+                <input type="text" name="internetApplicantTelephoneNumber" id="internetApplicantTelephoneNumber"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10">
               </div>
             </div>
           </div>
