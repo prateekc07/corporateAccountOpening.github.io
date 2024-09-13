@@ -1918,7 +1918,7 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(new Date().toLocaleDateString("en-GB"));
     form
       .getTextField("declarationPlace5")
-      .setText(localStorage.getItem("declarationPlace").toUpperCase());
+      .setText(companyDetails["declarationPlace"].toUpperCase());
 
     form
       .getTextField("internetEmailId")
@@ -1946,7 +1946,7 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(new Date().toLocaleDateString("en-GB"));
     form
       .getTextField("declarationPlace6")
-      .setText(localStorage.getItem("declarationPlace").toUpperCase());
+      .setText(companyDetails["declarationPlace"].toUpperCase());
 
     form.getCheckBox("optionSecond").check();
     form
@@ -2259,16 +2259,17 @@ submitDetails.addEventListener("submit", async (event) => {
     .setText(new Date().toLocaleDateString("en-GB"));
   form
     .getTextField("declarationPlace1")
-    .setText(localStorage.getItem("declarationPlace").toUpperCase());
+    .setText(companyDetails["declarationPlace"].toUpperCase());
   form
     .getTextField("declarationPlace2")
-    .setText(localStorage.getItem("declarationPlace").toUpperCase());
+    .setText(companyDetails["declarationPlace"].toUpperCase());
   form
     .getTextField("declarationPlace3")
-    .setText(localStorage.getItem("declarationPlace").toUpperCase());
+    .setText(companyDetails["declarationPlace"].toUpperCase());
   form
     .getTextField("declarationPlace4")
-    .setText(localStorage.getItem("declarationPlace").toUpperCase());
+    .setText(companyDetails["declarationPlace"].toUpperCase());
+  
   form.getCheckBox("nonIndividualBodyCorporate").check();
   form.getCheckBox("automaticCreditRecieve").check();
   form.getCheckBox("ddpiOnly").check();
