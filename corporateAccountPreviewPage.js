@@ -1208,7 +1208,9 @@ submitDetails.addEventListener("submit", async (event) => {
       "Artificial Liability Partnership"
     ) {
       form.getTextField("entityConstitutionTypeLetter").setText("K");
-    } else if (companyDetails["entityConstitutionType"] === "Public Sector Banks") {
+    } else if (
+      companyDetails["entityConstitutionType"] === "Public Sector Banks"
+    ) {
       form.getTextField("entityConstitutionTypeLetter").setText("L");
     } else if (
       companyDetails["entityConstitutionType"] ===
@@ -1909,7 +1911,7 @@ submitDetails.addEventListener("submit", async (event) => {
       .getTextField("ecnClientNameDesignation")
       .setText(
         acknowledgementDetails["ecnClientNameDesignation"].toUpperCase()
-    );
+      );
     form
       .getTextField("declarationDate6")
       .setText(new Date().toLocaleDateString("en-GB"));
@@ -1940,7 +1942,7 @@ submitDetails.addEventListener("submit", async (event) => {
       .getTextField("internetApplicantTelephoneNumber")
       .setText(
         acknowledgementDetails["internetApplicantTelephoneNumber"].toUpperCase()
-    );
+      );
     form
       .getTextField("declarationDate8")
       .setText(new Date().toLocaleDateString("en-GB"));
@@ -2007,7 +2009,7 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("companyNameFatca")
       .setText(companyDetails["companyName"].toUpperCase());
-    
+
     form
       .getTextField("declarationDate5")
       .setText(new Date().toLocaleDateString("en-GB"));
@@ -2269,7 +2271,7 @@ submitDetails.addEventListener("submit", async (event) => {
   form
     .getTextField("declarationPlace4")
     .setText(companyDetails["declarationPlace"].toUpperCase());
-  
+
   form.getCheckBox("nonIndividualBodyCorporate").check();
   form.getCheckBox("automaticCreditRecieve").check();
   form.getCheckBox("ddpiOnly").check();
@@ -2292,9 +2294,6 @@ submitDetails.addEventListener("submit", async (event) => {
   link.href = URL.createObjectURL(blob);
   link.download = "kyc_trading_form.pdf";
   link.click();
-
-  // Redirect to the next page
-  // window.location.href = "2_relatedPersonDetails.html";
 
   const corporatePdfDocuments = JSON.parse(
     sessionStorage.getItem("corporatePdfDocuments")
@@ -2319,6 +2318,9 @@ submitDetails.addEventListener("submit", async (event) => {
   pdfLink.href = pdfUrl;
   pdfLink.download = "allCorporateDocuments.pdf";
   pdfLink.click();
+
+  // Redirect to the next page
+  window.location.href = "last.html";
 });
 
 function formatDate(dateString) {
