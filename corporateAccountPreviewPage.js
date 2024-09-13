@@ -302,7 +302,6 @@ function getKycApplicationFormFirstPageDetails() {
   let cdsl = document.getElementById("cdsl");
 
   if (kycApplicationFormFirstPageDetails !== null) {
-
     if (
       kycApplicationFormFirstPageDetails["nsdlCdslOption"] ===
       "National Securities Depository Limited"
@@ -313,11 +312,7 @@ function getKycApplicationFormFirstPageDetails() {
     }
 
     let totalHolders = localStorage.getItem("totalHolders");
-    let holderArray = [
-      "First",
-      "Second",
-      "Third",
-    ];
+    let holderArray = ["First", "Second", "Third"];
 
     for (let i = 1; i <= totalHolders; i++) {
       let otherDetailsValueBox = document.querySelector(".otherDetailsValues");
@@ -799,7 +794,6 @@ function getKycApplicationFormSecondPageDetails() {
 
 // acknowledgementDetails section manages from here
 function getAcknowledgementDetails() {
-
   let ecnClientMandateName = document.getElementById("ecnClientMandateName");
   let ecnClientEmail = document.getElementById("ecnClientEmail");
   let ecnClientName = document.getElementById("ecnClientName");
@@ -1155,6 +1149,7 @@ submitDetails.addEventListener("submit", async (event) => {
   if (companyDetails !== null) {
     form.getCheckBox("applicationTypeNew").check();
     form.getCheckBox("entityDetails").check();
+    form.getCheckBox("poi").check();
 
     form
       .getTextField("companyName")
@@ -1175,6 +1170,75 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("entityConstitutionType")
       .setText(companyDetails["entityConstitutionType"].toUpperCase());
+
+    if (companyDetails["entityConstitutionType"] === "Sole Proprietorship") {
+      form.getTextField("entityConstitutionTypeLetter").setText("A");
+    } else if (
+      companyDetails["entityConstitutionType"] === "Partnership Firm"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("B");
+    } else if (companyDetails["entityConstitutionType"] === "HUF") {
+      form.getTextField("entityConstitutionTypeLetter").setText("C");
+    } else if (
+      companyDetails["entityConstitutionType"] === "Private Limited Company"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("D");
+    } else if (
+      companyDetails["entityConstitutionType"] === "Public Limited Company"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("E");
+    } else if (companyDetails["entityConstitutionType"] === "Society") {
+      form.getTextField("entityConstitutionTypeLetter").setText("F");
+    } else if (
+      companyDetails["entityConstitutionType"] ===
+      "Association of Persons (AOP) / Body of Individuals (BOI)"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("G");
+    } else if (companyDetails["entityConstitutionType"] === "Trust") {
+      form.getTextField("entityConstitutionTypeLetter").setText("H");
+    } else if (companyDetails["entityConstitutionType"] === "Liquidator") {
+      form.getTextField("entityConstitutionTypeLetter").setText("I");
+    } else if (
+      companyDetails["entityConstitutionType"] ===
+      "Limited Liability Partnership"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("J");
+    } else if (
+      companyDetails["entityConstitutionType"] ===
+      "Artificial Liability Partnership"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("K");
+    } else if (companyDetails["entityConstitutionType"] === "Public Sector Banks") {
+      form.getTextField("entityConstitutionTypeLetter").setText("L");
+    } else if (
+      companyDetails["entityConstitutionType"] ===
+      "Central/State Govt. Department or Agency"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("M");
+    } else if (
+      companyDetails["entityConstitutionType"] ===
+      "Section 8 Companies (Companies Act, 2013)"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("N");
+    } else if (
+      companyDetails["entityConstitutionType"] ===
+      "Aritificial Jurisdical Person"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("O");
+    } else if (
+      companyDetails["entityConstitutionType"] ===
+      "International Organisation / Foreign Embassy or Consular Office"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("P");
+    } else if (
+      companyDetails["entityConstitutionType"] === "Foreign Portfolio Investors"
+    ) {
+      form.getTextField("entityConstitutionTypeLetter").setText("S");
+    } else if (companyDetails["entityConstitutionType"] === "Not Categorized") {
+      form.getTextField("entityConstitutionTypeLetter").setText("Q");
+    } else {
+      form.getTextField("entityConstitutionTypeLetter").setText("R");
+    }
 
     form
       .getTextField("companyPan")
@@ -1257,9 +1321,8 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("companyFaxNumber")
       .setText(companyDetails["companyFaxNumber"].toUpperCase());
-    
-    form.getCheckBox("certifiedCopy").check();
 
+    form.getCheckBox("certifiedCopy").check();
   }
 
   if (relatedPersonDetails !== null) {
@@ -1540,7 +1603,7 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("firstHolderName")
       .setText(companyDetails["companyName"].toUpperCase());
-    
+
     form
       .getTextField("kycApplicantName")
       .setText(companyDetails["companyName"].toUpperCase());
@@ -1548,17 +1611,13 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("firstHolderPanNumber")
       .setText(companyDetails["companyPan"].toUpperCase());
-    
+
     form
       .getTextField("kycApplicantPan")
       .setText(companyDetails["companyPan"].toUpperCase());
 
     let totalHolders = localStorage.getItem("totalHolders");
-    let holderArray = [
-      "First",
-      "Second",
-      "Third",
-    ];
+    let holderArray = ["First", "Second", "Third"];
 
     for (let i = 1; i <= totalHolders; i++) {
       let incomeRange =
@@ -1831,6 +1890,64 @@ submitDetails.addEventListener("submit", async (event) => {
   }
 
   if (acknowledgementDetails !== null) {
+    form
+      .getTextField("ecnClientMandateName")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    form
+      .getTextField("ecnClientEmail")
+      .setText(acknowledgementDetails["ecnClientEmail"].toUpperCase());
+    form
+      .getTextField("ecnClientName")
+      .setText(acknowledgementDetails["ecnClientName"].toUpperCase());
+    form
+      .getTextField("ecnClientAddress")
+      .setText(acknowledgementDetails["ecnClientAddress"].toUpperCase());
+    form
+      .getTextField("ecnClientPan")
+      .setText(acknowledgementDetails["ecnClientPan"].toUpperCase());
+    form
+      .getTextField("ecnClientNameDesignation")
+      .setText(
+        acknowledgementDetails["ecnClientNameDesignation"].toUpperCase()
+    );
+    form
+      .getTextField("declarationDate6")
+      .setText(new Date().toLocaleDateString("en-GB"));
+    form
+      .getTextField("declarationDate7")
+      .setText(new Date().toLocaleDateString("en-GB"));
+    form
+      .getTextField("declarationPlace5")
+      .setText(localStorage.getItem("declarationPlace").toUpperCase());
+
+    form
+      .getTextField("internetEmailId")
+      .setText(acknowledgementDetails["internetEmailId"].toUpperCase());
+    form
+      .getTextField("internetApplicantName")
+      .setText(acknowledgementDetails["internetApplicantName"].toUpperCase());
+    form
+      .getTextField("internetApplicantAddress")
+      .setText(
+        acknowledgementDetails["internetApplicantAddress"].toUpperCase()
+      );
+    form
+      .getTextField("internetApplicantMobileNumber")
+      .setText(
+        acknowledgementDetails["internetApplicantMobileNumber"].toUpperCase()
+      );
+    form
+      .getTextField("internetApplicantTelephoneNumber")
+      .setText(
+        acknowledgementDetails["internetApplicantTelephoneNumber"].toUpperCase()
+    );
+    form
+      .getTextField("declarationDate8")
+      .setText(new Date().toLocaleDateString("en-GB"));
+    form
+      .getTextField("declarationPlace6")
+      .setText(localStorage.getItem("declarationPlace").toUpperCase());
+
     form.getCheckBox("optionSecond").check();
     form
       .getTextField("memberName2")
@@ -1845,7 +1962,6 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(companyDetails["companyPhoneNumber"]);
     form.getCheckBox("trustNo").check();
     form.getCheckBox("schemeB").check();
-
   }
 
   if (fatcaPartOneDetails !== null) {
@@ -1891,6 +2007,10 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("companyNameFatca")
       .setText(companyDetails["companyName"].toUpperCase());
+    
+    form
+      .getTextField("declarationDate5")
+      .setText(new Date().toLocaleDateString("en-GB"));
   }
 
   // if (fatcaPartTwoDetails !== null) {
@@ -2150,6 +2270,16 @@ submitDetails.addEventListener("submit", async (event) => {
     .getTextField("declarationPlace4")
     .setText(localStorage.getItem("declarationPlace").toUpperCase());
   form.getCheckBox("nonIndividualBodyCorporate").check();
+  form.getCheckBox("automaticCreditRecieve").check();
+  form.getCheckBox("ddpiOnly").check();
+  form.getCheckBox("firstSoleHolder").check();
+  form.getCheckBox("selfMobileNo").check();
+  form.getCheckBox("monthlyAccStatement").check();
+  form.getCheckBox("electronicEmailIdStatement").check();
+  form.getCheckBox("receiveDividend").check();
+  form.getCheckBox("dpPledge").check();
+  form.getCheckBox("rtaEmail").check();
+  form.getCheckBox("receiveAnnualReport").check();
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save();
@@ -2172,7 +2302,6 @@ submitDetails.addEventListener("submit", async (event) => {
   const mergedPdf = await PDFLib.PDFDocument.create();
 
   for (const fileData of corporatePdfDocuments) {
-    
     // Extract the base64 data part
     const base64 = fileData.data.split(",")[1];
     const pdfBytes = base64ToArrayBuffer(base64);
@@ -2220,7 +2349,6 @@ window.onload = function () {
     const previewContainer = document.getElementById("documentPreview");
 
     corporatePdfDocuments.forEach((fileData) => {
-
       // Display based on file type
       const iframe = document.createElement("iframe");
       iframe.src = fileData.data;
