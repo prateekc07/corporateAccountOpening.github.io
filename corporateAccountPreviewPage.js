@@ -747,44 +747,6 @@ function getKycApplicationFormSecondPageDetails() {
                     ]
                   }">
               </div>
-              
-              <div class="mr-5 mt-2">
-                <div class="companyRelatedPersonPoliticalRelation text-lg text-gray-700 font-semibold">PEP/RPEP</div>
-                <div class="politicalRelations flex">
-                  <div class="mr-8 flex items-center">
-                    <input type="radio" name="political${
-                      partnersArray[i - 1]
-                    }RelationPepRpep" value="Yes" id="${
-        partnersArray[i - 1]
-      }politicalYes" class="size-5 mr-2" ${
-        kycApplicationFormSecondPageDetails[
-          "political" + partnersArray[i - 1] + "RelationPepRpep"
-        ] === "Yes"
-          ? "checked"
-          : ""
-      } disabled>
-                    <label for="${
-                      partnersArray[i - 1]
-                    }politicalYes" class="text-lg text-gray-700">Yes</label>
-                  </div>
-                  <div class="flex items-center">
-                    <input type="radio" name="political${
-                      partnersArray[i - 1]
-                    }RelationPepRpep" value="No" id="${
-        partnersArray[i - 1]
-      }politicalNo" class="size-5 mr-2" ${
-        kycApplicationFormSecondPageDetails[
-          "political" + partnersArray[i - 1] + "RelationPepRpep"
-        ] === "No"
-          ? "checked"
-          : ""
-      } disabled>
-                    <label for="${
-                      partnersArray[i - 1]
-                    }politicalNo" class="text-lg text-gray-700">No</label>
-                  </div>
-                </div>
-              </div>
             </div>
   `;
       companyRelatedPersonDetails.appendChild(anotherRelatedPersonDiv);
@@ -1873,21 +1835,8 @@ submitDetails.addEventListener("submit", async (event) => {
           kycApplicationFormSecondPageDetails[
             `company${partnersArray[i - 1]}RelatedPersonAadhar`
           ].toUpperCase()
-        );
-
-      if (
-        kycApplicationFormSecondPageDetails[
-          `political${partnersArray[i - 1]}RelationPepRpep`
-        ] === "Yes"
-      ) {
-        form.getCheckBox(`${partnersArray[i - 1]}politicalYes`).check();
-      } else if (
-        kycApplicationFormSecondPageDetails[
-          `political${partnersArray[i - 1]}RelationPepRpep`
-        ] === "No"
-      ) {
-        form.getCheckBox(`${partnersArray[i - 1]}politicalNo`).check();
-      }
+      );
+      form.getCheckBox(`${partnersArray[i - 1]}politicalNo`).check();
     }
   }
 
@@ -2283,6 +2232,9 @@ submitDetails.addEventListener("submit", async (event) => {
   form.getCheckBox("dpPledge").check();
   form.getCheckBox("rtaEmail").check();
   form.getCheckBox("receiveAnnualReport").check();
+  form.getCheckBox("relatedPersonAdharProof").check();
+  form.getCheckBox("companyPanTick").check();
+  form.getCheckBox("selfEmailId").check();
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save();

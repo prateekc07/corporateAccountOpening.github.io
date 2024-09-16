@@ -75,20 +75,6 @@ addAnotherRelatedPersonBtn.addEventListener("click", (event) => {
                 <input type="text" name="company${relatedPersonArray[count]}RelatedPersonAadhar" id="company${relatedPersonArray[count]}RelatedPersonAadhar"
                   class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
               </div>
-              
-              <div class="mr-5 mt-2">
-                <div class="companyRelatedPersonPoliticalRelation text-lg text-gray-700 font-semibold">PEP/RPEP</div>
-                <div class="politicalRelations flex">
-                  <div class="mr-8 flex items-center">
-                    <input type="radio" name="political${relatedPersonArray[count]}RelationPepRpep" value="Yes" id="${relatedPersonArray[count]}politicalYes" class="size-5 mr-2">
-                    <label for="${relatedPersonArray[count]}politicalYes" class="text-lg text-gray-700">Yes</label>
-                  </div>
-                  <div class="flex items-center">
-                    <input type="radio" name="political${relatedPersonArray[count]}RelationPepRpep" value="No" id="${relatedPersonArray[count]}politicalNo" class="size-5 mr-2">
-                    <label for="${relatedPersonArray[count]}politicalNo" class="text-lg text-gray-700">No</label>
-                  </div>
-                </div>
-              </div>
             </div>
   `;
   companyRelatedPersonDetails.appendChild(anotherRelatedPersonDiv);
