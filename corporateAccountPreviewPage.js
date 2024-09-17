@@ -1296,12 +1296,14 @@ submitDetails.addEventListener("submit", async (event) => {
     ) {
       form.getCheckBox("relatedPersonAddition").check();
       form.getCheckBox("newRelatedPerson").check();
+      form.getCheckBox("addAnother").check();
     } else if (
       relatedPersonDetails["selectRelatedPersonAction"] ===
       "Updation of Related Person"
     ) {
       form.getCheckBox("relatedPersonUpdation").check();
       form.getCheckBox("updateRelatedPerson").check();
+      form.getCheckBox("hufUpdate").check();
     } else {
       form.getCheckBox("relatedPersonDeletion").check();
       form.getCheckBox("deleteRelatedPerson").check();
@@ -1345,76 +1347,131 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("firstName")
       .setText(relatedPersonDetails["firstName"].toUpperCase());
+    
+    form
+      .getTextField("hufFirstName")
+      .setText(relatedPersonDetails["firstName"].toUpperCase());
 
     form
       .getTextField("lastName")
       .setText(relatedPersonDetails["lastName"].toUpperCase());
-
+    
+    form
+      .getTextField("hufLastName")
+      .setText(relatedPersonDetails["lastName"].toUpperCase());
+      
     form
       .getTextField("familyFirstName")
+      .setText(relatedPersonDetails["familyFirstName"].toUpperCase());
+    
+    form
+      .getTextField("hufFamilyFirstName")
       .setText(relatedPersonDetails["familyFirstName"].toUpperCase());
 
     form
       .getTextField("familyLastName")
       .setText(relatedPersonDetails["familyLastName"].toUpperCase());
+    
+    form
+      .getTextField("hufFamilyLastName")
+      .setText(relatedPersonDetails["familyLastName"].toUpperCase());
 
     form
       .getTextField("motherFirstName")
+      .setText(relatedPersonDetails["motherFirstName"].toUpperCase());
+    form
+      .getTextField("hufMotherFirstName")
       .setText(relatedPersonDetails["motherFirstName"].toUpperCase());
 
     form
       .getTextField("motherLastName")
       .setText(relatedPersonDetails["motherLastName"].toUpperCase());
+    form
+      .getTextField("hufMotherLastName")
+      .setText(relatedPersonDetails["motherLastName"].toUpperCase());
 
     form.getTextField("dob").setText(formatDate(relatedPersonDetails["dob"]));
+    form
+      .getTextField("hufDob")
+      .setText(formatDate(relatedPersonDetails["dob"]));
 
     if (relatedPersonDetails["gender"] === "male") {
       form.getCheckBox("male").check();
+      form.getCheckBox("hufMale").check();
     } else if (relatedPersonDetails["gender"] === "female") {
       form.getCheckBox("female").check();
+      form.getCheckBox("hufFemale").check();
     } else {
       form.getCheckBox("otherGender").check();
+      form.getCheckBox("hufOtherGender").check();
     }
 
     if (relatedPersonDetails["nationality"] === "IN") {
       form.getCheckBox("india").check();
+      form.getCheckBox("hufIndian").check();
     } else {
       form.getCheckBox("otherCountry").check();
+      form.getCheckBox("hufOtherCountry").check();
       form
         .getTextField("otherCountryCode")
+        .setText(relatedPersonDetails["otherCountryCode"].toUpperCase());
+      form
+        .getTextField("hufOtherCountryCode")
         .setText(relatedPersonDetails["otherCountryCode"].toUpperCase());
     }
 
     form
       .getTextField("panNumber")
       .setText(relatedPersonDetails["relatedPersonPanNumber"].toUpperCase());
+    form
+      .getTextField("hufPanNumber")
+      .setText(relatedPersonDetails["relatedPersonPanNumber"].toUpperCase());
 
     form
       .getTextField("relatedPersonAddress")
+      .setText(relatedPersonDetails["relatedPersonAddress"].toUpperCase());
+    form
+      .getTextField("hufAddress")
       .setText(relatedPersonDetails["relatedPersonAddress"].toUpperCase());
 
     form
       .getTextField("relatedPersonCity")
       .setText(relatedPersonDetails["relatedPersonCity"].toUpperCase());
+    form
+      .getTextField("hufCity")
+      .setText(relatedPersonDetails["relatedPersonCity"].toUpperCase());
 
     form
       .getTextField("relatedPersonDistrict")
+      .setText(relatedPersonDetails["relatedPersonDistrict"].toUpperCase());
+    form
+      .getTextField("hufDistrict")
       .setText(relatedPersonDetails["relatedPersonDistrict"].toUpperCase());
 
     form
       .getTextField("relatedPersonPinCode")
       .setText(relatedPersonDetails["relatedPersonPinCode"].toUpperCase());
+    form
+      .getTextField("hufPinCode")
+      .setText(relatedPersonDetails["relatedPersonPinCode"].toUpperCase());
 
     form
       .getTextField("relatedPersonState")
+      .setText(relatedPersonDetails["relatedPersonState"].toUpperCase());
+    form
+      .getTextField("hufState")
       .setText(relatedPersonDetails["relatedPersonState"].toUpperCase());
 
     form
       .getTextField("relatedPersonCountry")
       .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
+    form
+      .getTextField("hufCountry")
+      .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
 
     if (relatedPersonDetails["isRelatedPersonLocalSame"] === "Yes") {
       form.getCheckBox("isLocalSame").check();
+      form.getCheckBox("hufIsLocalSame").check();
     }
 
     form
@@ -1422,13 +1479,26 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(
         relatedPersonDetails["relatedPersonCurrentAddress"].toUpperCase()
       );
+    form
+      .getTextField("hufLocalAddress")
+      .setText(
+        relatedPersonDetails["relatedPersonCurrentAddress"].toUpperCase()
+      );
 
     form
       .getTextField("relatedPersonCurrentCity")
       .setText(relatedPersonDetails["relatedPersonCurrentCity"].toUpperCase());
+    form
+      .getTextField("hufLocalCity")
+      .setText(relatedPersonDetails["relatedPersonCurrentCity"].toUpperCase());
 
     form
       .getTextField("relatedPersonCurrentDistrict")
+      .setText(
+        relatedPersonDetails["relatedPersonCurrentDistrict"].toUpperCase()
+      );
+    form
+      .getTextField("hufLocalDistrict")
       .setText(
         relatedPersonDetails["relatedPersonCurrentDistrict"].toUpperCase()
       );
@@ -1438,9 +1508,17 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(
         relatedPersonDetails["relatedPersonCurrentPinCode"].toUpperCase()
       );
+    form
+      .getTextField("hufLocalPinCode")
+      .setText(
+        relatedPersonDetails["relatedPersonCurrentPinCode"].toUpperCase()
+      );
 
     form
       .getTextField("relatedPersonCurrentState")
+      .setText(relatedPersonDetails["relatedPersonCurrentState"].toUpperCase());
+    form
+      .getTextField("hufLocalState")
       .setText(relatedPersonDetails["relatedPersonCurrentState"].toUpperCase());
 
     form
@@ -1448,13 +1526,24 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(
         relatedPersonDetails["relatedPersonCurrentCountry"].toUpperCase()
       );
+    form
+      .getTextField("hufLocalCountry")
+      .setText(
+        relatedPersonDetails["relatedPersonCurrentCountry"].toUpperCase()
+      );
 
     form
       .getTextField("relatedPersonMobileNumber")
       .setText(relatedPersonDetails["relatedPersonMobileNumber"].toUpperCase());
+    form
+      .getTextField("hufMobileNumber")
+      .setText(relatedPersonDetails["relatedPersonMobileNumber"].toUpperCase());
 
     form
       .getTextField("relatedPersonEmailId")
+      .setText(relatedPersonDetails["relatedPersonEmailId"].toUpperCase());
+    form
+      .getTextField("hufEmailId")
       .setText(relatedPersonDetails["relatedPersonEmailId"].toUpperCase());
 
     form
@@ -1462,10 +1551,27 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(
         relatedPersonDetails["relatedPersonTelephoneOffice"].toUpperCase()
       );
+    form
+      .getTextField("hufTelephoneOffice")
+      .setText(
+        relatedPersonDetails["relatedPersonTelephoneOffice"].toUpperCase()
+      );
 
     form
       .getTextField("relatedPersonTelephoneRes")
       .setText(relatedPersonDetails["relatedPersonTelephoneRes"].toUpperCase());
+    form
+      .getTextField("hufTelephoneRes")
+      .setText(relatedPersonDetails["relatedPersonTelephoneRes"].toUpperCase());
+    
+    form.getCheckBox("hufCertifiedCopy").check();
+
+    form
+      .getTextField("hufdeclarationDate")
+      .setText(new Date().toLocaleDateString("en-GB"));
+    form
+      .getTextField("hufdeclarationPlace")
+      .setText(companyDetails["declarationPlace"].toUpperCase());
   }
 
   if (kycApplicationFormFirstPageDetails !== null) {
@@ -1624,6 +1730,8 @@ submitDetails.addEventListener("submit", async (event) => {
       } else if (politicalInfo === "Related to Politically Exposed Person") {
         form.getCheckBox(`${holderArray[i - 1]}RPEP`).check();
       }
+
+      form.getCheckBox(`${holderArray[i - 1].toLowerCase()}Business`).check();
     }
   }
 
@@ -1916,12 +2024,6 @@ submitDetails.addEventListener("submit", async (event) => {
   }
 
   if (fatcaPartOneDetails !== null) {
-    if (fatcaPartOneDetails["settlementTimePeriod"] === "90 Days") {
-      form.getCheckBox("90Days").check();
-    } else {
-      form.getCheckBox("30Days").check();
-    }
-
     form
       .getTextField("fatcaApplicantName")
       .setText(companyDetails["companyName"].toUpperCase());
@@ -2225,7 +2327,6 @@ submitDetails.addEventListener("submit", async (event) => {
   form.getCheckBox("automaticCreditRecieve").check();
   form.getCheckBox("ddpiOnly").check();
   form.getCheckBox("firstSoleHolder").check();
-  form.getCheckBox("selfMobileNo").check();
   form.getCheckBox("monthlyAccStatement").check();
   form.getCheckBox("electronicEmailIdStatement").check();
   form.getCheckBox("receiveDividend").check();
@@ -2233,8 +2334,9 @@ submitDetails.addEventListener("submit", async (event) => {
   form.getCheckBox("rtaEmail").check();
   form.getCheckBox("receiveAnnualReport").check();
   form.getCheckBox("relatedPersonAdharProof").check();
+  form.getCheckBox("hufAadhar").check();
   form.getCheckBox("companyPanTick").check();
-  form.getCheckBox("selfEmailId").check();
+  form.getCheckBox("90Days").check();
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save();

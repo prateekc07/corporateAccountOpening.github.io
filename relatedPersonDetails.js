@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+  let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
+  console.log(dematAccountType);
+  if (dematAccountType["dematAccountType"] === "HUF") {
+    console.log(dematAccountType);
+    document.querySelector(".addAnotherRelatedPerson").style.display = "none";
+  }
+});
+
 let relatedPersonDetails = {};
 
 let relatedPersonDetailsForm = document.getElementById(

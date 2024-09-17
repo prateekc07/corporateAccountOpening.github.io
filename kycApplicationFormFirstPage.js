@@ -1,4 +1,5 @@
 let anotherAccountHolderBtn = document.querySelector(".addAnotherHolderButton");
+
 let holderArray = [
   "Second",
   "Third",

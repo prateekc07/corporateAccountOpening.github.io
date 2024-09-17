@@ -28,8 +28,6 @@ function getfatcaPartOneDetail() {
   let fatcaPartOneDetail = JSON.parse(
     localStorage.getItem("fatcaPartOneDetails")
   );
-  let days90 = document.getElementById("90Days");
-  let days30 = document.getElementById("30Days");
 
   let optionAYes = document.getElementById("optionAYes");
   let optionANo = document.getElementById("optionANo");
@@ -46,11 +44,6 @@ function getfatcaPartOneDetail() {
   let optionDNo = document.getElementById("optionDNo");
 
   if (fatcaPartOneDetail !== null) {
-    if (fatcaPartOneDetail["settlementTimePeriod"] === "90 Days") {
-      days90.checked = true;
-    } else {
-      days30.checked = true;
-    }
 
     if (fatcaPartOneDetail["QuesAOptions"] === "Yes") {
       optionAYes.checked = true;

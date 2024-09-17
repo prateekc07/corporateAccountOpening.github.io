@@ -1,6 +1,16 @@
 let addAnotherRelatedPersonBtn = document.querySelector(
   ".addAnotherRelatedPersonBtn"
 );
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
+  console.log(dematAccountType);
+  if (dematAccountType["dematAccountType"] === "HUF") {
+    console.log(dematAccountType);
+    document.querySelector(".addAnother").style.display = "none";
+  }
+});
+
 let relatedPersonArray = [
   "Second",
   "Third",
