@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Account Opening</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section
+    class="acknowledgementDetailsSection customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
+    <div class="ourLogo">
+      <img src="./images/DhanushLogo.png" alt="" class="my-2">
+    </div>
+
+    <form id="hufDocumentUploadForm">
+
+      <div class="settlementTimePeriod mt-8">
+        <div
+          class="settlementTimePeriodHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          19. Proof of Identity(HUF): <span class="text-sm">(Only pdf files)</span></div>
+        <div class="docs ml-3">
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">1.</span> PAN of HUF</div>
+            <div><input type="file" name="inputFile1" id="inputFile1"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf" required>
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">2.</span> PAN of Karta.</div>
+            <div><input type="file" name="inputFile2" id="inputFile2"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf">
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">3.</span> Address Proof of HUF.</div>
+            <div><input type="file" name="inputFile3" id="inputFile3"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf" required>
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">4.</span> Address Proof of Karta</div>
+            <div><input type="file" name="inputFile4" id="inputFile4"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf">
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">5.</span> Adhaar of Karta</div>
+            <div><input type="file" name="inputFile5" id="inputFile5"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf" required>
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">6.</span> Deed of Declaration of HUF/List of coparceners</div>
+            <div><input type="file" name="inputFile6" id="inputFile6"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf" required>
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">7.</span> Bank Proof with MICR Code of the HUF(cancelled cheque)</div>
+            <div><input type="file" name="inputFile7" id="inputFile7"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf" required>
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">8.</span> Demat Proof (required if opening only trading account)</div>
+            <div><input type="file" name="inputFile8" id="inputFile8"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf">
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">9.</span> Income Proof (for trading in derivatives segments)</div>
+            <div><input type="file" name="inputFile9" id="inputFile9"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf" required>
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">10.</span> Cheque for DP AMC (as per the scheme opted)
+            </div>
+            <div><input type="file" name="inputFile10" id="inputFile10"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf" required>
+            </div>
+          </div>
+          <div class="flex items-center my-3">
+            <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
+                class="text-2xl text-blue-800">11.</span>
+              UBO Declaration</div>
+            <div><input type="file" name="inputFile11" id="inputFile11"
+                class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
+                accept="application/pdf" required>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nextAndPrevButton flex justify-end mt-8">
+        <div class="previewBtn">
+          <button type="submit"
+            class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Preview</button>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <script src="corporateDocumentUpload.js"></script>
+</body>
+
+</html>

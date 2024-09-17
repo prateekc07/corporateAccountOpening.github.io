@@ -798,8 +798,6 @@ function getAcknowledgementDetails() {
 
 // fatcaPartOneDetails section manages from here
 function getFatcaPartOneDetails() {
-  let days90 = document.getElementById("90Days");
-  let days30 = document.getElementById("30Days");
 
   let optionAYes = document.getElementById("optionAYes");
   let optionANo = document.getElementById("optionANo");
@@ -816,11 +814,6 @@ function getFatcaPartOneDetails() {
   let optionDNo = document.getElementById("optionDNo");
 
   if (fatcaPartOneDetails !== null) {
-    if (fatcaPartOneDetails["settlementTimePeriod"] === "90 Days") {
-      days90.checked = true;
-    } else {
-      days30.checked = true;
-    }
 
     if (fatcaPartOneDetails["QuesAOptions"] === "Yes") {
       optionAYes.checked = true;
@@ -1296,14 +1289,12 @@ submitDetails.addEventListener("submit", async (event) => {
     ) {
       form.getCheckBox("relatedPersonAddition").check();
       form.getCheckBox("newRelatedPerson").check();
-      form.getCheckBox("addAnother").check();
     } else if (
       relatedPersonDetails["selectRelatedPersonAction"] ===
       "Updation of Related Person"
     ) {
       form.getCheckBox("relatedPersonUpdation").check();
       form.getCheckBox("updateRelatedPerson").check();
-      form.getCheckBox("hufUpdate").check();
     } else {
       form.getCheckBox("relatedPersonDeletion").check();
       form.getCheckBox("deleteRelatedPerson").check();
@@ -1347,131 +1338,76 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("firstName")
       .setText(relatedPersonDetails["firstName"].toUpperCase());
-    
-    form
-      .getTextField("hufFirstName")
-      .setText(relatedPersonDetails["firstName"].toUpperCase());
 
     form
       .getTextField("lastName")
       .setText(relatedPersonDetails["lastName"].toUpperCase());
-    
-    form
-      .getTextField("hufLastName")
-      .setText(relatedPersonDetails["lastName"].toUpperCase());
-      
+
     form
       .getTextField("familyFirstName")
-      .setText(relatedPersonDetails["familyFirstName"].toUpperCase());
-    
-    form
-      .getTextField("hufFamilyFirstName")
       .setText(relatedPersonDetails["familyFirstName"].toUpperCase());
 
     form
       .getTextField("familyLastName")
       .setText(relatedPersonDetails["familyLastName"].toUpperCase());
-    
-    form
-      .getTextField("hufFamilyLastName")
-      .setText(relatedPersonDetails["familyLastName"].toUpperCase());
 
     form
       .getTextField("motherFirstName")
-      .setText(relatedPersonDetails["motherFirstName"].toUpperCase());
-    form
-      .getTextField("hufMotherFirstName")
       .setText(relatedPersonDetails["motherFirstName"].toUpperCase());
 
     form
       .getTextField("motherLastName")
       .setText(relatedPersonDetails["motherLastName"].toUpperCase());
-    form
-      .getTextField("hufMotherLastName")
-      .setText(relatedPersonDetails["motherLastName"].toUpperCase());
 
     form.getTextField("dob").setText(formatDate(relatedPersonDetails["dob"]));
-    form
-      .getTextField("hufDob")
-      .setText(formatDate(relatedPersonDetails["dob"]));
 
     if (relatedPersonDetails["gender"] === "male") {
       form.getCheckBox("male").check();
-      form.getCheckBox("hufMale").check();
     } else if (relatedPersonDetails["gender"] === "female") {
       form.getCheckBox("female").check();
-      form.getCheckBox("hufFemale").check();
     } else {
       form.getCheckBox("otherGender").check();
-      form.getCheckBox("hufOtherGender").check();
     }
 
     if (relatedPersonDetails["nationality"] === "IN") {
       form.getCheckBox("india").check();
-      form.getCheckBox("hufIndian").check();
     } else {
       form.getCheckBox("otherCountry").check();
-      form.getCheckBox("hufOtherCountry").check();
       form
         .getTextField("otherCountryCode")
-        .setText(relatedPersonDetails["otherCountryCode"].toUpperCase());
-      form
-        .getTextField("hufOtherCountryCode")
         .setText(relatedPersonDetails["otherCountryCode"].toUpperCase());
     }
 
     form
       .getTextField("panNumber")
       .setText(relatedPersonDetails["relatedPersonPanNumber"].toUpperCase());
-    form
-      .getTextField("hufPanNumber")
-      .setText(relatedPersonDetails["relatedPersonPanNumber"].toUpperCase());
 
     form
       .getTextField("relatedPersonAddress")
-      .setText(relatedPersonDetails["relatedPersonAddress"].toUpperCase());
-    form
-      .getTextField("hufAddress")
       .setText(relatedPersonDetails["relatedPersonAddress"].toUpperCase());
 
     form
       .getTextField("relatedPersonCity")
       .setText(relatedPersonDetails["relatedPersonCity"].toUpperCase());
-    form
-      .getTextField("hufCity")
-      .setText(relatedPersonDetails["relatedPersonCity"].toUpperCase());
 
     form
       .getTextField("relatedPersonDistrict")
-      .setText(relatedPersonDetails["relatedPersonDistrict"].toUpperCase());
-    form
-      .getTextField("hufDistrict")
       .setText(relatedPersonDetails["relatedPersonDistrict"].toUpperCase());
 
     form
       .getTextField("relatedPersonPinCode")
       .setText(relatedPersonDetails["relatedPersonPinCode"].toUpperCase());
-    form
-      .getTextField("hufPinCode")
-      .setText(relatedPersonDetails["relatedPersonPinCode"].toUpperCase());
 
     form
       .getTextField("relatedPersonState")
-      .setText(relatedPersonDetails["relatedPersonState"].toUpperCase());
-    form
-      .getTextField("hufState")
       .setText(relatedPersonDetails["relatedPersonState"].toUpperCase());
 
     form
       .getTextField("relatedPersonCountry")
       .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
-    form
-      .getTextField("hufCountry")
-      .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
 
     if (relatedPersonDetails["isRelatedPersonLocalSame"] === "Yes") {
       form.getCheckBox("isLocalSame").check();
-      form.getCheckBox("hufIsLocalSame").check();
     }
 
     form
@@ -1479,26 +1415,13 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(
         relatedPersonDetails["relatedPersonCurrentAddress"].toUpperCase()
       );
-    form
-      .getTextField("hufLocalAddress")
-      .setText(
-        relatedPersonDetails["relatedPersonCurrentAddress"].toUpperCase()
-      );
 
     form
       .getTextField("relatedPersonCurrentCity")
       .setText(relatedPersonDetails["relatedPersonCurrentCity"].toUpperCase());
-    form
-      .getTextField("hufLocalCity")
-      .setText(relatedPersonDetails["relatedPersonCurrentCity"].toUpperCase());
 
     form
       .getTextField("relatedPersonCurrentDistrict")
-      .setText(
-        relatedPersonDetails["relatedPersonCurrentDistrict"].toUpperCase()
-      );
-    form
-      .getTextField("hufLocalDistrict")
       .setText(
         relatedPersonDetails["relatedPersonCurrentDistrict"].toUpperCase()
       );
@@ -1508,17 +1431,9 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(
         relatedPersonDetails["relatedPersonCurrentPinCode"].toUpperCase()
       );
-    form
-      .getTextField("hufLocalPinCode")
-      .setText(
-        relatedPersonDetails["relatedPersonCurrentPinCode"].toUpperCase()
-      );
 
     form
       .getTextField("relatedPersonCurrentState")
-      .setText(relatedPersonDetails["relatedPersonCurrentState"].toUpperCase());
-    form
-      .getTextField("hufLocalState")
       .setText(relatedPersonDetails["relatedPersonCurrentState"].toUpperCase());
 
     form
@@ -1526,24 +1441,13 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(
         relatedPersonDetails["relatedPersonCurrentCountry"].toUpperCase()
       );
-    form
-      .getTextField("hufLocalCountry")
-      .setText(
-        relatedPersonDetails["relatedPersonCurrentCountry"].toUpperCase()
-      );
 
     form
       .getTextField("relatedPersonMobileNumber")
       .setText(relatedPersonDetails["relatedPersonMobileNumber"].toUpperCase());
-    form
-      .getTextField("hufMobileNumber")
-      .setText(relatedPersonDetails["relatedPersonMobileNumber"].toUpperCase());
 
     form
       .getTextField("relatedPersonEmailId")
-      .setText(relatedPersonDetails["relatedPersonEmailId"].toUpperCase());
-    form
-      .getTextField("hufEmailId")
       .setText(relatedPersonDetails["relatedPersonEmailId"].toUpperCase());
 
     form
@@ -1551,27 +1455,149 @@ submitDetails.addEventListener("submit", async (event) => {
       .setText(
         relatedPersonDetails["relatedPersonTelephoneOffice"].toUpperCase()
       );
-    form
-      .getTextField("hufTelephoneOffice")
-      .setText(
-        relatedPersonDetails["relatedPersonTelephoneOffice"].toUpperCase()
-      );
 
     form
       .getTextField("relatedPersonTelephoneRes")
       .setText(relatedPersonDetails["relatedPersonTelephoneRes"].toUpperCase());
-    form
-      .getTextField("hufTelephoneRes")
-      .setText(relatedPersonDetails["relatedPersonTelephoneRes"].toUpperCase());
     
-    form.getCheckBox("hufCertifiedCopy").check();
+    let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
+    if (dematAccountType["dematAccountType"] === "HUF") {
+      form.getCheckBox("hufAadhar").check();
 
-    form
-      .getTextField("hufdeclarationDate")
-      .setText(new Date().toLocaleDateString("en-GB"));
-    form
-      .getTextField("hufdeclarationPlace")
-      .setText(companyDetails["declarationPlace"].toUpperCase());
+      if (
+        relatedPersonDetails["selectRelatedPersonAction"] ===
+        "Addition of Related Person"
+      ) {
+        form.getCheckBox("hufNew").check();
+      } else if (
+        relatedPersonDetails["selectRelatedPersonAction"] ===
+        "Updation of Related Person"
+      ) {
+        form.getCheckBox("hufUpdate").check();
+      }
+
+      form
+        .getTextField("hufFirstName")
+        .setText(relatedPersonDetails["firstName"].toUpperCase());
+      form
+        .getTextField("hufLastName")
+        .setText(relatedPersonDetails["lastName"].toUpperCase());
+      form
+        .getTextField("hufFamilyFirstName")
+        .setText(relatedPersonDetails["familyFirstName"].toUpperCase());
+      form
+        .getTextField("hufFamilyLastName")
+        .setText(relatedPersonDetails["familyLastName"].toUpperCase());
+      form
+        .getTextField("hufMotherFirstName")
+        .setText(relatedPersonDetails["motherFirstName"].toUpperCase());
+      form
+        .getTextField("hufMotherLastName")
+        .setText(relatedPersonDetails["motherLastName"].toUpperCase());
+      form
+        .getTextField("hufDob")
+        .setText(formatDate(relatedPersonDetails["dob"]));
+
+      if (relatedPersonDetails["gender"] === "male") {
+        form.getCheckBox("hufMale").check();
+      } else if (relatedPersonDetails["gender"] === "female") {
+        form.getCheckBox("hufFemale").check();
+      } else {
+        form.getCheckBox("hufOtherGender").check();
+      }
+
+      if (relatedPersonDetails["nationality"] === "IN") {
+        form.getCheckBox("hufIndian").check();
+      } else {
+        form.getCheckBox("hufOtherCountry").check();
+        form
+          .getTextField("hufOtherCountryCode")
+          .setText(relatedPersonDetails["otherCountryCode"].toUpperCase());
+      }
+
+      form
+        .getTextField("hufPanNumber")
+        .setText(relatedPersonDetails["relatedPersonPanNumber"].toUpperCase());
+      form
+        .getTextField("hufAddress")
+        .setText(relatedPersonDetails["relatedPersonAddress"].toUpperCase());
+      form
+        .getTextField("hufCity")
+        .setText(relatedPersonDetails["relatedPersonCity"].toUpperCase());
+      form
+        .getTextField("hufDistrict")
+        .setText(relatedPersonDetails["relatedPersonDistrict"].toUpperCase());
+      form
+        .getTextField("hufPinCode")
+        .setText(relatedPersonDetails["relatedPersonPinCode"].toUpperCase());
+      form
+        .getTextField("hufState")
+        .setText(relatedPersonDetails["relatedPersonState"].toUpperCase());
+      form
+        .getTextField("hufCountry")
+        .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
+      
+      if (relatedPersonDetails["isRelatedPersonLocalSame"] === "Yes") {
+        form.getCheckBox("hufIsLocalSame").check();
+      }
+      form
+        .getTextField("hufLocalAddress")
+        .setText(
+          relatedPersonDetails["relatedPersonCurrentAddress"].toUpperCase()
+        );
+      form
+        .getTextField("hufLocalCity")
+        .setText(
+          relatedPersonDetails["relatedPersonCurrentCity"].toUpperCase()
+        );
+      form
+        .getTextField("hufLocalDistrict")
+        .setText(
+          relatedPersonDetails["relatedPersonCurrentDistrict"].toUpperCase()
+        );
+      form
+        .getTextField("hufLocalPinCode")
+        .setText(
+          relatedPersonDetails["relatedPersonCurrentPinCode"].toUpperCase()
+        );
+      form
+        .getTextField("hufLocalState")
+        .setText(
+          relatedPersonDetails["relatedPersonCurrentState"].toUpperCase()
+        );
+      form
+        .getTextField("hufLocalCountry")
+        .setText(
+          relatedPersonDetails["relatedPersonCurrentCountry"].toUpperCase()
+        );
+      form
+        .getTextField("hufMobileNumber")
+        .setText(
+          relatedPersonDetails["relatedPersonMobileNumber"].toUpperCase()
+        );
+      form
+        .getTextField("hufEmailId")
+        .setText(relatedPersonDetails["relatedPersonEmailId"].toUpperCase());
+      form
+        .getTextField("hufTelephoneOffice")
+        .setText(
+          relatedPersonDetails["relatedPersonTelephoneOffice"].toUpperCase()
+        );
+      form
+        .getTextField("hufTelephoneRes")
+        .setText(
+          relatedPersonDetails["relatedPersonTelephoneRes"].toUpperCase()
+        );
+
+      form.getCheckBox("hufCertifiedCopy").check();
+
+      form
+        .getTextField("hufdeclarationDate")
+        .setText(new Date().toLocaleDateString("en-GB"));
+      form
+        .getTextField("hufdeclarationPlace")
+        .setText(companyDetails["declarationPlace"].toUpperCase());
+    }
   }
 
   if (kycApplicationFormFirstPageDetails !== null) {
@@ -1943,7 +1969,7 @@ submitDetails.addEventListener("submit", async (event) => {
           kycApplicationFormSecondPageDetails[
             `company${partnersArray[i - 1]}RelatedPersonAadhar`
           ].toUpperCase()
-      );
+        );
       form.getCheckBox(`${partnersArray[i - 1]}politicalNo`).check();
     }
   }
@@ -2020,7 +2046,6 @@ submitDetails.addEventListener("submit", async (event) => {
       .getTextField("mobileForAlert")
       .setText(companyDetails["companyPhoneNumber"]);
     form.getCheckBox("trustNo").check();
-    form.getCheckBox("schemeB").check();
   }
 
   if (fatcaPartOneDetails !== null) {
@@ -2334,7 +2359,6 @@ submitDetails.addEventListener("submit", async (event) => {
   form.getCheckBox("rtaEmail").check();
   form.getCheckBox("receiveAnnualReport").check();
   form.getCheckBox("relatedPersonAdharProof").check();
-  form.getCheckBox("hufAadhar").check();
   form.getCheckBox("companyPanTick").check();
   form.getCheckBox("90Days").check();
 
@@ -2349,13 +2373,19 @@ submitDetails.addEventListener("submit", async (event) => {
   link.download = "kyc_trading_form.pdf";
   link.click();
 
-  const corporatePdfDocuments = JSON.parse(
-    sessionStorage.getItem("corporatePdfDocuments")
-  );
+  let pdfDocuments;
+  let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
+  if (dematAccountType["dematAccountType"] === "HUF") {
+    pdfDocuments = JSON.parse(sessionStorage.getItem("hufPdfDocuments"));
+  } else if (dematAccountType["dematAccountType"] === "LLP") {
+    pdfDocuments = JSON.parse(sessionStorage.getItem("llpPdfDocuments"));
+  } else {
+    pdfDocuments = JSON.parse(sessionStorage.getItem("corporatePdfDocuments"));
+  }
 
   const mergedPdf = await PDFLib.PDFDocument.create();
 
-  for (const fileData of corporatePdfDocuments) {
+  for (const fileData of pdfDocuments) {
     // Extract the base64 data part
     const base64 = fileData.data.split(",")[1];
     const pdfBytes = base64ToArrayBuffer(base64);
@@ -2370,7 +2400,7 @@ submitDetails.addEventListener("submit", async (event) => {
 
   const pdfLink = document.createElement("a");
   pdfLink.href = pdfUrl;
-  pdfLink.download = "allCorporateDocuments.pdf";
+  pdfLink.download = "allDocuments.pdf";
   pdfLink.click();
 
   // Redirect to the next page
@@ -2398,22 +2428,63 @@ function base64ToArrayBuffer(base64) {
 }
 
 window.onload = function () {
-  const corporatePdfDocuments = JSON.parse(
-    sessionStorage.getItem("corporatePdfDocuments")
-  );
+  let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
+  if (dematAccountType["dematAccountType"] === "HUF") {
+    const hufPdfDocuments = JSON.parse(
+      sessionStorage.getItem("hufPdfDocuments")
+    );
 
-  if (corporatePdfDocuments && corporatePdfDocuments.length > 0) {
-    const previewContainer = document.getElementById("documentPreview");
+    if (hufPdfDocuments && hufPdfDocuments.length > 0) {
+      const previewContainer = document.getElementById("documentPreview");
 
-    corporatePdfDocuments.forEach((fileData) => {
-      // Display based on file type
-      const iframe = document.createElement("iframe");
-      iframe.src = fileData.data;
-      iframe.width = "30%";
-      iframe.height = "400px";
-      iframe.style.paddingTop = "10px";
-      iframe.style.paddingBottom = "10px";
-      previewContainer.appendChild(iframe);
-    });
+      hufPdfDocuments.forEach((fileData) => {
+        // Display based on file type
+        const iframe = document.createElement("iframe");
+        iframe.src = fileData.data;
+        iframe.width = "30%";
+        iframe.height = "400px";
+        iframe.style.paddingTop = "10px";
+        iframe.style.paddingBottom = "10px";
+        previewContainer.appendChild(iframe);
+      });
+    }
+  } else if (dematAccountType["dematAccountType"] === "LLP") {
+    const llpPdfDocuments = JSON.parse(
+      sessionStorage.getItem("llpPdfDocuments")
+    );
+
+    if (llpPdfDocuments && llpPdfDocuments.length > 0) {
+      const previewContainer = document.getElementById("documentPreview");
+
+      llpPdfDocuments.forEach((fileData) => {
+        // Display based on file type
+        const iframe = document.createElement("iframe");
+        iframe.src = fileData.data;
+        iframe.width = "30%";
+        iframe.height = "400px";
+        iframe.style.paddingTop = "10px";
+        iframe.style.paddingBottom = "10px";
+        previewContainer.appendChild(iframe);
+      });
+    }
+  } else {
+    const corporatePdfDocuments = JSON.parse(
+      sessionStorage.getItem("corporatePdfDocuments")
+    );
+
+    if (corporatePdfDocuments && corporatePdfDocuments.length > 0) {
+      const previewContainer = document.getElementById("documentPreview");
+
+      corporatePdfDocuments.forEach((fileData) => {
+        // Display based on file type
+        const iframe = document.createElement("iframe");
+        iframe.src = fileData.data;
+        iframe.width = "30%";
+        iframe.height = "400px";
+        iframe.style.paddingTop = "10px";
+        iframe.style.paddingBottom = "10px";
+        previewContainer.appendChild(iframe);
+      });
+    }
   }
 };

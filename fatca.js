@@ -16,8 +16,17 @@ fatcaForm.addEventListener("submit", (event) => {
   );
   console.log(JSON.parse(localStorage.getItem("fatcaPartOneDetails")));
 
-  // Redirect to the next page
-  window.location.href = "8_corporateDocumentUpload.html";
+  let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
+  if (dematAccountType["dematAccountType"] === "HUF") {
+    // Redirect to the next page
+    window.location.href = "8_hufDocumentUpload.html";
+  } else if (dematAccountType["dematAccountType"] === "LLP") {
+    // Redirect to the next page
+    window.location.href = "8_llpDocumentUpload.html";
+  } else {
+    // Redirect to the next page
+    window.location.href = "8_corporateDocumentUpload.html";
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
