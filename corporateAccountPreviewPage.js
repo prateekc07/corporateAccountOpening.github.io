@@ -2403,6 +2403,8 @@ submitDetails.addEventListener("submit", async (event) => {
   pdfLink.download = "allDocuments.pdf";
   pdfLink.click();
 
+  clearLocalStorage();
+
   // Redirect to the next page
   window.location.href = "last.html";
 });
@@ -2488,3 +2490,14 @@ window.onload = function () {
     }
   }
 };
+
+function clearLocalStorage() {
+  localStorage.removeItem("dematAccountType");
+  localStorage.removeItem("companyDetails");
+  localStorage.removeItem("relatedPersonDetails");
+  localStorage.removeItem("kycApplicationFormFirstPageDetails");
+  localStorage.removeItem("kycApplicationFormSecondPageDetails");
+  localStorage.removeItem("acknowledgementDetails");
+  localStorage.removeItem("fatcaPartOneDetails");
+  localStorage.removeItem("fatcaPartTwoDetails");
+}
