@@ -23,3 +23,23 @@ accountTypeForm.addEventListener("submit", (event) => {
   // Redirect to the next page
   window.location.href = "companyDetails.html";
 });
+
+let caSection = document.getElementById("corporateAccountSection");
+let hufSection = document.getElementById("hufSection");
+let llpSection = document.getElementById("llpSection");
+
+function changeDocList(type) {
+  if (type === "corporate") {
+    caSection.style.display = "block";
+    hufSection.style.display = "none";
+    llpSection.style.display = "none";
+  } else if (type === "huf") {
+    caSection.style.display = "none";
+    hufSection.style.display = "block";
+    llpSection.style.display = "none";
+  } else {
+    caSection.style.display = "none";
+    hufSection.style.display = "none";
+    llpSection.style.display = "block";
+  }
+}

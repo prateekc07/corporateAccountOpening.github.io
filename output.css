@@ -683,6 +683,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .size-4 {
   width: 1rem;
   height: 1rem;

@@ -25,7 +25,7 @@
           Thank you for your interest in associating with Dhanush.<br>Please keep all these documents at your desk while
           filling the form.
         </div>
-        <div class="mx-12">
+        <div id="corporateAccountSection" class="mx-12">
           <ul class="list-disc text-gray-800">
             <li>Select any one & upload the same document</li>
             <li>List of Directors on Letterhead.</li>
@@ -44,18 +44,53 @@
             <li>MITC & CKYC download consent</li>
           </ul>
         </div>
+        <div id="hufSection" class="mx-12 hidden">
+          <ul class="list-disc text-gray-800">
+            <li>PAN of HUF.</li>
+            <li>PAN of Karta.</li>
+            <li>Address Proof of HUF.</li>
+            <li>Address Proof of Karta.</li>
+            <li>Adhaar of Karta.</li>
+            <li>Deed of Declaration of HUF/List of coparceners.</li>
+            <li>Bank Proof with MICR Code of the HUF(cancelled cheque).</li>
+            <li>Demat Proof (required if opening only trading account).</li>
+            <li>Income Proof (for trading in derivatives segments).</li>
+            <li>Cheque for DP AMC (as per the scheme opted).</li>
+            <li>UBO Declaration</li>
+          </ul>
+        </div>
+        <div id="llpSection" class="mx-12 hidden">
+          <ul class="list-disc text-gray-800">
+            <li>PAN of LLP.</li>
+            <li>PAN of all the Partners.</li>
+            <li>Adhaar of LLP.</li>
+            <li>Adhaar of all the Partners.</li>
+            <li>Adhaar of person holding attorny to transact on firm's behalf.</li>
+            <li>Balance Sheet and Profit & Loss account (last two years).</li>
+            <li>Net Worth certificate (certified by CA).</li>
+            <li>Copy of Partnership Deed.</li>
+            <li>Certification of Registration.</li>
+            <li>Authorized Signatories list with specimen signatures (as per our format).</li>
+            <li>Bank Proof with MICR Code (cancelled Cheque).</li>
+            <li>Demat Proof (required if opening only a trading account).</li>
+            <li>Income Proof (for trading in derivatives segments).</li>
+            <li>UBO Declaration.</li>
+            <li>Cheque for DP AMC (as per the scheme opted).</li>
+            <li>Declaration as per format.</li>
+          </ul>
+        </div>
         <div class="mx-12 flex items-center justify-evenly my-10">
           <div class="flex items-center">
             <input type="radio" name="dematAccountType" value="Corporate Account" id="corporateAccount"
-              class="size-5 mr-2 hover:cursor-pointer">
+              class="size-5 mr-2 hover:cursor-pointer" checked onclick="changeDocList('corporate')">
             <label for="corporateAccount" class="hover:cursor-pointer text-xl text-gray-700">Corporate Account</label>
           </div>
           <div class="flex items-center">
-            <input type="radio" name="dematAccountType" value="HUF" id="huf" class="size-5 mr-2 hover:cursor-pointer">
+            <input type="radio" name="dematAccountType" value="HUF" id="huf" class="size-5 mr-2 hover:cursor-pointer" onclick="changeDocList('huf')">
             <label for="huf" class="hover:cursor-pointer text-xl text-gray-700">HUF</label>
           </div>
           <div class="flex items-center">
-            <input type="radio" name="dematAccountType" value="LLP" id="llp" class="size-5 mr-2 hover:cursor-pointer">
+            <input type="radio" name="dematAccountType" value="LLP" id="llp" class="size-5 mr-2 hover:cursor-pointer" onclick="changeDocList('llp')">
             <label for="llp" class="hover:cursor-pointer text-xl text-gray-700">LLP</label>
           </div>
         </div>
