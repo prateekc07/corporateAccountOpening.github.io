@@ -798,7 +798,6 @@ function getAcknowledgementDetails() {
 
 // fatcaPartOneDetails section manages from here
 function getFatcaPartOneDetails() {
-
   let optionAYes = document.getElementById("optionAYes");
   let optionANo = document.getElementById("optionANo");
   let listedCompanyName = document.getElementById("listedCompanyName");
@@ -814,7 +813,6 @@ function getFatcaPartOneDetails() {
   let optionDNo = document.getElementById("optionDNo");
 
   if (fatcaPartOneDetails !== null) {
-
     if (fatcaPartOneDetails["QuesAOptions"] === "Yes") {
       optionAYes.checked = true;
       listedCompanyName.value = fatcaPartOneDetails["listedCompanyName"];
@@ -1459,7 +1457,7 @@ submitDetails.addEventListener("submit", async (event) => {
     form
       .getTextField("relatedPersonTelephoneRes")
       .setText(relatedPersonDetails["relatedPersonTelephoneRes"].toUpperCase());
-    
+
     let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
     if (dematAccountType["dematAccountType"] === "HUF") {
       form.getCheckBox("hufAadhar").check();
@@ -1536,7 +1534,7 @@ submitDetails.addEventListener("submit", async (event) => {
       form
         .getTextField("hufCountry")
         .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
-      
+
       if (relatedPersonDetails["isRelatedPersonLocalSame"] === "Yes") {
         form.getCheckBox("hufIsLocalSame").check();
       }
@@ -2403,7 +2401,7 @@ submitDetails.addEventListener("submit", async (event) => {
   pdfLink.download = "allDocuments.pdf";
   pdfLink.click();
 
-  clearLocalStorage();
+  // clearLocalStorage();
 
   // Redirect to the next page
   window.location.href = "last.html";
@@ -2500,4 +2498,30 @@ function clearLocalStorage() {
   localStorage.removeItem("acknowledgementDetails");
   localStorage.removeItem("fatcaPartOneDetails");
   localStorage.removeItem("fatcaPartTwoDetails");
+}
+
+async function sendEmail(kycTradingForm) {
+  await Email.send({
+    Host: "smtp.gmail.com",
+    Username: "kyc@ashikagroup.com",
+    Password: "ugsmpzzmxmcbimnm",
+    To: "prateekc@ashikagroup.com",
+    From: "kyc@ashikagroup.com",
+    Subject: "Sending Email using javascript",
+    Body: "Well that was easy!!",
+    Attachments: [
+      {
+        name: "kyc_trading_form.pdf",
+        path: kycTradingForm,
+      },
+      // {
+      //   name: "allDocuments.pdf",
+      //   path: allDocs,
+      // },
+    ],
+  })
+    .then(function (message) {
+      alert("mail sent successfully");
+    });
+  console.log("email is sending.....");
 }
