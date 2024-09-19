@@ -1,5 +1,7 @@
 let FourthrelatedPersonDetails = {};
 
+let companyDetails = JSON.parse(localStorage.getItem("companyDetails"));
+
 let relatedPersonDetails;
 
 let relatedPersonDetailsForm = document.getElementById(
