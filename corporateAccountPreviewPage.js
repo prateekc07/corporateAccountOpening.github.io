@@ -2401,7 +2401,21 @@ submitDetails.addEventListener("submit", async (event) => {
   pdfLink.download = "allDocuments.pdf";
   pdfLink.click();
 
-  clearLocalStorage();
+  // clearLocalStorage();
+
+  // Assuming blob and pdfUrl are Blob objects representing PDFs
+  // let corporatePdfFiles = new FormData();
+
+  // // Append the files to FormData
+  // corporatePdfFiles.append("kyc_opening_form", blob, "kyc_opening_form.pdf"); // Blob for KYC form
+  // corporatePdfFiles.append("allDocuments", blobPdf, "all_documents.pdf"); // Blob for all documents
+
+  // fetch("http://127.0.0.1:5555/corporateAccountOpening/api/v1/sendMail", {
+  //   method: "POST",
+  //   body: corporatePdfFiles,
+  // })
+  //   .then((res) => console.log(res))
+  //   .catch((error) => console.log(error));
 
   // Redirect to the next page
   window.location.href = "last.html";

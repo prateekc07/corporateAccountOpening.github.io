@@ -441,7 +441,7 @@ async function downloadRelatedPerson() {
 
     form
       .getTextField("declarationPlace")
-      .setText(localStorage.getItem("declarationPlace").toUpperCase());
+      .setText(companyDetails["declarationPlace"].toUpperCase());
 
     form
       .getTextField("declarationDate")
