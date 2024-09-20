@@ -117,6 +117,11 @@
                       <label for="FirstRPEP" class="font-semibold text-gray-800">Related to Politically Exposed
                         Person</label>
                     </div>
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="FirstPoliticalInfo" id="FirstNone"
+                        value="None" class="size-4 mr-2">
+                      <label for="FirstNone" class="font-semibold text-gray-800">None</label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -149,8 +154,6 @@
   <script>
     // Get today's date in YYYY-MM-DD format
     const today = new Date().toISOString().split('T')[0];
-    document.getElementById('incorporationDateKyc').setAttribute('max', today);
-    document.getElementById('bussinessCommenceDateKyc').setAttribute('max', today);
     document.getElementById('FirstNetWorthDate').setAttribute('max', today);
     
     let addAnotherHolderButton = document.getElementById("addAnotherHolderBtn");
@@ -162,20 +165,6 @@
         document.getElementById('ThirdNetWorthDate').setAttribute('max', today);
       }
     });
-    
-
-    // Get all input elements
-    const inputElements = document.getElementsByTagName('input');
-
-    // Loop through and find the input element(s) with type="tel"
-    for (let i = 0; i < inputElements.length; i++) {
-      if (inputElements[i].type === 'tel') {
-        inputElements[i].addEventListener('input', function (e) {
-          // Remove any character that is not a digit
-          this.value = this.value.replace(/[^0-9]/g, '');
-        });
-      }
-    }
   </script>
 </body>
 

@@ -25,12 +25,33 @@
     <form id="startPageForm">
       <div class="instructions flex flex-col justify-center">
         <div class="mx-3 font-semibold text-blue-800 text-lg mb-2">
-          Thank you for your interest in associating with Dhanush.<br>Please keep all these documents at your desk while
-          filling the form.
+          Thank you for your interest in associating with Dhanush.
+        </div>
+        <div class="mx-3 font-semibold text-blue-800 text-lg">Select Account Type:</div>
+        <div class="flex items-center justify-evenly mb-5">
+          <div class="flex items-center">
+            <input type="radio" name="dematAccountType" value="Corporate Account" id="corporateAccount"
+              class="size-5 mr-2 hover:cursor-pointer" checked onclick="changeDocList('corporate')">
+            <label for="corporateAccount" class="hover:cursor-pointer text-xl text-gray-700">Corporate Account</label>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="dematAccountType" value="HUF" id="huf" class="size-5 mr-2 hover:cursor-pointer"
+              onclick="changeDocList('huf')">
+            <label for="huf" class="hover:cursor-pointer text-xl text-gray-700">HUF</label>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="dematAccountType" value="LLP" id="llp" class="size-5 mr-2 hover:cursor-pointer"
+              onclick="changeDocList('llp')">
+            <label for="llp" class="hover:cursor-pointer text-xl text-gray-700">LLP</label>
+          </div>
+        </div>
+        <div class="mx-3 font-semibold text-blue-800 text-lg mb-2">
+          Please keep all these documents at your desk while filling the form.
         </div>
         <div id="corporateAccountSection" class="mx-12">
           <ul class="list-disc text-gray-800">
-            <li>Select any one & upload the same document</li>
+            <li>Demat Board Resolution on Letterhead.</li>
+            <li>Trading Board Resolution on Letterhead.</li>
             <li>List of Directors on Letterhead.</li>
             <li>List of Authorized Signatories with specimen signature on letterhead.</li>
             <li>Copy of Pan Card and Address proof of Company</li>
@@ -39,7 +60,7 @@
             <li>Audited Balance Sheet (last 2 years)</li>
             <li>Bank Proof (Latest bank statement or Personalized canceled cheque)</li>
             <li>UBO on letterhead</li>
-            <li>Related party CKYC of Beneficial Owner along with copy of Pan Card/Adhaar/DL/Passport/Voter Id (if different
+            <li>Related party CKYC of Beneficial Owner along with copy of Pan Card/Masked Adhaar (if different
               from
               Director/Authorized Signatory)</li>
             <li>MOA, AOA, and Certificate of incorporation</li>
@@ -81,21 +102,6 @@
             <li>Cheque for DP AMC (as per the scheme opted).</li>
             <li>Declaration as per format.</li>
           </ul>
-        </div>
-        <div class="mx-12 flex items-center justify-evenly my-10">
-          <div class="flex items-center">
-            <input type="radio" name="dematAccountType" value="Corporate Account" id="corporateAccount"
-              class="size-5 mr-2 hover:cursor-pointer" checked onclick="changeDocList('corporate')">
-            <label for="corporateAccount" class="hover:cursor-pointer text-xl text-gray-700">Corporate Account</label>
-          </div>
-          <div class="flex items-center">
-            <input type="radio" name="dematAccountType" value="HUF" id="huf" class="size-5 mr-2 hover:cursor-pointer" onclick="changeDocList('huf')">
-            <label for="huf" class="hover:cursor-pointer text-xl text-gray-700">HUF</label>
-          </div>
-          <div class="flex items-center">
-            <input type="radio" name="dematAccountType" value="LLP" id="llp" class="size-5 mr-2 hover:cursor-pointer" onclick="changeDocList('llp')">
-            <label for="llp" class="hover:cursor-pointer text-xl text-gray-700">LLP</label>
-          </div>
         </div>
         <div class="flex justify-end pr-5">
           <button class="bg-blue-500 text-white py-2 px-8 rounded-xl hover:bg-blue-600 active:bg-blue-500">Start Application</button>

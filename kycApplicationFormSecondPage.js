@@ -81,9 +81,9 @@ addAnotherRelatedPersonBtn.addEventListener("click", (event) => {
               
               <div class="mr-5 mt-2">
                 <label for="company${relatedPersonArray[count]}RelatedPersonAadhar" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Aadhar
-                  Number</label>
+                  Number<span class="text-sm">(Last 4 digits)</span></label>
                 <input type="text" name="company${relatedPersonArray[count]}RelatedPersonAadhar" id="company${relatedPersonArray[count]}RelatedPersonAadhar"
-                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" maxlength="4" required>
               </div>
             </div>
   `;

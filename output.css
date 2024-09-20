@@ -607,6 +607,10 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .ml-14 {
   margin-left: 3.5rem;
 }

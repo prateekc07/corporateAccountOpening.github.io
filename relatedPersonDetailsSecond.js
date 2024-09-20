@@ -50,9 +50,6 @@ let checkbox = document.querySelector("#isRelatedPersonLocalSame");
 
 checkbox.addEventListener("click", () => {
   if (checkbox.checked) {
-    let relatedPersonIdentityProof = document.querySelector(
-      "#relatedPersonIdentityProof"
-    );
     let relatedPersonAddress = document.querySelector("#relatedPersonAddress");
     let relatedPersonCity = document.querySelector("#relatedPersonCity");
     let relatedPersonDistrict = document.querySelector(
@@ -62,8 +59,6 @@ checkbox.addEventListener("click", () => {
     let relatedPersonState = document.querySelector("#relatedPersonState");
     let relatedPersonCountry = document.querySelector("#relatedPersonCountry");
 
-    document.querySelector("#currentIdentityProof").value =
-      relatedPersonIdentityProof.value;
     document.querySelector("#relatedPersonCurrentAddress").value =
       relatedPersonAddress.value;
     document.querySelector("#relatedPersonCurrentCity").value =
@@ -77,7 +72,6 @@ checkbox.addEventListener("click", () => {
     document.querySelector("#relatedPersonCurrentCountry").value =
       relatedPersonCountry.value;
   } else {
-    document.querySelector("#currentIdentityProof").value = "";
     document.querySelector("#relatedPersonCurrentAddress").value = "";
     document.querySelector("#relatedPersonCurrentCity").value = "";
     document.querySelector("#relatedPersonCurrentDistrict").value = "";
@@ -119,9 +113,6 @@ function getrelatedPersonDetail() {
   let relatedPersonPanNumber = document.getElementById(
     "relatedPersonPanNumber"
   );
-  let relatedPersonIdentityProof = document.getElementById(
-    "relatedPersonIdentityProof"
-  );
   let relatedPersonAddress = document.getElementById("relatedPersonAddress");
   let relatedPersonCity = document.getElementById("relatedPersonCity");
   let relatedPersonDistrict = document.getElementById("relatedPersonDistrict");
@@ -131,7 +122,6 @@ function getrelatedPersonDetail() {
   let isRelatedPersonLocalSame = document.getElementById(
     "isRelatedPersonLocalSame"
   );
-  let currentIdentityProof = document.getElementById("currentIdentityProof");
   let relatedPersonCurrentAddress = document.getElementById(
     "relatedPersonCurrentAddress"
   );
@@ -207,9 +197,6 @@ function getrelatedPersonDetail() {
     relatedPersonPanNumber.value =
       relatedPersonDetail["relatedPersonPanNumber"];
 
-    relatedPersonIdentityProof.value =
-      relatedPersonDetail["relatedPersonIdentityProof"];
-
     relatedPersonAddress.value = relatedPersonDetail["relatedPersonAddress"];
 
     relatedPersonCity.value = relatedPersonDetail["relatedPersonCity"];
@@ -225,8 +212,6 @@ function getrelatedPersonDetail() {
     if (relatedPersonDetail["isRelatedPersonLocalSame"] === "Yes") {
       isRelatedPersonLocalSame.checked = true;
     }
-
-    currentIdentityProof.value = relatedPersonDetail["currentIdentityProof"];
 
     relatedPersonCurrentAddress.value =
       relatedPersonDetail["relatedPersonCurrentAddress"];

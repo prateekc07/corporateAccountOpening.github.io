@@ -156,9 +156,6 @@ function getRelatedPersonDetails() {
   let relatedPersonPanNumber = document.getElementById(
     "relatedPersonPanNumber"
   );
-  let relatedPersonIdentityProof = document.getElementById(
-    "relatedPersonIdentityProof"
-  );
   let relatedPersonAddress = document.getElementById("relatedPersonAddress");
   let relatedPersonCity = document.getElementById("relatedPersonCity");
   let relatedPersonDistrict = document.getElementById("relatedPersonDistrict");
@@ -168,7 +165,6 @@ function getRelatedPersonDetails() {
   let isRelatedPersonLocalSame = document.getElementById(
     "isRelatedPersonLocalSame"
   );
-  let currentIdentityProof = document.getElementById("currentIdentityProof");
   let relatedPersonCurrentAddress = document.getElementById(
     "relatedPersonCurrentAddress"
   );
@@ -244,9 +240,6 @@ function getRelatedPersonDetails() {
     relatedPersonPanNumber.value =
       relatedPersonDetails["relatedPersonPanNumber"];
 
-    relatedPersonIdentityProof.value =
-      relatedPersonDetails["relatedPersonIdentityProof"];
-
     relatedPersonAddress.value = relatedPersonDetails["relatedPersonAddress"];
 
     relatedPersonCity.value = relatedPersonDetails["relatedPersonCity"];
@@ -262,8 +255,6 @@ function getRelatedPersonDetails() {
     if (relatedPersonDetails["isRelatedPersonLocalSame"] === "Yes") {
       isRelatedPersonLocalSame.checked = true;
     }
-
-    currentIdentityProof.value = relatedPersonDetails["currentIdentityProof"];
 
     relatedPersonCurrentAddress.value =
       relatedPersonDetails["relatedPersonCurrentAddress"];
@@ -482,6 +473,23 @@ function getKycApplicationFormFirstPageDetails() {
                       <label for="${
                         holderArray[i - 1]
                       }RPEP" class="font-semibold text-gray-800">Related to Politically Exposed Person</label>
+                    </div>
+
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="${
+                        holderArray[i - 1]
+                      }PoliticalInfo" id="${
+        holderArray[i - 1]
+      }None" class="size-4 mr-2" ${
+        kycApplicationFormFirstPageDetails[
+          holderArray[i - 1] + "PoliticalInfo"
+        ] === "None"
+          ? "checked"
+          : ""
+      } disabled>
+                      <label for="${
+                        holderArray[i - 1]
+                      }None" class="font-semibold text-gray-800">None</label>
                     </div>
                   </div>
                 </div>
@@ -761,9 +769,6 @@ function getAcknowledgementDetails() {
   let ecnClientName = document.getElementById("ecnClientName");
   let ecnClientAddress = document.getElementById("ecnClientAddress");
   let ecnClientPan = document.getElementById("ecnClientPan");
-  let ecnClientNameDesignation = document.getElementById(
-    "ecnClientNameDesignation"
-  );
   let internetEmailId = document.getElementById("internetEmailId");
   let internetApplicantName = document.getElementById("internetApplicantName");
   let internetApplicantAddress = document.getElementById(
@@ -782,8 +787,6 @@ function getAcknowledgementDetails() {
     ecnClientName.value = acknowledgementDetails["ecnClientName"];
     ecnClientAddress.value = acknowledgementDetails["ecnClientAddress"];
     ecnClientPan.value = acknowledgementDetails["ecnClientPan"];
-    ecnClientNameDesignation.value =
-      acknowledgementDetails["ecnClientNameDesignation"];
     internetEmailId.value = acknowledgementDetails["internetEmailId"];
     internetApplicantName.value =
       acknowledgementDetails["internetApplicantName"];
@@ -1989,11 +1992,6 @@ submitDetails.addEventListener("submit", async (event) => {
       .getTextField("ecnClientPan")
       .setText(acknowledgementDetails["ecnClientPan"].toUpperCase());
     form
-      .getTextField("ecnClientNameDesignation")
-      .setText(
-        acknowledgementDetails["ecnClientNameDesignation"].toUpperCase()
-      );
-    form
       .getTextField("declarationDate6")
       .setText(new Date().toLocaleDateString("en-GB"));
     form
@@ -2371,36 +2369,6 @@ submitDetails.addEventListener("submit", async (event) => {
   link.download = "kyc_trading_form.pdf";
   link.click();
 
-  let pdfDocuments;
-  let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
-  if (dematAccountType["dematAccountType"] === "HUF") {
-    pdfDocuments = JSON.parse(sessionStorage.getItem("hufPdfDocuments"));
-  } else if (dematAccountType["dematAccountType"] === "LLP") {
-    pdfDocuments = JSON.parse(sessionStorage.getItem("llpPdfDocuments"));
-  } else {
-    pdfDocuments = JSON.parse(sessionStorage.getItem("corporatePdfDocuments"));
-  }
-
-  const mergedPdf = await PDFLib.PDFDocument.create();
-
-  for (const fileData of pdfDocuments) {
-    // Extract the base64 data part
-    const base64 = fileData.data.split(",")[1];
-    const pdfBytes = base64ToArrayBuffer(base64);
-
-    const pdf = await PDFLib.PDFDocument.load(pdfBytes);
-    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-    copiedPages.forEach((page) => mergedPdf.addPage(page));
-  }
-  const combinedPdfBytes = await mergedPdf.save();
-  const blobPdf = new Blob([combinedPdfBytes], { type: "application/pdf" });
-  const pdfUrl = URL.createObjectURL(blobPdf);
-
-  const pdfLink = document.createElement("a");
-  pdfLink.href = pdfUrl;
-  pdfLink.download = "allDocuments.pdf";
-  pdfLink.click();
-
   // clearLocalStorage();
 
   // Assuming blob and pdfUrl are Blob objects representing PDFs
@@ -2440,68 +2408,6 @@ function base64ToArrayBuffer(base64) {
   }
   return bytes.buffer;
 }
-
-window.onload = function () {
-  let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
-  if (dematAccountType["dematAccountType"] === "HUF") {
-    const hufPdfDocuments = JSON.parse(
-      sessionStorage.getItem("hufPdfDocuments")
-    );
-
-    if (hufPdfDocuments && hufPdfDocuments.length > 0) {
-      const previewContainer = document.getElementById("documentPreview");
-
-      hufPdfDocuments.forEach((fileData) => {
-        // Display based on file type
-        const iframe = document.createElement("iframe");
-        iframe.src = fileData.data;
-        iframe.width = "30%";
-        iframe.height = "400px";
-        iframe.style.paddingTop = "10px";
-        iframe.style.paddingBottom = "10px";
-        previewContainer.appendChild(iframe);
-      });
-    }
-  } else if (dematAccountType["dematAccountType"] === "LLP") {
-    const llpPdfDocuments = JSON.parse(
-      sessionStorage.getItem("llpPdfDocuments")
-    );
-
-    if (llpPdfDocuments && llpPdfDocuments.length > 0) {
-      const previewContainer = document.getElementById("documentPreview");
-
-      llpPdfDocuments.forEach((fileData) => {
-        // Display based on file type
-        const iframe = document.createElement("iframe");
-        iframe.src = fileData.data;
-        iframe.width = "30%";
-        iframe.height = "400px";
-        iframe.style.paddingTop = "10px";
-        iframe.style.paddingBottom = "10px";
-        previewContainer.appendChild(iframe);
-      });
-    }
-  } else {
-    const corporatePdfDocuments = JSON.parse(
-      sessionStorage.getItem("corporatePdfDocuments")
-    );
-
-    if (corporatePdfDocuments && corporatePdfDocuments.length > 0) {
-      const previewContainer = document.getElementById("documentPreview");
-
-      corporatePdfDocuments.forEach((fileData) => {
-        // Display based on file type
-        const iframe = document.createElement("iframe");
-        iframe.src = fileData.data;
-        iframe.width = "30%";
-        iframe.height = "400px";
-        iframe.style.paddingTop = "10px";
-        iframe.style.paddingBottom = "10px";
-        previewContainer.appendChild(iframe);
-      });
-    }
-  }
-};
 
 function clearLocalStorage() {
   localStorage.removeItem("dematAccountType");

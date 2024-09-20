@@ -18,7 +18,7 @@ anotherAccountHolderBtn.addEventListener("click", (e) => {
   anotherHolderDiv.innerHTML = `
     <div class="${holderArray[count]}HolderOtherDetails mt-5 text-lg text-blue-800 font-semibold">${holderArray[count]} Holder</div>
             <div class="details">
-              <div class="grossAnnualIncome flex items-center justify-between">
+              <div class="grossAnnualIncome flex flex-wrap items-center justify-between">
                 <div>
                   <label class="block font-semibold text-gray-700">1. Gross Annual Income</label>
                   <div class="incomeRanges flex items-center mt-2">
@@ -46,7 +46,7 @@ anotherAccountHolderBtn.addEventListener("click", (e) => {
                 </div>
                 <div>
                   <label class="block font-semibold text-gray-700">Net Worth (Not older than 1 year)</label>
-                  <div class="${holderArray[count]}NetWorth flex">
+                  <div class="${holderArray[count]}NetWorth flex flex-wrap">
                     <div class="mr-5 mt-2">
                       <label for="${holderArray[count]}NetWorthAmount" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Amount</label>
                       <input type="text" name="${holderArray[count]}NetWorthAmount" id="${holderArray[count]}NetWorthAmount"
@@ -61,7 +61,7 @@ anotherAccountHolderBtn.addEventListener("click", (e) => {
                   </div>
                 </div>
               </div>
-              <div class="flex items-center">
+              <div class="flex flex-wrap items-center">
                 <div class="politicalRelation">
                   <label class="block font-semibold text-gray-700">2. Please Tick (if applicable)</label>
                   <div class="${holderArray[count]}PoliticalDetails flex items-center mt-2">
@@ -72,6 +72,11 @@ anotherAccountHolderBtn.addEventListener("click", (e) => {
                     <div class="flex items-center mr-5">
                       <input type="radio" name="${holderArray[count]}PoliticalInfo" value="Related to Politically Exposed Person" id="${holderArray[count]}RPEP" class="size-4 mr-2">
                       <label for="${holderArray[count]}RPEP" class="font-semibold text-gray-800">Related to Politically Exposed Person</label>
+                    </div>
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="${holderArray[count]}PoliticalInfo" id="${holderArray[count]}None"
+                        value="None" class="size-4 mr-2">
+                      <label for="${holderArray[count]}None" class="font-semibold text-gray-800">None</label>
                     </div>
                   </div>
                 </div>

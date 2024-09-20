@@ -35,9 +35,6 @@ function getacknowledgementDetail() {
   let ecnClientName = document.getElementById("ecnClientName");
   let ecnClientAddress = document.getElementById("ecnClientAddress");
   let ecnClientPan = document.getElementById("ecnClientPan");
-  let ecnClientNameDesignation = document.getElementById(
-    "ecnClientNameDesignation"
-  );
   let internetEmailId = document.getElementById("internetEmailId");
   let internetApplicantName = document.getElementById("internetApplicantName");
   let internetApplicantAddress = document.getElementById(
@@ -56,8 +53,6 @@ function getacknowledgementDetail() {
     ecnClientName.value = acknowledgementDetail["ecnClientName"];
     ecnClientAddress.value = acknowledgementDetail["ecnClientAddress"];
     ecnClientPan.value = acknowledgementDetail["ecnClientPan"];
-    ecnClientNameDesignation.value =
-      acknowledgementDetail["ecnClientNameDesignation"];
     internetEmailId.value = acknowledgementDetail["internetEmailId"];
     internetApplicantName.value =
       acknowledgementDetail["internetApplicantName"];
