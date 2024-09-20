@@ -223,3 +223,25 @@ function getkycApplicationFormSecondPageDetail() {
       kycApplicationFormSecondPageDetail["tradingExperience"];
   }
 }
+
+function clearSecondaryAccount(event) {
+  let secondaryAccountType = document.getElementById("secondaryAccountType");
+  let secondaryBankAccountNo = document.getElementById(
+    "secondaryBankAccountNo"
+  );
+  let secondaryBankName = document.getElementById("secondaryBankName");
+  let secondaryBranchAddress = document.getElementById(
+    "secondaryBranchAddress"
+  );
+  let secondaryMicrCode = document.getElementById("secondaryMicrCode");
+  let secondaryIfscCode = document.getElementById("secondaryIfscCode");
+  let secondaryUpiId = document.getElementById("secondaryUpiId");
+
+  secondaryAccountType.selectedIndex = 0;
+  secondaryBankAccountNo.value = "";
+  secondaryBankName.value = "";
+  secondaryBranchAddress.value = "";
+  secondaryMicrCode.value = "";
+  secondaryIfscCode.value = "";
+  secondaryUpiId.value = "";
+}
