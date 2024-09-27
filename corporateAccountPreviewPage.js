@@ -2369,7 +2369,7 @@ submitDetails.addEventListener("submit", async (event) => {
   link.download = "kyc_trading_form.pdf";
   link.click();
 
-  // clearLocalStorage();
+  clearLocalStorage();
 
   // Assuming blob and pdfUrl are Blob objects representing PDFs
   // let corporatePdfFiles = new FormData();
@@ -2386,7 +2386,7 @@ submitDetails.addEventListener("submit", async (event) => {
   //   .catch((error) => console.log(error));
 
   // Redirect to the next page
-  window.location.href = "last.html";
+  window.location.href = "8_corporateDocumentUpload.html";
 });
 
 function formatDate(dateString) {
@@ -2417,5 +2417,5 @@ function clearLocalStorage() {
   localStorage.removeItem("kycApplicationFormSecondPageDetails");
   localStorage.removeItem("acknowledgementDetails");
   localStorage.removeItem("fatcaPartOneDetails");
-  localStorage.removeItem("fatcaPartTwoDetails");
+  // localStorage.removeItem("fatcaPartTwoDetails");
 }

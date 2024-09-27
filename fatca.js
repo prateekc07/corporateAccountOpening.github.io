@@ -25,7 +25,7 @@ fatcaForm.addEventListener("submit", (event) => {
     window.location.href = "8_llpDocumentUpload.html";
   } else {
     // Redirect to the next page
-    window.location.href = "8_corporateDocumentUpload.html";
+    window.location.href = "9_corporateAccountPreviewPage.html";
   }
 });
 
