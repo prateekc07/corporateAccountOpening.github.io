@@ -68,3 +68,24 @@ function base64ToArrayBuffer(base64) {
   }
   return bytes.buffer;
 }
+
+let docPreviewSectionMain = document.querySelector(".docPreviewSectionMain");
+function showPreview(preview) {
+  docPreviewSectionMain.style.display = "block";
+  let docPreviewSection = document.querySelector(".docPreviewSection");
+  const iframe = document.createElement("iframe");
+
+  // Set attributes for the iframe
+  if (preview === "ubo") iframe.src = "page36.pdf";
+  else iframe.src = "page52.pdf";
+  // Set the PDF source
+  iframe.width = "300px"; // Set iframe width
+  iframe.height = "446px"; // Set iframe height
+
+  docPreviewSection.appendChild(iframe);
+}
+
+function removePreview(event) {
+  document.querySelector(".docPreviewSection").innerHTML = "";
+  docPreviewSectionMain.style.display = "none";
+}

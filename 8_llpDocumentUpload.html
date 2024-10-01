@@ -24,7 +24,14 @@
 
     <form id="llpDocumentUploadForm">
 
-      <div class="settlementTimePeriod mt-8">
+      <div
+        class="docPreviewSectionMain absolute left-[35%] right-[41.5%] top-[15%] hidden border border-red-500 px-2 pt-1 pb-3 rounded-xl bg-gray-700">
+        <div class="text-right"><span class="text-white font-bold mr-3 hover:cursor-pointer"
+            onclick="removePreview(event)">X</span></div>
+        <div class="docPreviewSection"></div>
+      </div>
+
+      <div class="mt-8">
         <div
           class="settlementTimePeriodHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
           19. Proof of Identity(LLP): <span class="text-sm">(Only pdf files)</span></div>
@@ -113,7 +120,7 @@
             </div>
             <div class="flex items-center my-3">
               <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span class="text-2xl text-blue-800">14.</span>
-                UBO Declaration (refer page 36 from downloaded pdf)</div>
+                UBO Declaration <span class="text-green-600 text-sm hover:cursor-pointer hover:text-green-700" onclick="showPreview('ubo')">Preview</span></div>
               <div><input type="file" name="inputFile14" id="inputFile14"
                   class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5" accept="application/pdf" required>
               </div>
@@ -127,7 +134,7 @@
             </div>
             <div class="flex items-center my-3">
               <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span class="text-2xl text-blue-800">16.</span>
-                Declaration as per format (refer page 52 both part)</div>
+                Declaration as per format <span class="text-green-600 text-sm hover:cursor-pointer hover:text-green-700" onclick="showPreview()">Preview</span></div>
               <div><input type="file" name="inputFile16" id="inputFile16"
                   class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5" accept="application/pdf" required>
               </div>
@@ -137,7 +144,7 @@
 
       <div class="nextAndPrevButton flex justify-end mt-8">
         <div class="previewBtn">
-          <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Preview</button>
+          <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Submit</button>
         </div>
       </div>
 
