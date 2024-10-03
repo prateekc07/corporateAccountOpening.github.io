@@ -2419,34 +2419,3 @@ function clearLocalStorage() {
   localStorage.removeItem("fatcaPartOneDetails");
   // localStorage.removeItem("fatcaPartTwoDetails");
 }
-
-let pdfFiles = ["page36.pdf", "page52.pdf", "page53.pdf", "page54.pdf"];
-let container = document.getElementById("refDocs");
-
-document.addEventListener('DOMContentLoaded', () => {
-  pdfFiles.forEach((pdf, index) => {
-    // Create a new iframe element
-    const box = document.createElement("div");
-    const iframe = document.createElement("iframe");
-
-    // Set attributes for the iframe
-    iframe.src = pdf; // Set the PDF source
-    iframe.width = "300px"; // Set iframe width
-    iframe.height = "446px"; // Set iframe height
-
-    const title = document.createElement("h3");
-    if (index === 0) {
-      title.innerText = `UBO Declaration (Corporate, LLP, HUF)`;
-    } else if (index === 1) {
-      title.innerText = `for LLP`;
-    } else if (index === 2) {
-      title.innerText = `for Corporate`;
-    } else {
-      title.innerText = `for HUF`;
-    }
-
-    box.appendChild(title);
-    box.appendChild(iframe);
-    container.appendChild(box);
-  });
-});
