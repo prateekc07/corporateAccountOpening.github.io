@@ -89,3 +89,13 @@ function removePreview(event) {
   document.querySelector(".docPreviewSection").innerHTML = "";
   docPreviewSectionMain.style.display = "none";
 }
+
+function showInfo(cardName) {
+  let showCard = document.querySelector("." + cardName);
+  showCard.style.display = "inline-block";
+}
+
+function closeInfo(cardName) {
+  let hideCard = document.querySelector("." + cardName);
+  hideCard.style.display = "none";
+}

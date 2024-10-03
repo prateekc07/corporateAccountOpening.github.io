@@ -81,7 +81,7 @@ function showPreview(preview) {
   // Set attributes for the iframe
   if (preview === "ubo") iframe.src = "page36.pdf";
   else iframe.src = "page53.pdf";
-   // Set the PDF source
+  // Set the PDF source
   iframe.width = "300px"; // Set iframe width
   iframe.height = "446px"; // Set iframe height
 
@@ -91,4 +91,14 @@ function showPreview(preview) {
 function removePreview(event) {
   document.querySelector(".docPreviewSection").innerHTML = "";
   docPreviewSectionMain.style.display = "none";
+}
+
+function showInfo(cardName) {
+  let showCard = document.querySelector("." + cardName);
+  showCard.style.display = "inline-block";
+}
+
+function closeInfo(cardName) {
+  let hideCard = document.querySelector("." + cardName);
+  hideCard.style.display = "none";
 }

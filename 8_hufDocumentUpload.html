@@ -14,7 +14,7 @@
 
 <body>
   <section
-    class="acknowledgementDetailsSection customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
+    class="acknowledgementDetailsSection relative customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
     <div class="ourLogo flex items-center justify-between">
       <div class="companyLogo">
         <img src="./images/DhanushLogo.png" alt="" class="my-2">
@@ -78,7 +78,12 @@
           </div>
           <div class="flex items-center my-3">
             <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
-                class="text-2xl text-blue-800">6.</span> Deed of Declaration of HUF/List of coparceners <span class="text-green-600 text-sm hover:cursor-pointer hover:text-green-700" onclick="showPreview()">Preview</span></div>
+                class="text-2xl text-blue-800">6.</span> Deed of Declaration of HUF/List of coparceners <span class="text-green-600 text-sm hover:cursor-pointer hover:text-green-700" onclick="showPreview()">Format</span> <i class="fa-solid fa-info border border-black text-sm py-0.5 px-1.5 rounded-full hover:cursor-pointer mx-2" id="sf1"
+                  onclick="showInfo('showCard1')"></i> <span
+                  class="showCard1 hidden border border-black pl-1 rounded-md absolute w-60 text-sm"> <span
+                    class="flex justify-end mr-3"><i class="fa-solid fa-xmark hover:cursor-pointer" id="cf1"
+                      onclick="closeInfo('showCard1')"></i></span> Please download the format and paste it on the company's letterhead
+                  and then upload filled pdf</span> </div>
             <div><input type="file" name="inputFile6" id="inputFile6"
                 class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
                 accept="application/pdf" required>
@@ -120,7 +125,12 @@
           <div class="flex items-center my-3">
             <div class="w-[650px] text-lg text-gray-800 font-semibold mr-14"><span
                 class="text-2xl text-blue-800">11.</span>
-              UBO Declaration <span class="text-green-600 text-sm hover:cursor-pointer hover:text-green-700" onclick="showPreview('ubo')">Preview</span></div>
+              UBO Declaration <span class="text-green-600 text-sm hover:cursor-pointer hover:text-green-700" onclick="showPreview('ubo')">Format</span> <i class="fa-solid fa-info border border-black text-sm py-0.5 px-1.5 rounded-full hover:cursor-pointer mx-2" id="sf1"
+                onclick="showInfo('showCard2')"></i> <span
+                class="showCard2 hidden border border-black pl-1 rounded-md absolute w-60 text-sm"> <span
+                  class="flex justify-end mr-3"><i class="fa-solid fa-xmark hover:cursor-pointer" id="cf1"
+                    onclick="closeInfo('showCard2')"></i></span> Please download the format and paste it on the company's letterhead
+                and then upload filled pdf</span> </div>
             <div><input type="file" name="inputFile11" id="inputFile11"
                 class="border border-gray-500 text-lg outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10 hover:cursor-pointer pt-0.5"
                 accept="application/pdf" required>
