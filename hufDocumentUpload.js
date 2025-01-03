@@ -698,14 +698,89 @@ let kycApplicationFormSecondPageDetails = JSON.parse(
 let acknowledgementDetails = JSON.parse(
   localStorage.getItem("acknowledgementDetails")
 );
-let familyDeclarationDetails = JSON.parse(
-  localStorage.getItem("familyDeclaration")
+// let familyDeclarationDetails = JSON.parse(
+//   localStorage.getItem("familyDeclaration")
+// );
+let familyDeclarationDetails = {};
+
+let addAnotherRelatedPersonBtn = document.querySelector(
+  ".addAnotherRelatedPersonBtn"
 );
+let relatedPersonArray = [
+  "Second",
+  "Third",
+  "Fourth",
+  "Fifth",
+  "Sixth",
+  "Seventh",
+  "Eighth",
+  "Ninth",
+  "Tenth",
+];
+let count = 0;
+addAnotherRelatedPersonBtn.addEventListener("click", (event) => {
+  let companyRelatedPersonDetails = document.querySelector(
+    ".companyRelatedPersonDetails"
+  );
+  let anotherRelatedPersonDiv = document.createElement("div");
+  anotherRelatedPersonDiv.style.marginTop = "5vh";
+  anotherRelatedPersonDiv.innerHTML = `
+    <div class="flex flex-wrap">
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonName" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Name</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonName" id="company${relatedPersonArray[count]}RelatedPersonName"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10" required>
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonDesignation"
+                  class="block text-sm text-gray-700 font-semibold my-1 pl-1">Designation</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonDesignation" id="company${relatedPersonArray[count]}RelatedPersonDesignation"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10" required>
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonPan" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Pan
+                  Number</label>
+                <input type="text" name="company${relatedPersonArray[count]}RelatedPersonPan" id="company${relatedPersonArray[count]}RelatedPersonPan"
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
+              </div>
+              
+              <div class="mr-5 mt-2">
+                <label for="company${relatedPersonArray[count]}RelatedPersonDob" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Date
+                  of Birth</label>
+                <input type="date" name="company${relatedPersonArray[count]}RelatedPersonDob" id="company${relatedPersonArray[count]}RelatedPersonDob" max=""
+                  class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10" required>
+              </div>
+
+              <div class="mr-5 mt-2">
+                  <label for="${relatedPersonArray[count]}gender" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Gender</label>
+                  <select name="${relatedPersonArray[count]}gender" id="${relatedPersonArray[count]}gender"
+                    class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-44 h-10">
+                    <option value="" selected disabled>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+            </div>
+  `;
+  companyRelatedPersonDetails.appendChild(anotherRelatedPersonDiv);
+  count++;
+});
 
 let hufDocumentUploadForm = document.getElementById("hufDocumentUploadForm");
 
 hufDocumentUploadForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  const familyDeclarationFormData = new FormData(event.target);
+  familyDeclarationFormData.forEach((value, key) => {
+    familyDeclarationDetails[key] = value;
+  });
+
+  console.log(familyDeclarationDetails);
 
   // Loop through all the file input elements
   for (let i = 1; i <= 11; i++) {
@@ -861,42 +936,51 @@ hufDocumentUploadForm.addEventListener("submit", async (event) => {
   }
 
   if (familyDeclarationDetails !== null) {
+    relatedPersonArray = ["First", "Second", "Third", "Fourth", "Fifth"];
 
-    let totalPersons = familyDeclaration["totalRelatedPersons"];
+    for (let i = 0; i <= count; i++) {
+      if(i > 4) break;
 
-    for (let i = 1; i <= totalPersons; i++)  {
       familyForm
-        .getTextField(`familyName${i}`)
+        .getTextField(`familyName${i + 1}`)
         .setText(
-          familyDeclarationDetails[`firstName${i}`].toUpperCase() +
-            " " +
-            familyDeclarationDetails[`lastName${i}`].toUpperCase()
-      );
-      
-      if (familyDeclarationDetails[`gender${i}`] === "Male") {
-        familyForm
-          .getTextField(`familyGender${i}`)
-          .setText("M");
-      } else if(familyDeclarationDetails[`gender${i}`] === "Female") {
-        familyForm
-          .getTextField(`familyGender${i}`)
-          .setText("F");
+          familyDeclarationDetails[
+            `company${relatedPersonArray[i]}RelatedPersonName`
+          ].toUpperCase()
+        );
+
+      if (
+        familyDeclarationDetails[`${relatedPersonArray[i]}gender`] === "male"
+      ) {
+        familyForm.getTextField(`familyGender${i + 1}`).setText("M");
+      } else if (
+        familyDeclarationDetails[`${relatedPersonArray[i]}gender`] === "female"
+      ) {
+        familyForm.getTextField(`familyGender${i + 1}`).setText("F");
       } else {
-        familyForm
-          .getTextField(`familyGender${i}`)
-          .setText("O");
+        familyForm.getTextField(`familyGender${i + 1}`).setText("O");
       }
 
       familyForm
-        .getTextField(`familyDob${i}`)
-        .setText(familyDeclarationDetails[`dob${i}`].toUpperCase());
-      familyForm
-        .getTextField(`familyRelation${i}`)
-        .setText(familyDeclarationDetails[`personType${i}`].toUpperCase());
-      familyForm
-        .getTextField(`familyPan${i}`)
+        .getTextField(`familyDob${i + 1}`)
         .setText(
-          familyDeclarationDetails[`relatedPersonPanNumber${i}`].toUpperCase()
+          familyDeclarationDetails[
+            `company${relatedPersonArray[i]}RelatedPersonDob`
+          ].toUpperCase()
+        );
+      familyForm
+        .getTextField(`familyRelation${i + 1}`)
+        .setText(
+          familyDeclarationDetails[
+            `company${relatedPersonArray[i]}RelatedPersonDesignation`
+          ].toUpperCase()
+        );
+      familyForm
+        .getTextField(`familyPan${i + 1}`)
+        .setText(
+          familyDeclarationDetails[
+            `company${relatedPersonArray[i]}RelatedPersonPan`
+          ].toUpperCase()
         );
     }
   }
@@ -913,7 +997,7 @@ hufDocumentUploadForm.addEventListener("submit", async (event) => {
   linkFamily.click();
 
   // Redirect to next page
-  window.location.href = "9_corporateAccountPreviewPage.html";
+  // window.location.href = "9_corporateAccountPreviewPage.html";
 });
 
 async function downloadAllDocs(hufPdfDocuments) {
