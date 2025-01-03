@@ -698,9 +698,6 @@ let kycApplicationFormSecondPageDetails = JSON.parse(
 let acknowledgementDetails = JSON.parse(
   localStorage.getItem("acknowledgementDetails")
 );
-// let familyDeclarationDetails = JSON.parse(
-//   localStorage.getItem("familyDeclaration")
-// );
 let familyDeclarationDetails = {};
 
 let addAnotherRelatedPersonBtn = document.querySelector(

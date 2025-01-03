@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 let relatedPersonDetails = {};
-let familyDeclaration = {};
 
 let relatedPersonDetailsForm = document.getElementById(
   "relatedPersonDetailsForm"
@@ -31,24 +30,12 @@ relatedPersonDetailsForm.addEventListener("submit", (event) => {
   const relatedPersonFormData = new FormData(event.target);
   relatedPersonFormData.forEach((value, key) => {
     relatedPersonDetails[key] = value;
-    if (
-      key === "firstName" ||
-      key === "lastName" ||
-      key === "gender" ||
-      key === "dob" ||
-      key === "personType" ||
-      key === "relatedPersonPanNumber"
-    ) {
-      familyDeclaration[key + "1"] = value.toUpperCase();
-    }
   });
 
   localStorage.setItem(
     "relatedPersonDetails",
     JSON.stringify(relatedPersonDetails)
   );
-  familyDeclaration["totalRelatedPersons"] = 1;
-  localStorage.setItem("familyDeclaration", JSON.stringify(familyDeclaration));
   console.log(JSON.parse(localStorage.getItem("relatedPersonDetails")));
 
   // Redirect to the next page

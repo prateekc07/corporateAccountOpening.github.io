@@ -686,7 +686,6 @@ let stateCodeList = {
 let ThirdrelatedPersonDetails = {};
 
 let companyDetails = JSON.parse(localStorage.getItem("companyDetails"));
-let familyDeclaration = JSON.parse(localStorage.getItem("familyDeclaration"));
 
 let relatedPersonDetails;
 
@@ -711,24 +710,12 @@ relatedPersonDetailsForm.addEventListener("submit", async (event) => {
   const relatedPersonFormData = new FormData(event.target);
   relatedPersonFormData.forEach((value, key) => {
     ThirdrelatedPersonDetails[key] = value;
-    if (
-      key === "firstName" ||
-      key === "lastName" ||
-      key === "gender" ||
-      key === "dob" ||
-      key === "personType" ||
-      key === "relatedPersonPanNumber"
-    ) {
-      familyDeclaration[key + "3"] = value.toUpperCase();
-    }
   });
 
   localStorage.setItem(
     "ThirdrelatedPersonDetails",
     JSON.stringify(ThirdrelatedPersonDetails)
   );
-  familyDeclaration["totalRelatedPersons"] = 3;
-  localStorage.setItem("familyDeclaration", JSON.stringify(familyDeclaration));
   console.log(JSON.parse(localStorage.getItem("ThirdrelatedPersonDetails")));
 
   relatedPersonDetails = JSON.parse(
