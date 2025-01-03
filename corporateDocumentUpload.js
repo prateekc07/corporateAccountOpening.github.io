@@ -36,7 +36,7 @@ corporateDocumentUploadForm.addEventListener("submit", async (event) => {
   await downloadAllDocs(corporatePdfDocuments);
 
   // Redirect to next page
-  window.location.href = "last.html";
+  window.location.href = "9_corporateAccountPreviewPage.html";
 });
 
 async function downloadAllDocs(corporatePdfDocuments) {

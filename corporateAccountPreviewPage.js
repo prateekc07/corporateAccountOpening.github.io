@@ -1,3 +1,688 @@
+let countryCodeList = {
+  afghanistan: "AF",
+  "åland islands": "AX",
+  albania: "AL",
+  algeria: "DZ",
+  "american samoa": "AS",
+  andorra: "AD",
+  angola: "AO",
+  anguilla: "AI",
+  antarctica: "AQ",
+  "antigua and barbuda": "AG",
+  argentina: "AR",
+  armenia: "AM",
+  aruba: "AW",
+  australia: "AU",
+  austria: "AT",
+  azerbaijan: "AZ",
+  bahamas: "BS",
+  bahrain: "BH",
+  bangladesh: "BD",
+  barbados: "BB",
+  belarus: "BY",
+  belgium: "BE",
+  belize: "BZ",
+  benin: "BJ",
+  bermuda: "BM",
+  bhutan: "BT",
+  bolivia: "BO",
+  "bosnia and herzegovina": "BA",
+  botswana: "BW",
+  brazil: "BR",
+  "brunei darussalam": "BN",
+  bulgaria: "BG",
+  "burkina faso": "BF",
+  burundi: "BI",
+  "cabo verde": "CV",
+  cambodia: "KH",
+  cameroon: "CM",
+  canada: "CA",
+  "cayman islands": "KY",
+  "central african republic": "CF",
+  chad: "TD",
+  chile: "CL",
+  china: "CN",
+  colombia: "CO",
+  comoros: "KM",
+  congo: "CG",
+  "congo, democratic republic of the": "CD",
+  "costa rica": "CR",
+  croatia: "HR",
+  cuba: "CU",
+  cyprus: "CY",
+  czechia: "CZ",
+  denmark: "DK",
+  djibouti: "DJ",
+  dominica: "DM",
+  "dominican republic": "DO",
+  ecuador: "EC",
+  egypt: "EG",
+  "el salvador": "SV",
+  "equatorial guinea": "GQ",
+  eritrea: "ER",
+  estonia: "EE",
+  eswatini: "SZ",
+  ethiopia: "ET",
+  fiji: "FJ",
+  finland: "FI",
+  france: "FR",
+  gabon: "GA",
+  gambia: "GM",
+  georgia: "GE",
+  germany: "DE",
+  ghana: "GH",
+  greece: "GR",
+  grenada: "GD",
+  guatemala: "GT",
+  guinea: "GN",
+  "guinea-bissau": "GW",
+  guyana: "GY",
+  haiti: "HT",
+  honduras: "HN",
+  hungary: "HU",
+  iceland: "IS",
+  india: "IN",
+  indonesia: "ID",
+  iran: "IR",
+  iraq: "IQ",
+  ireland: "IE",
+  israel: "IL",
+  italy: "IT",
+  jamaica: "JM",
+  japan: "JP",
+  jordan: "JO",
+  kazakhstan: "KZ",
+  kenya: "KE",
+  kiribati: "KI",
+  "korea (north)": "KP",
+  "korea (south)": "KR",
+  kuwait: "KW",
+  kyrgyzstan: "KG",
+  "lao people's democratic republic": "LA",
+  latvia: "LV",
+  lebanon: "LB",
+  lesotho: "LS",
+  liberia: "LR",
+  libya: "LY",
+  liechtenstein: "LI",
+  lithuania: "LT",
+  luxembourg: "LU",
+  madagascar: "MG",
+  malawi: "MW",
+  malaysia: "MY",
+  maldives: "MV",
+  mali: "ML",
+  malta: "MT",
+  "marshall islands": "MH",
+  mauritania: "MR",
+  mauritius: "MU",
+  mexico: "MX",
+  micronesia: "FM",
+  moldova: "MD",
+  monaco: "MC",
+  mongolia: "MN",
+  montenegro: "ME",
+  morocco: "MA",
+  mozambique: "MZ",
+  myanmar: "MM",
+  namibia: "NA",
+  nauru: "NR",
+  nepal: "NP",
+  netherlands: "NL",
+  "new zealand": "NZ",
+  nicaragua: "NI",
+  niger: "NE",
+  nigeria: "NG",
+  "north macedonia": "MK",
+  norway: "NO",
+  oman: "OM",
+  pakistan: "PK",
+  palau: "PW",
+  panama: "PA",
+  "papua new guinea": "PG",
+  paraguay: "PY",
+  peru: "PE",
+  philippines: "PH",
+  poland: "PL",
+  portugal: "PT",
+  qatar: "QA",
+  romania: "RO",
+  "russian federation": "RU",
+  rwanda: "RW",
+  "saint kitts and nevis": "KN",
+  "saint lucia": "LC",
+  "saint vincent and the grenadines": "VC",
+  samoa: "WS",
+  "san marino": "SM",
+  "sao tome and principe": "ST",
+  "saudi arabia": "SA",
+  senegal: "SN",
+  serbia: "RS",
+  seychelles: "SC",
+  "sierra leone": "SL",
+  singapore: "SG",
+  slovakia: "SK",
+  slovenia: "SI",
+  "solomon islands": "SB",
+  somalia: "SO",
+  "south africa": "ZA",
+  "south sudan": "SS",
+  spain: "ES",
+  "sri lanka": "LK",
+  sudan: "SD",
+  suriname: "SR",
+  sweden: "SE",
+  switzerland: "CH",
+  "syrian arab republic": "SY",
+  tajikistan: "TJ",
+  tanzania: "TZ",
+  thailand: "TH",
+  "timor-leste": "TL",
+  togo: "TG",
+  tonga: "TO",
+  "trinidad and tobago": "TT",
+  tunisia: "TN",
+  turkey: "TR",
+  turkmenistan: "TM",
+  tuvalu: "TV",
+  uganda: "UG",
+  ukraine: "UA",
+  "united arab emirates": "AE",
+  "united kingdom": "GB",
+  "united states of america": "US",
+  "united state of america": "US",
+  "united state america": "US",
+  "united states america": "US",
+  "united states": "US",
+  "united state": "US",
+  america: "US",
+  uruguay: "UY",
+  uzbekistan: "UZ",
+  vanuatu: "VU",
+  venezuela: "VE",
+  vietnam: "VN",
+  yemen: "YE",
+  zambia: "ZM",
+  zimbabwe: "ZW",
+};
+
+let stateCodeList = {
+  afghanistan: {
+    states: {
+      badakhshan: "BDS",
+      badghis: "BDG",
+      baghlan: "BGL",
+      balkh: "BAL",
+      bamyan: "BAM",
+      daykundi: "DAY",
+      farah: "FRA",
+      faryab: "FYB",
+      ghazni: "GHA",
+      ghor: "GHO",
+    },
+  },
+  "united kingdom": {
+    states: {
+      england: "ENG",
+      scotland: "SCT",
+      wales: "WLS",
+      "northern ireland": "NIR",
+    },
+  },
+  argentina: {
+    states: {
+      "buenos aires": "BA",
+      catamarca: "CT",
+      chaco: "CH",
+      chubut: "CU",
+      cordoba: "CB",
+      corrientes: "CR",
+      "entre rios": "ER",
+      formosa: "FO",
+      jujuy: "JY",
+      "la pampa": "LP",
+    },
+  },
+  australia: {
+    states: {
+      "new south wales": "NSW",
+      queensland: "QLD",
+      "south australia": "SA",
+      tasmania: "TAS",
+      victoria: "VIC",
+      "western australia": "WA",
+      "australian capital territory": "ACT",
+      "northern territory": "NT",
+    },
+  },
+  brazil: {
+    states: {
+      acre: "AC",
+      alagoas: "AL",
+      amapa: "AP",
+      amazonas: "AM",
+      bahia: "BA",
+      ceara: "CE",
+      "distrito federal": "DF",
+      "espirito santo": "ES",
+      goias: "GO",
+      maranhao: "MA",
+    },
+  },
+  canada: {
+    states: {
+      alberta: "AB",
+      "british columbia": "BC",
+      manitoba: "MB",
+      "new brunswick": "NB",
+      "newfoundland and labrador": "NL",
+      "nova scotia": "NS",
+      ontario: "ON",
+      "prince edward island": "PE",
+      quebec: "QC",
+      saskatchewan: "SK",
+    },
+  },
+  india: {
+    states: {
+      "andhra pradesh": "AP",
+      "arunachal pradesh": "AR",
+      assam: "AS",
+      bihar: "BR",
+      chhattisgarh: "CG",
+      goa: "GA",
+      gujarat: "GJ",
+      haryana: "HR",
+      "himachal pradesh": "HP",
+      jharkhand: "JH",
+      karnataka: "KA",
+      kerala: "KL",
+      "madhya pradesh": "MP",
+      maharashtra: "MH",
+      manipur: "MN",
+      meghalaya: "ML",
+      mizoram: "MZ",
+      nagaland: "NL",
+      odisha: "OR",
+      punjab: "PB",
+      rajasthan: "RJ",
+      sikkim: "SK",
+      "tamil nadu": "TN",
+      telangana: "TS",
+      tripura: "TR",
+      "uttar pradesh": "UP",
+      uttarakhand: "UK",
+      "west bengal": "WB",
+      "andaman and nicobar islands": "AN",
+      chandigarh: "CH",
+      "dadra and nagar haveli and daman and diu": "DN",
+      delhi: "DL",
+      "jammu and kashmir": "JK",
+      ladakh: "LA",
+      lakshadweep: "LD",
+      puducherry: "PY",
+    },
+  },
+  "united states": {
+    states: {
+      alabama: "AL",
+      alaska: "AK",
+      arizona: "AZ",
+      arkansas: "AR",
+      california: "CA",
+      colorado: "CO",
+      connecticut: "CT",
+      delaware: "DE",
+      florida: "FL",
+      georgia: "GA",
+      hawaii: "HI",
+      idaho: "ID",
+      illinois: "IL",
+      indiana: "IN",
+      iowa: "IA",
+      kansas: "KS",
+      kentucky: "KY",
+      louisiana: "LA",
+      maine: "ME",
+      maryland: "MD",
+      massachusetts: "MA",
+      michigan: "MI",
+      minnesota: "MN",
+      mississippi: "MS",
+      missouri: "MO",
+      montana: "MT",
+      nebraska: "NE",
+      nevada: "NV",
+      "new hampshire": "NH",
+      "new jersey": "NJ",
+      "new mexico": "NM",
+      "new york": "NY",
+      "north carolina": "NC",
+      "north dakota": "ND",
+      ohio: "OH",
+      oklahoma: "OK",
+      oregon: "OR",
+      pennsylvania: "PA",
+      "rhode island": "RI",
+      "south carolina": "SC",
+      "south dakota": "SD",
+      tennessee: "TN",
+      texas: "TX",
+      utah: "UT",
+      vermont: "VT",
+      virginia: "VA",
+      washington: "WA",
+      "west virginia": "WV",
+      wisconsin: "WI",
+      wyoming: "WY",
+    },
+  },
+  germany: {
+    states: {
+      "baden-wurttemberg": "BW",
+      bavaria: "BY",
+      berlin: "BE",
+      brandenburg: "BB",
+      bremen: "HB",
+      hamburg: "HH",
+      hesse: "HE",
+      "lower saxony": "NI",
+      "mecklenburg-western pomerania": "MV",
+      "north rhine-westphalia": "NW",
+      "rhineland-palatinate": "RP",
+      saarland: "SL",
+      saxony: "SN",
+      "saxony-anhalt": "ST",
+      "schleswig-holstein": "SH",
+      thuringia: "TH",
+    },
+  },
+  italy: {
+    states: {
+      abruzzo: "65",
+      basilicata: "77",
+      calabria: "78",
+      campania: "72",
+      "emilia-romagna": "45",
+      "friuli-venezia giulia": "36",
+      lazio: "62",
+      liguria: "42",
+      lombardy: "25",
+      marche: "57",
+      molise: "67",
+      piedmont: "21",
+      puglia: "75",
+      sardinia: "88",
+      sicily: "82",
+      tuscany: "52",
+      "trentino-south tyrol": "32",
+      umbria: "55",
+      "valle d'aosta": "23",
+      veneto: "34",
+    },
+  },
+  japan: {
+    states: {
+      aichi: "23",
+      akita: "05",
+      aomori: "02",
+      chiba: "12",
+      ehime: "38",
+      fukui: "18",
+      fukuoka: "40",
+      fukushima: "07",
+      gifu: "21",
+      gunma: "10",
+      hiroshima: "34",
+      hokkaido: "01",
+      hyogo: "28",
+      ibaraki: "08",
+      ishikawa: "17",
+      iwate: "03",
+      kagawa: "37",
+      kagoshima: "46",
+      kanagawa: "14",
+      kochi: "39",
+      kumamoto: "43",
+      kyoto: "26",
+      mie: "24",
+      miyagi: "04",
+      miyazaki: "45",
+      nagano: "20",
+      nagasaki: "42",
+      nara: "29",
+      niigata: "15",
+      oita: "44",
+      okayama: "33",
+      okinawa: "47",
+      osaka: "27",
+      saga: "41",
+      saitama: "11",
+      shiga: "25",
+      shimane: "32",
+      shizuoka: "22",
+      tochigi: "09",
+      tokushima: "36",
+      tokyo: "13",
+      tottori: "31",
+      toyama: "16",
+      wakayama: "30",
+      yamagata: "06",
+      yamaguchi: "35",
+      yamanashi: "19",
+    },
+  },
+  mexico: {
+    states: {
+      aguascalientes: "AGU",
+      "baja california": "BCN",
+      "baja california sur": "BCS",
+      campeche: "CAM",
+      chiapas: "CHP",
+      chihuahua: "CHH",
+      coahuila: "COA",
+      colima: "COL",
+      durango: "DUR",
+      guanajuato: "GUA",
+      guerrero: "GRO",
+      hidalgo: "HID",
+      jalisco: "JAL",
+      "mexico city": "CMX",
+      michoacan: "MIC",
+      morelos: "MOR",
+      nayarit: "NAY",
+      "nuevo leon": "NLE",
+      oaxaca: "OAX",
+      puebla: "PUE",
+      queretaro: "QUE",
+      "quintana roo": "ROO",
+      "san luis potosi": "SLP",
+      sinaloa: "SIN",
+      sonora: "SON",
+      tabasco: "TAB",
+      tamaulipas: "TAM",
+      tlaxcala: "TLA",
+      veracruz: "VER",
+      yucatan: "YUC",
+      zacatecas: "ZAC",
+    },
+  },
+  nigeria: {
+    states: {
+      abia: "AB",
+      adamawa: "AD",
+      "akwa ibom": "AK",
+      anambra: "AN",
+      bauchi: "BA",
+      bayelsa: "BY",
+      benue: "BE",
+      borno: "BO",
+      "cross river": "CR",
+      delta: "DE",
+      ebonyi: "EB",
+      edo: "ED",
+      ekiti: "EK",
+      enugu: "EN",
+      gombe: "GO",
+      imo: "IM",
+      jigawa: "JI",
+      kaduna: "KD",
+      kano: "KN",
+      katsina: "KT",
+      kebbi: "KE",
+      kogi: "KO",
+      kwara: "KW",
+      lagos: "LA",
+      nasarawa: "NA",
+      niger: "NI",
+      ogun: "OG",
+      ondo: "ON",
+      osun: "OS",
+      oyo: "OY",
+      plateau: "PL",
+      rivers: "RI",
+      sokoto: "SO",
+      taraba: "TA",
+      yobe: "YO",
+      zamfara: "ZA",
+      "federal capital territory": "FC",
+    },
+  },
+  russia: {
+    states: {
+      adygea: "AD",
+      altai: "AL",
+      bashkortostan: "BA",
+      buryatia: "BU",
+      chechnya: "CE",
+      chuvashia: "CU",
+      dagestan: "DA",
+      ingushetia: "IN",
+      "kabardino-balkaria": "KB",
+      kalmykia: "KL",
+      "karachay-cherkessia": "KC",
+      karelia: "KR",
+      khakassia: "KK",
+      komi: "KO",
+      "mari el": "ME",
+      mordovia: "MO",
+      sakha: "SA",
+      "north ossetia": "NO",
+      tatarstan: "TA",
+      tuva: "TY",
+      udmurtia: "UD",
+      "altai krai": "ALT",
+      "amur oblast": "AMU",
+      "arkhangelsk oblast": "ARK",
+      "astrakhan oblast": "AST",
+      "belgorod oblast": "BEL",
+      "bryansk oblast": "BRY",
+      "chelyabinsk oblast": "CHE",
+      "irkutsk oblast": "IRK",
+      "kaliningrad oblast": "KGD",
+      "krasnodar krai": "KDA",
+      "krasnoyarsk krai": "KYA",
+      "moscow oblast": "MOS",
+      "novosibirsk oblast": "NVS",
+      "saint petersburg": "SPE",
+      "sverdlovsk oblast": "SVE",
+      "vladimir oblast": "VLA",
+      "voronezh oblast": "VOR",
+    },
+  },
+  china: {
+    states: {
+      anhui: "AH",
+      beijing: "BJ",
+      chongqing: "CQ",
+      fujian: "FJ",
+      gansu: "GS",
+      guangdong: "GD",
+      guangxi: "GX",
+      guizhou: "GZ",
+      hainan: "HI",
+      hebei: "HE",
+      heilongjiang: "HL",
+      henan: "HA",
+      "hong kong": "HK",
+      hubei: "HB",
+      hunan: "HN",
+      "inner mongolia": "NM",
+      jiangsu: "JS",
+      jiangxi: "JX",
+      jilin: "JL",
+      liaoning: "LN",
+      macau: "MO",
+      ningxia: "NX",
+      qinghai: "QH",
+      shaanxi: "SN",
+      shandong: "SD",
+      shanghai: "SH",
+      shanxi: "SX",
+      sichuan: "SC",
+      tianjin: "TJ",
+      tibet: "XZ",
+      xinjiang: "XJ",
+      yunnan: "YN",
+      zhejiang: "ZJ",
+    },
+  },
+  france: {
+    states: {
+      "auvergne-rhone-alpes": "ARA",
+      "bourgogne-franche-comte": "BFC",
+      brittany: "BRE",
+      "centre-val de loire": "CVL",
+      corsica: "COR",
+      "grand est": "GES",
+      "hauts-de-france": "HDF",
+      "ile-de-france": "IDF",
+      normandy: "NOR",
+      "nouvelle-aquitaine": "NAQ",
+      occitanie: "OCC",
+      "pays de la loire": "PDL",
+      "provence-alpes-cote d'azur": "PAC",
+    },
+  },
+  indonesia: {
+    states: {
+      aceh: "AC",
+      bali: "BA",
+      banten: "BT",
+      bengkulu: "BE",
+      "central java": "JT",
+      "central kalimantan": "KT",
+      "central sulawesi": "ST",
+      "east java": "JI",
+      "east kalimantan": "KI",
+      "east nusa tenggara": "NT",
+      gorontalo: "GO",
+      jakarta: "JK",
+      jambi: "JA",
+      lampung: "LA",
+      maluku: "MA",
+      "north kalimantan": "KU",
+      "north maluku": "MU",
+      "north sulawesi": "SA",
+      "north sumatra": "SU",
+      papua: "PA",
+      riau: "RI",
+      "riau islands": "KR",
+      "south east sulawesi": "SG",
+      "south kalimantan": "KS",
+      "south sulawesi": "SN",
+      "south sumatra": "SS",
+      "west java": "JB",
+      "west kalimantan": "KB",
+      "west nusa tenggara": "NB",
+      "west papua": "PB",
+      "west sulawesi": "SR",
+      "west sumatra": "SB",
+      yogyakarta: "YO",
+    },
+  },
+};
+
 let companyDetails = JSON.parse(localStorage.getItem("companyDetails"));
 let relatedPersonDetails = JSON.parse(
   localStorage.getItem("relatedPersonDetails")
@@ -1121,7 +1806,7 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("incorporationCountry")
-      .setText(companyDetails["incorporationCountry"].toUpperCase());
+      .setText(countryCodeList[companyDetails["incorporationCountry"].toLowerCase()]);
 
     form
       .getTextField("entityConstitutionType")
@@ -1234,11 +1919,11 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("registeredState")
-      .setText(companyDetails["registeredState"].toUpperCase());
+      .setText(stateCodeList[companyDetails["registeredCountry"].toLowerCase()].states[companyDetails["registeredState"].toLowerCase()]);
 
     form
       .getTextField("registeredCountry")
-      .setText(companyDetails["registeredCountry"].toUpperCase());
+      .setText(countryCodeList[companyDetails["registeredCountry"].toLowerCase()]);
 
     form
       .getTextField("localAddress")
@@ -1258,11 +1943,11 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("localState")
-      .setText(companyDetails["localState"].toUpperCase());
+      .setText(stateCodeList[companyDetails["localCountry"].toLowerCase()].states[companyDetails["localState"].toLowerCase()]);
 
     form
       .getTextField("localCountry")
-      .setText(companyDetails["localCountry"].toUpperCase());
+      .setText(countryCodeList[companyDetails["localCountry"].toLowerCase()]);
 
     form
       .getTextField("companyPhoneNumber")
@@ -1376,7 +2061,7 @@ submitDetails.addEventListener("submit", async (event) => {
       form.getCheckBox("otherCountry").check();
       form
         .getTextField("otherCountryCode")
-        .setText(relatedPersonDetails["otherCountryCode"].toUpperCase());
+        .setText(countryCodeList[relatedPersonDetails["otherCountryCode"].toLowerCase()]);
     }
 
     form
@@ -1401,11 +2086,11 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("relatedPersonState")
-      .setText(relatedPersonDetails["relatedPersonState"].toUpperCase());
+      .setText(stateCodeList[relatedPersonDetails["relatedPersonCountry"].toLowerCase()].states[relatedPersonDetails["relatedPersonState"].toLowerCase()]);
 
     form
       .getTextField("relatedPersonCountry")
-      .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
+      .setText(countryCodeList[relatedPersonDetails["relatedPersonCountry"].toLowerCase()]);
 
     if (relatedPersonDetails["isRelatedPersonLocalSame"] === "Yes") {
       form.getCheckBox("isLocalSame").check();
@@ -1435,13 +2120,13 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("relatedPersonCurrentState")
-      .setText(relatedPersonDetails["relatedPersonCurrentState"].toUpperCase());
+      .setText(stateCodeList[relatedPersonDetails["relatedPersonCurrentCountry"].toLowerCase()].states[relatedPersonDetails["relatedPersonCurrentState"].toLowerCase()]);
 
     form
       .getTextField("relatedPersonCurrentCountry")
       .setText(
-        relatedPersonDetails["relatedPersonCurrentCountry"].toUpperCase()
-      );
+        countryCodeList[relatedPersonDetails["relatedPersonCurrentCountry"].toLowerCase()]
+    );
 
     form
       .getTextField("relatedPersonMobileNumber")
@@ -1513,7 +2198,7 @@ submitDetails.addEventListener("submit", async (event) => {
         form.getCheckBox("hufOtherCountry").check();
         form
           .getTextField("hufOtherCountryCode")
-          .setText(relatedPersonDetails["otherCountryCode"].toUpperCase());
+          .setText(countryCodeList[relatedPersonDetails["otherCountryCode"].toLowerCase()]);
       }
 
       form
@@ -1533,10 +2218,10 @@ submitDetails.addEventListener("submit", async (event) => {
         .setText(relatedPersonDetails["relatedPersonPinCode"].toUpperCase());
       form
         .getTextField("hufState")
-        .setText(relatedPersonDetails["relatedPersonState"].toUpperCase());
+        .setText(stateCodeList[relatedPersonDetails["relatedPersonCountry"].toLowerCase()].states[relatedPersonDetails["relatedPersonState"].toLowerCase()]);
       form
         .getTextField("hufCountry")
-        .setText(relatedPersonDetails["relatedPersonCountry"].toUpperCase());
+        .setText(countryCodeList[relatedPersonDetails["relatedPersonCountry"].toLowerCase()]);
 
       if (relatedPersonDetails["isRelatedPersonLocalSame"] === "Yes") {
         form.getCheckBox("hufIsLocalSame").check();
@@ -1564,13 +2249,14 @@ submitDetails.addEventListener("submit", async (event) => {
       form
         .getTextField("hufLocalState")
         .setText(
-          relatedPersonDetails["relatedPersonCurrentState"].toUpperCase()
+          stateCodeList[relatedPersonDetails["relatedPersonCurrentCountry"].toLowerCase()].states[relatedPersonDetails["relatedPersonCurrentState"].toLowerCase()]
         );
       form
         .getTextField("hufLocalCountry")
         .setText(
-          relatedPersonDetails["relatedPersonCurrentCountry"].toUpperCase()
-        );
+          countryCodeList[relatedPersonDetails["relatedPersonCurrentCountry"].toLowerCase()]
+      );
+
       form
         .getTextField("hufMobileNumber")
         .setText(
@@ -1638,11 +2324,11 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("stateName")
-      .setText(companyDetails["registeredState"].toUpperCase());
+      .setText(stateCodeList[companyDetails["registeredCountry"].toLowerCase()].states[companyDetails["registeredState"].toLowerCase()]);
 
     form
       .getTextField("countryName")
-      .setText(companyDetails["registeredCountry"].toUpperCase());
+      .setText(countryCodeList[companyDetails["registeredCountry"].toLowerCase()]);
 
     form
       .getTextField("pinCode")
@@ -1678,11 +2364,11 @@ submitDetails.addEventListener("submit", async (event) => {
 
     form
       .getTextField("registeredStateName")
-      .setText(companyDetails["localState"].toUpperCase());
+      .setText(stateCodeList[companyDetails["localCountry"].toLowerCase()].states[companyDetails["localState"].toLowerCase()]);
 
     form
       .getTextField("registeredCountryName")
-      .setText(companyDetails["localCountry"].toUpperCase());
+      .setText(countryCodeList[companyDetails["localCountry"].toLowerCase()]);
 
     form
       .getTextField("registeredPinCodeKyc")
@@ -2386,7 +3072,7 @@ submitDetails.addEventListener("submit", async (event) => {
   //   .catch((error) => console.log(error));
 
   // Redirect to the next page
-  window.location.href = "8_corporateDocumentUpload.html";
+  window.location.href = "last.html";
 });
 
 function formatDate(dateString) {
