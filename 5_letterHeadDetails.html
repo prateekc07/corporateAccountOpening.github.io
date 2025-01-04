@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Account Opening</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section
+    class="letterHeadDetailsSection customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
+    <div class="ourLogo flex items-center justify-between">
+      <div class="companyLogo">
+        <img src="./images/DhanushLogo.png" alt="" class="my-2">
+      </div>
+      <div class="helpNumber text-blue-800 font-semibold text-lg">Need Help? Contact: 40102500-210</div>
+    </div>
+
+    <form id="letterHeadForm">
+      <div class="letterHeadDetails mt-8">
+        <div
+          class="letterHeadDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          Letter Head Printing Details:</div>
+        <div class="UboDetails mt-5">
+          <div class="ml-3 font-semibold text-blue-800">UBO Details</div>
+          <div class="docs ml-3">
+            <div class="partnerTrusteesDetails">
+              <div class="companyRelatedPersonDetails">
+                <div class="flex flex-wrap">
+                  <div class="mr-5 mt-2">
+                    <label for="uboName1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">UBO Name</label>
+                    <input type="text" name="uboName1" id="uboName1"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-80 h-10"
+                      required>
+                  </div>
+                
+                  <div class="mr-5 mt-2">
+                    <label for="taxResidencyCountry1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Tax Residency
+                      Country</label>
+                    <input type="text" name="taxResidencyCountry1" id="taxResidencyCountry1"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10"
+                      required>
+                  </div>
+                
+                  <div class="mr-5 mt-2">
+                    <label for="uboTinPan1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">TIN / PAN</label>
+                    <input type="text" name="uboTinPan1" id="uboTinPan1"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-64 h-10"
+                      required>
+                  </div>
+                
+                  <div class="mr-5 mt-2">
+                    <label for="uboBeneficialPercentage1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">% of Beneficial
+                      Interest</label>
+                    <input type="number" name="uboBeneficialPercentage1" id="uboBeneficialPercentage1" max=""
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10"
+                      required>
+                  </div>
+                
+                  <div class="mr-5 mt-2">
+                    <label for="uboAddress1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Address</label>
+                    <input type="text" name="uboAddress1" id="uboAddress1" max=""
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10"
+                      required>
+                  </div>
+                
+                  <div class="mr-5 mt-2">
+                    <label for="uboGender1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Gender</label>
+                    <select name="uboGender1" id="uboGender1"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-44 h-10">
+                      <option value="" selected disabled>Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                
+                  <div class="mr-5 mt-2">
+                    <label for="uboPep1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">PEP(Yes/No)</label>
+                    <input type="text" name="uboPep1" id="uboPep1" max=""
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-24 h-10"
+                      required>
+                  </div>
+                
+                  <div class="mr-5 mt-2">
+                    <label for="uboNationality1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Nationality</label>
+                    <input type="text" name="uboNationality1" id="uboNationality1" max=""
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-52 h-10"
+                      required>
+                  </div>
+                
+                  <div class="mr-5 mt-2">
+                    <label for="uboOccupation1"
+                      class="block text-sm text-gray-700 font-semibold my-1 pl-1">Occupation(Service,Business,Other)</label>
+                    <input type="text" name="uboOccupation1" id="uboOccupation1" max=""
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10"
+                      required>
+                  </div>
+                </div>
+              </div>
+              <div class="addAnother flex justify-end mt-5">
+                <span id="addAnotherRelatedPersonButton"
+                  class="addAnotherRelatedPersonBtn text-white bg-blue-700 px-10 py-1.5 rounded-lg hover:bg-blue-800 hover:cursor-pointer">Add
+                  Another</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="listOfPartnerDetails mt-5">
+          <div class="ml-3 font-semibold text-blue-800">List of Partners</div>
+          <div class="docs ml-3">
+            <div class="">
+              <div class="partnerDetails">
+                <div class="flex flex-wrap">
+                  <div class="mr-5 mt-2">
+                    <label for="partnerName1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Partner Name</label>
+                    <input type="text" name="partnerName1" id="partnerName1"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-80 h-10"
+                      required>
+                  </div>
+        
+                  <div class="mr-5 mt-2">
+                    <label for="partnerPan1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">PAN</label>
+                    <input type="text" name="partnerPan1" id="partnerPan1"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-60 h-10"
+                      required>
+                  </div>
+        
+                  <div class="mr-5 mt-2">
+                    <label for="partnerAddress1" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Address</label>
+                    <input type="text" name="partnerAddress1" id="partnerAddress1"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10"
+                      required>
+                  </div>
+                </div>
+              </div>
+              <div class="addAnother flex justify-end mt-5">
+                <span id="addAnotherPartnerButton"
+                  class="addAnotherPartnerBtn text-white bg-blue-700 px-10 py-1.5 rounded-lg hover:bg-blue-800 hover:cursor-pointer">Add
+                  Another</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nextAndPrevButton flex justify-between mt-8">
+          <div class="prevBtn">
+            <a href="5_acknowledgementDetails.html"
+              class="border border-black rounded-md py-1.5 px-7 text-xl text-blue-700 bg-white hover:text-blue-800"><i
+                class="fa-solid fa-chevron-left"></i> Back</a>
+          </div>
+          <div class="nextBtn">
+            <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Next
+              <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+
+    </form>
+  </section>
+
+  <script src="letterHeadDetails.js"></script>
+</body>
+
+</html>

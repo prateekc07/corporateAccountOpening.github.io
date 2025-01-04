@@ -17,8 +17,17 @@ acknowledgementDetailsForm.addEventListener("submit", (event) => {
   );
   console.log(JSON.parse(localStorage.getItem("acknowledgementDetails")));
 
-  // Redirect to the next page
-  window.location.href = "6_fatca.html";
+  let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
+  if (dematAccountType["dematAccountType"] === "HUF") {
+    // Redirect to the next page
+    window.location.href = "6_fatca.html";
+  } else if (dematAccountType["dematAccountType"] === "LLP") {
+    // Redirect to the next page
+    window.location.href = "5_letterHeadDetails.html";
+  } else {
+    // Redirect to the next page
+    window.location.href = "6_fatca.html";
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
