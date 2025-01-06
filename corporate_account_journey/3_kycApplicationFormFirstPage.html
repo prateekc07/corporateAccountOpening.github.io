@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Account Opening</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section
+    class="kycApplicationFormDetails customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
+    <div class="ourLogo flex items-center justify-between">
+      <div class="companyLogo">
+        <img src="./images/DhanushLogo.png" alt="" class="my-2">
+      </div>
+      <div class="helpNumber text-blue-800 font-semibold text-lg">Need Help? Contact: 40102500-210</div>
+    </div>
+
+    <form id="kycApplicationFormFirstPageForm">
+      <div class="dematTradingAccount mt-8">
+        <div class="dematTradingAccountHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          11. Demat/Trading Account Preference:</div>
+        <div class="dematTradingAccountPreference">
+
+          <div class="dematTradingAccountPreferenceHeading text-blue-800 font-semibold">DP</div>
+          <div class="flex flex-wrap">
+            <div class="mr-5 mt-2 flex items-center">
+              <input type="radio" name="nsdlCdslOption" id="nsdl" value="National Securities Depository Limited" class="size-5 hover:cursor-pointer">
+              <label for="nsdl" class="block hover:cursor-pointer text-gray-700 font-semibold my-1 ml-2">National Securities Depository Limited</label>
+            </div>
+
+            <div class="mr-5 mt-2 flex items-center">
+              <input type="radio" name="nsdlCdslOption" id="cdsl" value="Central Depository Services Limited" class="size-5 hover:cursor-pointer">
+              <label for="cdsl" class="block hover:cursor-pointer text-gray-700 font-semibold my-1 ml-2">Central Depository Services Limited</label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="otherDetails mt-8">
+        <div
+          class="otherDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          12. Other Details:</div>
+        <div class="otherDetailsValues">
+          <div id="firstAccHolderOtherDetail">
+            <div class="FirstHolderOtherDetails text-lg text-blue-800 font-semibold">First Holder</div>
+            <div class="details">
+              <div class="grossAnnualIncome flex flex-wrap items-center justify-between">
+                <div>
+                  <label class="block font-semibold text-gray-700">1. Gross Annual Income</label>
+                  <div class="incomeRanges flex flex-wrap items-center mt-2">
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="FirstincomeRange" id="FirstbelowOneLakh" value="Below 1Lac"
+                        class="size-4 mr-2">
+                      <label for="FirstbelowOneLakh" class="font-semibold text-gray-800">Below 1Lac</label>
+                    </div>
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="FirstincomeRange" id="FirstoneToFiveLakh" value="1-5Lac"
+                        class="size-4 mr-2">
+                      <label for="FirstoneToFiveLakh" class="font-semibold text-gray-800">1-5Lac</label>
+                    </div>
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="FirstincomeRange" id="FirstfiveToTenLakh" value="5-10Lac"
+                        class="size-4 mr-2">
+                      <label for="FirstfiveToTenLakh" class="font-semibold text-gray-800">5-10Lac</label>
+                    </div>
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="FirstincomeRange" id="FirsttenToTwentyFiveLakh" value="10-25Lac"
+                        class="size-4 mr-2">
+                      <label for="FirsttenToTwentyFiveLakh" class="font-semibold text-gray-800">10-25Lac</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="radio" name="FirstincomeRange" id="FirstaboveTwentyFiveLakh" value="Above 25Lac"
+                        class="size-4 mr-2">
+                      <label for="FirstaboveTwentyFiveLakh" class="font-semibold text-gray-800">Above 25Lac</label>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label class="block font-semibold text-gray-700">Net Worth (Not older than 1 year)</label>
+                  <div class="firstNetWorth flex flex-wrap">
+                    <div class="mr-5 mt-2">
+                      <label for="FirstNetWorthAmount"
+                        class="block text-sm text-gray-700 font-semibold my-1 pl-1">Amount</label>
+                      <input type="text" required name="FirstNetWorthAmount" id="FirstNetWorthAmount"
+                        class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                    </div>
+
+                    <div class="mr-5 mt-2">
+                      <label for="FirstNetWorthDate" class="block text-sm text-gray-700 font-semibold my-1 pl-1">As on
+                        (Date)</label>
+                      <input type="date" required name="FirstNetWorthDate" id="FirstNetWorthDate" max=""
+                        class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-10">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center">
+                <div class="politicalRelation">
+                  <label class="block font-semibold text-gray-700">2. Please Tick (if applicable)</label>
+                  <div class="FirstPoliticalDetails flex items-center mt-2">
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="FirstPoliticalInfo" id="FirstPEP" value="Politically Exposed Person"
+                        class="size-4 mr-2">
+                      <label for="FirstPEP" class="font-semibold text-gray-800">Politically Exposed Person</label>
+                    </div>
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="FirstPoliticalInfo" id="FirstRPEP"
+                        value="Related to Politically Exposed Person" class="size-4 mr-2">
+                      <label for="FirstRPEP" class="font-semibold text-gray-800">Related to Politically Exposed
+                        Person</label>
+                    </div>
+                    <div class="flex items-center mr-5">
+                      <input type="radio" name="FirstPoliticalInfo" id="FirstNone"
+                        value="None" class="size-4 mr-2">
+                      <label for="FirstNone" class="font-semibold text-gray-800">None</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="addAnotherHolder flex justify-end mt-1">
+          <span id="addAnotherHolderBtn"
+            class="addAnotherHolderButton text-white bg-blue-600 px-10 py-1.5 hover:bg-blue-700 cursor-pointer rounded-lg" onclick="addHolder(event)">Add
+            Holder</span>
+        </div>
+      </div>
+
+      <div class="nextAndPrevButton flex justify-between mt-8">
+        <div class="prevBtn">
+          <a href="2_relatedPersonDetails.html"
+            class="border border-black rounded-md py-1.5 px-7 text-xl text-blue-700 bg-white hover:text-blue-800"><i
+              class="fa-solid fa-chevron-left"></i> Back</a>
+        </div>
+        <div class="nextBtn">
+          <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Next <i
+              class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <script src="kycApplicationFormFirstPage.js"></script>
+  <script>
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('FirstNetWorthDate').setAttribute('max', today);
+    
+    let addAnotherHolderButton = document.getElementById("addAnotherHolderBtn");
+    addAnotherHolderButton.addEventListener('click', (e) => {
+      if (document.getElementById('SecondNetWorthDate') !== undefined && document.getElementById('SecondNetWorthDate') !== null) {
+        document.getElementById('SecondNetWorthDate').setAttribute('max', today);
+      }
+      if (document.getElementById('ThirdNetWorthDate') !== undefined && document.getElementById('ThirdNetWorthDate') !== null) {
+        document.getElementById('ThirdNetWorthDate').setAttribute('max', today);
+      }
+    });
+  </script>
+</body>
+
+</html>

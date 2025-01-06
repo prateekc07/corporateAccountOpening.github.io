@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Account Opening</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section
+    class="acknowledgementDetailsSection customScroll box-shadow w-[95%] mx-auto mt-5 px-7 rounded-xl bg-blue-100 py-5 h-[94vh] overflow-y-scroll">
+    <div class="ourLogo flex items-center justify-between">
+      <div class="companyLogo">
+        <img src="./images/DhanushLogo.png" alt="" class="my-2">
+      </div>
+      <div class="helpNumber text-blue-800 font-semibold text-lg">Need Help? Contact: 40102500-210</div>
+    </div>
+
+    <form id="fatcaForm">
+      <div class="fatcaDetails mt-8">
+        <div
+          class="fatcaDetailsHeading box-shadow bg-white py-2 text-blue-900 text-xl font-semibold rounded-lg pl-3 shadow-md mb-3">
+          18. FATCA/CRS Declaration:</div>
+        <div class="firstPartDetails mt-5">
+          <div class="optionA mt-3">
+            <div class="text-lg font-semibold text-gray-800">A. Is the account holder a Govt. body/International
+              Organization/listed company on recognized stock exchange:</div>
+            <div class="QuesAOptions">
+              <div class="flex">
+                <div class="flex items-center mt-3">
+                  <input type="radio" name="QuesAOptions" value="Yes" id="optionAYes" class="size-5 mr-2 hover:cursor-pointer">
+                  <label for="optionAYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+                </div>
+                <div class="flex items-center mt-3 ml-5">
+                  <input type="radio" name="QuesAOptions" value="No"id="optionANo" class="size-5 mr-2 hover:cursor-pointer">
+                  <label for="optionANo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray-700 font-semibold">If "No", then proceed to point B. If "Yes" please specify name of
+              stock exchange, if you are listed company <input type="text" name="listedCompanyName"
+                id="listedCompanyName"
+                class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-8">
+              and proceed to sign the declaration.</div>
+          </div>
+          <div class="optionB mt-3">
+            <div class="text-lg font-semibold text-gray-800">B. Is the account holder a (Entity/Financial Institution)
+              tax resident of any country other than India:</div>
+            <div class="QuesBOptions">
+              <div class="flex">
+                <div class="flex items-center mt-3">
+                  <input type="radio" name="QuesBOptions" id="optionBYes" value="Yes" class="size-5 mr-2 hover:cursor-pointer">
+                  <label for="optionBYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+                </div>
+                <div class="flex items-center mt-3 ml-5">
+                  <input type="radio" name="QuesBOptions" id="optionBNo" value="No" class="size-5 mr-2 hover:cursor-pointer">
+                  <label for="optionBNo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray-700 font-semibold">If "Yes", then please fill of FATCA/CRS Self Certification Form. If
+              "No", proceed to point C.</div>
+          </div>
+          <div class="optionC mt-3">
+            <div class="text-lg font-semibold text-gray-800">C. Is the account holder an Indian Financial Institution:
+            </div>
+            <div class="QuesCOptions">
+              <div class="flex">
+                <div class="flex items-center mt-3">
+                  <input type="radio" name="QuesCOptions" id="optionCYes" value="Yes" class="size-5 mr-2 hover:cursor-pointer">
+                  <label for="optionCYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+                </div>
+                <div class="flex items-center mt-3 ml-5">
+                  <input type="radio" name="QuesCOptions" id="optionCNo" value="No" class="size-5 mr-2 hover:cursor-pointer">
+                  <label for="optionCNo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray-700 font-semibold">If "No", then proceed to point D. If "Yes", please provide your
+              GIIN, if any <input type="text" name="giinNumber" id="giinNumber"
+                class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-72 h-8">
+            </div>
+          </div>
+          <div class="optionD mt-3">
+            <div class="text-lg font-semibold text-gray-800">D. Are the Substantial owners or controlling persons in the
+              entity or chain of ownership resident for tax purpose in any country outside India or not an Indian
+              citizen:</div>
+            <div class="QuesDOptions">
+              <div class="flex">
+                <div class="flex items-center mt-3">
+                  <input type="radio" name="QuesDOptions" id="optionDYes" value="Yes" class="size-5 mr-2 hover:cursor-pointer">
+                  <label for="optionDYes" class="hover:cursor-pointer text-xl text-gray-700">Yes</label>
+                </div>
+                <div class="flex items-center mt-3 ml-5">
+                  <input type="radio" name="QuesDOptions" id="optionDNo" value="No" class="size-5 mr-2 hover:cursor-pointer">
+                  <label for="optionDNo" class="hover:cursor-pointer text-xl text-gray-700">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray-700 font-semibold">If "No", then proceed to sign the declaration. If "Yes" please fill
+              FATCA/CRS Self Certification Form.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nextAndPrevButton flex justify-between mt-8">
+        <div class="prevBtn">
+          <a href="5_acknowledgementDetails.html"
+            class="border border-black rounded-md py-1.5 px-7 text-xl text-blue-700 bg-white hover:text-blue-800"><i
+              class="fa-solid fa-chevron-left"></i> Back</a>
+        </div>
+        <div class="nextBtn">
+          <button type="submit" class="rounded-md py-1.5 px-7 text-xl text-white bg-blue-700 hover:bg-blue-800">Next <i
+              class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+    </form>
+  </section>
+
+  <script src="fatca.js"></script>
+</body>
+
+</html>
