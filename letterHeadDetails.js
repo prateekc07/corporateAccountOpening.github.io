@@ -165,6 +165,37 @@ addAnotherPartnerBtn.addEventListener("click", (event) => {
   partnerCount++;
 });
 
+let addAnotherAuthorizedPartnerBtn = document.querySelector(
+  ".addAnotherAuthorizedPartnerBtn"
+);
+let authorizedCount = 1;
+addAnotherAuthorizedPartnerBtn.addEventListener("click", (event) => {
+  let authorizedPartnerDetails = document.querySelector(
+    ".authorizedPartnerDetails"
+  );
+  let anotherPartnerDiv = document.createElement("div");
+  anotherPartnerDiv.style.marginTop = "5vh";
+  anotherPartnerDiv.innerHTML = `
+    <div class="flex flex-wrap">
+                  <div class="mr-5 mt-2">
+                    <label for="authorizedPartner${authorizedCount + 1}" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Partner Name</label>
+                    <input type="text" name="authorizedPartner${authorizedCount + 1}" id="authorizedPartner${authorizedCount + 1}"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10"
+                      required>
+                  </div>
+        
+                  <div class="mr-5 mt-2">
+                    <label for="authorizedPartnerDesignation${authorizedCount + 1}" class="block text-sm text-gray-700 font-semibold my-1 pl-1">Designation</label>
+                    <input type="text" name="authorizedPartnerDesignation${authorizedCount + 1}" id="authorizedPartnerDesignation${authorizedCount + 1}"
+                      class="border border-gray-300 text-lg py-1 outline-none rounded-md px-2 text-gray-600 font-semibold w-96 h-10"
+                      required>
+                  </div>
+                </div>
+  `;
+  authorizedPartnerDetails.appendChild(anotherPartnerDiv);
+  authorizedCount++;
+});
+
 let letterHeadDetails = {};
 let letterHeadForm = document.getElementById("letterHeadForm");
 
@@ -299,6 +330,15 @@ letterHeadForm.addEventListener("submit", async (event) => {
     }
   }
 
+  if (acknowledgementDetails !== null) {
+    lopForm
+      .getTextField("lopCompanyName")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    lopForm
+      .getTextField("lopCompanyAddress")
+      .setText(acknowledgementDetails["ecnClientAddress"].toUpperCase());
+  }
+
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytesLop = await pdfDocListOfPartners.save();
   // Create a Blob from the bytes
@@ -310,6 +350,200 @@ letterHeadForm.addEventListener("submit", async (event) => {
   linkLop.download = "listOfPartners.pdf";
   linkLop.click();
 
+  // editing pdf file
+  // Fetch the PDF file from the server
+  const authorityLetterFormat = "./authorityLetter.pdf"; // Path to your PDF file
+  const existingPdfBytesAuthorityLetter = await fetch(
+    authorityLetterFormat
+  ).then((res) => res.arrayBuffer());
+  // Load the existing PDF
+  const pdfDocAuthorityLetter = await PDFLib.PDFDocument.load(
+    existingPdfBytesAuthorityLetter
+  );
+  // Get the form
+  const authorityLetterForm = pdfDocAuthorityLetter.getForm();
+
+  if (acknowledgementDetails !== null) {
+    authorityLetterForm
+      .getTextField("authorityCompanyName")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    authorityLetterForm
+      .getTextField("firmName1")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    authorityLetterForm
+      .getTextField("firmName2")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    authorityLetterForm
+      .getTextField("firmName3")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    authorityLetterForm
+      .getTextField("firmName4")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    authorityLetterForm
+      .getTextField("authorityCompanyAddress")
+      .setText(acknowledgementDetails["ecnClientAddress"].toUpperCase());
+  }
+
+  if (letterHeadDetails !== null) {
+    for (let i = 1; i <= partnerCount; i++) {
+      if (i > 2) break;
+
+      authorityLetterForm
+        .getTextField(`firmPerson${i}`)
+        .setText(letterHeadDetails[`partnerName${i}`]);
+      authorityLetterForm
+        .getTextField(`firmPerson${i}${i}`)
+        .setText(letterHeadDetails[`partnerName${i}`]);
+
+      authorityLetterForm
+        .getTextField(`authorityPartnerName${i}`)
+        .setText(letterHeadDetails[`partnerName${i}`]);
+    }
+  }
+
+  if (companyDetails !== null) {
+    authorityLetterForm
+      .getTextField("firmAddress")
+      .setText(companyDetails["companyAddress"].toUpperCase());
+    authorityLetterForm
+      .getTextField("firmCity")
+      .setText(companyDetails["registeredCity"].toUpperCase());
+    authorityLetterForm
+      .getTextField("firmState")
+      .setText(companyDetails["registeredState"].toUpperCase());
+  }
+
+  // Serialize the PDFDocument to bytes (a Uint8Array)
+  const pdfBytesAuthorityLetter = await pdfDocAuthorityLetter.save();
+  // Create a Blob from the bytes
+  const blobAuthorityLetter = new Blob([pdfBytesAuthorityLetter], {
+    type: "application/pdf",
+  });
+
+  // Create a link element to download the filled PDF
+  const linkAuthorityLetter = document.createElement("a");
+  linkAuthorityLetter.href = URL.createObjectURL(blobAuthorityLetter);
+  linkAuthorityLetter.download = "authorityLetter.pdf";
+  linkAuthorityLetter.click();
+
+  // editing pdf file
+  // Fetch the PDF file from the server
+  const resolutionLetterFormat = "./resolutionLetter.pdf"; // Path to your PDF file
+  const existingPdfBytesResolutionLetter = await fetch(
+    resolutionLetterFormat
+  ).then((res) => res.arrayBuffer());
+  // Load the existing PDF
+  const pdfDocResolutionLetter = await PDFLib.PDFDocument.load(
+    existingPdfBytesResolutionLetter
+  );
+  // Get the form
+  const resolutionLetterForm = pdfDocResolutionLetter.getForm();
+
+  if (acknowledgementDetails !== null) {
+    resolutionLetterForm
+      .getTextField("resolutionCompanyName")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    resolutionLetterForm
+      .getTextField("llpName1")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    resolutionLetterForm
+      .getTextField("llpName2")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    resolutionLetterForm
+      .getTextField("llpName3")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    resolutionLetterForm
+      .getTextField("llpName4")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    resolutionLetterForm
+      .getTextField("resolutionCompanyAddress")
+      .setText(acknowledgementDetails["ecnClientAddress"].toUpperCase());
+  }
+
+  if (letterHeadDetails !== null) {
+    for (let i = 1; i <= partnerCount; i++) {
+      if (i > 2) break;
+
+      resolutionLetterForm
+        .getTextField(`llpPartner${i}`)
+        .setText(letterHeadDetails[`partnerName${i}`]);
+      resolutionLetterForm
+        .getTextField(`llpPartner${i}${i}`)
+        .setText(letterHeadDetails[`partnerName${i}`]);
+
+      resolutionLetterForm
+        .getTextField(`resolutionPartnerName${i}`)
+        .setText(letterHeadDetails[`partnerName${i}`]);
+    }
+  }
+
+  if (companyDetails !== null) {
+    resolutionLetterForm
+      .getTextField("llpAddress")
+      .setText(companyDetails["companyAddress"].toUpperCase());
+  }
+
+  // Serialize the PDFDocument to bytes (a Uint8Array)
+  const pdfBytesResolutionLetter = await pdfDocResolutionLetter.save();
+  // Create a Blob from the bytes
+  const blobResolutionLetter = new Blob([pdfBytesResolutionLetter], {
+    type: "application/pdf",
+  });
+
+  // Create a link element to download the filled PDF
+  const linkResolutionLetter = document.createElement("a");
+  linkResolutionLetter.href = URL.createObjectURL(blobResolutionLetter);
+  linkResolutionLetter.download = "resolutionLetter.pdf";
+  linkResolutionLetter.click();
+
+  // editing pdf file
+  // Fetch the PDF file from the server
+  const authorizedSignatoryFormat = "./listOfAuthorizedSignatory.pdf"; // Path to your PDF file
+  const existingPdfBytesAuthorizedSignatory = await fetch(
+    authorizedSignatoryFormat
+  ).then((res) => res.arrayBuffer());
+  // Load the existing PDF
+  const pdfDocAuthorizedSignatory = await PDFLib.PDFDocument.load(
+    existingPdfBytesAuthorizedSignatory
+  );
+  // Get the form
+  const authorizedSignatoryForm = pdfDocAuthorizedSignatory.getForm();
+
+  if (acknowledgementDetails !== null) {
+    authorizedSignatoryForm
+      .getTextField("authorizedSignatoryCompanyName")
+      .setText(acknowledgementDetails["ecnClientMandateName"].toUpperCase());
+    authorizedSignatoryForm
+      .getTextField("authorizedSignatoryCompanyAddress")
+      .setText(acknowledgementDetails["ecnClientAddress"].toUpperCase());
+  }
+
+  if (letterHeadDetails !== null) {
+    for (let i = 1; i <= authorizedCount; i++) {
+      if (i > 5) break;
+
+      authorizedSignatoryForm
+        .getTextField(`authorizedSignatoryName${i}`)
+        .setText(letterHeadDetails[`authorizedPartner${i}`]);
+      authorizedSignatoryForm
+        .getTextField(`authorizedSignatoryDesignation${i}`)
+        .setText(letterHeadDetails[`authorizedPartnerDesignation${i}`]);
+    }
+  }
+
+  // Serialize the PDFDocument to bytes (a Uint8Array)
+  const pdfBytesAuthorizedSignatory = await pdfDocAuthorizedSignatory.save();
+  // Create a Blob from the bytes
+  const blobAuthorizedSignatory = new Blob([pdfBytesAuthorizedSignatory], {
+    type: "application/pdf",
+  });
+
+  // Create a link element to download the filled PDF
+  const linkAuthorizedSignatory = document.createElement("a");
+  linkAuthorizedSignatory.href = URL.createObjectURL(blobAuthorizedSignatory);
+  linkAuthorizedSignatory.download = "listOfAuthorizedSignatory.pdf";
+  linkAuthorizedSignatory.click();
+
   // Redirect to the next page
-  window.location.href = "6_fatca.html";
+  // window.location.href = "6_fatca.html";
 });
