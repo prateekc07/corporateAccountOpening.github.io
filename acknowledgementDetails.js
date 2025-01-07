@@ -20,7 +20,7 @@ acknowledgementDetailsForm.addEventListener("submit", (event) => {
   let dematAccountType = JSON.parse(localStorage.getItem("dematAccountType"));
   if (dematAccountType["dematAccountType"] === "HUF") {
     // Redirect to the next page
-    window.location.href = "6_fatca.html";
+    window.location.href = "5_letterHeadDetailsHuf.html";
   } else if (dematAccountType["dematAccountType"] === "LLP") {
     // Redirect to the next page
     window.location.href = "5_letterHeadDetails.html";
